@@ -237,21 +237,20 @@ h5{
 @media only screen and (min-width:1441px){
   p{
     width: 85%;
-    font-size: 40px;
-    text-align: justify;
+    font-size: 20px;
+    text-align: center;
   }
   h1{
-    font-size: 72px;
+    font-size: 50px;
   }
   h2{
-    font-size: 58px;
+    font-size: 40px;
   }
 
   .footer{
     background-color: #CCF5F1;
-    padding: 10px;
     width: 100%;
-    height: 150px;  
+    height: 80px;  
     position: absolute;
     text-align: center;
     justify-content: center;
@@ -266,16 +265,21 @@ h5{
   }
   ul li {
     font-family: 'Poppins','Sans-serif';
-    font-size: 24px;
+    font-size: 16px;
+    float: left;
+    margin-right: 20px;
     list-style-type: none;
     padding-top: 5px;
     color: rgb(37, 122, 80);
   }
+  .fax{margin-right: 50px;}
   h5{
     width: 650px;
     color: rgb(37, 122, 80);
-    font-size: 24px;
+    font-size: 16px;
   }
+  .btn{font-size: 20px; padding: .7rem 1.3rem;}
+  .email ul li{padding-left: 0px;}
 }
 
 
