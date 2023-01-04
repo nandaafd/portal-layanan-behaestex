@@ -106,7 +106,16 @@ header a{
     background-color: #3CADA2;
     border: none;
 }
-
+#btn-tambah{
+    font-size: 12px;
+    font-weight: 600    ;
+    color: black;
+    background-color: #ffc629;
+}
+#btn-tambah:hover{
+    color: rgb(255, 255, 255);
+    background-color: #494844;
+}
 
 /* h2{
     width: 55%;
@@ -127,6 +136,7 @@ header a{
 .container{
     margin-bottom: 1rem;
 }
+
 .table{
     width: 98%;
     margin: auto;
@@ -147,6 +157,15 @@ th, td{
 
 .footer{
     padding: 1.5rem;
+}
+
+.bi-x-circle-fill{
+    margin-top: .6rem;
+    padding-left: .6rem;
+    padding-right: 1rem;
+}
+.bi-x-circle-fill:hover{
+    color: red;
 }
 
 

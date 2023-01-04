@@ -8,7 +8,7 @@
     <div class="box-container">
 
         <div class="box">
-            <a href="{{asset('/inventaris')}}">
+            <a href="{{url('/inventaris')}}">
             <img src="{{('images/ikon1.png')}}" alt="">
             <h3>Peminjaman Inventaris</h3>
             </a>
@@ -16,28 +16,28 @@
 
 
         <div class="box">
-        <a href="{{asset('/revisidata')}}" target="">
+        <a href="{{url('/revisidata')}}" target="">
             <img src="{{('images/ikon2.png')}}" alt="">
             <h3>Pengajuan Revisi Data</h3>
         </a>
         </div>
 
         <div class="box">
-        <a href="{{asset('/aksesprogram')}}" target="">
+        <a href="{{url('/aksesprogram')}}" target="">
             <img src="{{('images/ikon4.png')}}" alt="">
             <h3>Pengajuan Akses Program</h3>
             </a>
         </div>
 
         <div class="box">
-        <a href="{{asset('/sewazoom')}}" target="">
+        <a href="{{url('/sewazoom')}}" target="">
             <img src="{{('images/ikon3.png')}}" alt="">
             <h3>Daftar Zoom</h3>
             </a>
         </div>
 
         <div class="box">
-        <a href="{{asset('/aksesinternet')}}"   >
+        <a href="{{url('/aksesinternet')}}"   >
             <img src="{{('images/ikon5.png')}}" alt="">
             <h3>Pengajuan Akses Internet</h3>
             </a>

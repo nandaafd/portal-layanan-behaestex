@@ -15,6 +15,7 @@ class CreateSewazoomTable extends Migration
     {
         Schema::create('sewazoom', function (Blueprint $table) {
             $table->increments('id');
+            $table->
             $table->string('nama',255);
             $table->string('departemen',255);
             $table->string('topik',255);

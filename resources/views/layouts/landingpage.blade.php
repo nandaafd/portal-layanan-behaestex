@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <meta http-equiv="refresh" content="8; url='{{asset("/portal")}}'" /> --}}
+    <meta http-equiv="refresh" content="8; url='{{asset("/portal")}}'" />
     <title>WELCOME</title>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
