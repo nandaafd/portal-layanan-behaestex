@@ -56,17 +56,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($akses_internet as $ai)
                                 <tr>
                                     <td class="text-bold-500"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$ai->nama}}</td>
+                                    <td>{{$ai->departemen}}</td>
+                                    <td>{{$ai->jabatan}}</td>
+                                    <td>{{$ai->keperluan_email}}</td>
+                                    <td>{{$ai->keperluan_browsing}}</td>
                                     <td><span class="badge bg-success">Approved</span></td>
                                 </tr>
-
+                                @endforeach
 
                             </tbody>
                         </table>

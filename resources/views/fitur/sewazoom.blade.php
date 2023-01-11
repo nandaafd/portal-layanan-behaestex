@@ -57,17 +57,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <?php $no = 1 ?>
+                                @foreach ($sewazoom as $sewa)
                                 <tr>
-                                    <td class="text-bold-500"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="badge bg-success">Active</span></td>
+                                    <td class="text-bold-500"> <?php echo $no++ ?></td>
+                                    <td>{{$sewa->nama}}</td>
+                                    <td>{{$sewa->departemen}}</td>
+                                    <td>{{$sewa->jam_mulai}}</td>
+                                    <td>{{$sewa->jam_selesai}}</td>
+                                    <td><span class="badge bg-success">{{$sewa->status}}</span></td>
                                 </tr>
 
-
+                                @endforeach
                             </tbody>
                         </table>
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAksesprogramTable extends Migration
+class CreateAksesProgramTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateAksesprogramTable extends Migration
      */
     public function up()
     {
-        Schema::create('aksesprogram', function (Blueprint $table) {
+        Schema::create('akses_program', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('user');
             $table->string('departemen',255);
             $table->string('nama_program',255);
             $table->string('latar_belakang',255);
@@ -24,8 +26,9 @@ class CreateAksesprogramTable extends Migration
             $table->string('konsekuensi',255);
             $table->string('fitur',255);
             $table->string('prosedur_dan_dokumen',255);
+            $table->string('status',255);
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
@@ -35,6 +38,6 @@ class CreateAksesprogramTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aksesprogram');
+        Schema::dropIfExists('akses_program');
     }
 }

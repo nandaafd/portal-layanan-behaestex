@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeminjamanInventarisTable extends Migration
+class CreateAksesInternetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreatePeminjamanInventarisTable extends Migration
      */
     public function up()
     {
-        Schema::create('peminjaman_inventaris', function (Blueprint $table) {
+        Schema::create('akses_internet', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('user');
             $table->string('nama',255);
             $table->string('departemen',255);
-            $table->date('tanggal_pinjam');
-            $table->string('item_a',255);
-            $table->string('item_b',255);
-            $table->string('item_c',255);
-            $table->date('tanggal_pengembalian');
+            $table->string('jabatan',255);
+            $table->string('keperluan_email',255);
+            $table->string('keperluan_browsing',255);
+            $table->string('status',255);
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreatePeminjamanInventarisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peminjaman_inventaris');
+        Schema::dropIfExists('akses_internet');
     }
 }

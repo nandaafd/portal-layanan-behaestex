@@ -56,16 +56,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
+                                
+                                                                    <tr>
                                     <td class="text-bold-500"></td>
-                                    <td></td>
+                                    <td>{{}}</td>
                                     <td></td>
                                     <td><span class="badge bg-success">Accepted</span></td>
                                     <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                             data-bs-target="#detail" id="btn-detail">Detail</button></td>
                                 </tr>
-
+                                @endforeach
 
                             </tbody>
                         </table>
