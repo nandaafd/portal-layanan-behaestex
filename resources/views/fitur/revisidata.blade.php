@@ -60,19 +60,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <?php $no = 1 ?>
+                                @foreach ($revisidata as $rev)
                                 <tr>
-                                    <td class="text-bold-500"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="badge bg-success">Accepted</span></td>
-                                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                            data-bs-target="#detail" id="btn-detail">Detail</button></td>
+                                    <td class="text-bold-500"><?php echo $no++ ?></td>
+                                    <td>{{$rev->jenis_revisi}}</td>
+                                    <td>{{$rev->tanggal}}</td>
+                                    <td>{{$rev->tanggal_data}}</td>
+                                    <td>{{$rev->jenis_data}}</td>
+                                    <td>{{$rev->nama_data}}</td>
+                                    <td><span class="badge bg-success">{{$rev->status}}</span></td>
+                                    <td><a href="javascript:void(0)" id="btn-detail-revisidata" data-id="${response.data.id}" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#detail">Detail</a>
+                                       </td>
                                 </tr>
-
+                                    
+                                @endforeach
 
                             </tbody>
                         </table>
@@ -106,8 +109,8 @@
                                         <div class="input-group mb-3">
                                             <select class="form-select" id="inputGroupSelect02">
                                                 <option selected>Choose...</option>
-                                                <option value="1">Belum Closing</option>
-                                                <option value="2">Sudah closing</option>
+                                                <option value="Belum Closing">Belum Closing</option>
+                                                <option value="Sudah Closing">Sudah closing</option>
                                             </select>
                                         </div>
                                     </div>
@@ -245,6 +248,7 @@
                 <form class="form form-horizontal">
                     <div class="form-body">
                         <div class="row">
+                            <div><input type="hidden" value="{{$rev->id}}"></div>
                             <div class="col-md-4">
                                 <label>Jenis Revisi</label>
                             </div>
@@ -253,7 +257,7 @@
                                     <div class="position-relative">
                                         <div class="input-group mb-3">
                                             <input readonly type="text" class="form-control" placeholder=""
-                                                id="first-name-icon">
+                                                id="first-name-icon" value="{{$rev->jenis_revisi}}">
                                             <div class="form-control-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-clipboard-data"
@@ -277,7 +281,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input readonly type="date" class="form-control" placeholder=""
-                                            id="first-name-icon">
+                                            id="first-name-icon" value="{{$rev->tanggal}}">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -296,7 +300,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input readonly type="date" class="form-control" placeholder="">
+                                        <input readonly type="date" class="form-control" placeholder="" value="{{$rev->tanggal_data}}">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -315,7 +319,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input readonly type="text" class="form-control" placeholder="">
+                                        <input readonly type="text" class="form-control" placeholder="" value="{{$rev->jenis_data}}">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
@@ -336,7 +340,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input readonly type="text" class="form-control" placeholder="">
+                                        <input readonly type="text" class="form-control" placeholder="" value="{{$rev->nama_data}}">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -355,7 +359,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="floatingTextarea2" style="height: 100px" value="{{$rev->detail_revisi}}">{{$rev->detail_revisi}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -368,7 +372,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="floatingTextarea2" style="height: 100px" value="{{$rev->alasan_revisi}}"></textarea>
                                         </div>
                                     </div>
                                 </div>

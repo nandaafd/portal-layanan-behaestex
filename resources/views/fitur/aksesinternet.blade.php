@@ -56,15 +56,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
                                 @foreach ($akses_internet as $ai)
                                 <tr>
-                                    <td class="text-bold-500"></td>
+                                    <td class="text-bold-500"><?php echo $no++ ?></td>
                                     <td>{{$ai->nama}}</td>
                                     <td>{{$ai->departemen}}</td>
                                     <td>{{$ai->jabatan}}</td>
                                     <td>{{$ai->keperluan_email}}</td>
                                     <td>{{$ai->keperluan_browsing}}</td>
-                                    <td><span class="badge bg-success">Approved</span></td>
+                                    <td><span class="badge bg-success">{{$ai->status}}</span></td>
                                 </tr>
                                 @endforeach
 

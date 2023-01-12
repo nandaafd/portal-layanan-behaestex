@@ -21,21 +21,7 @@ Route::get('/login', function () {
 // Route::get('/sewazoom', function () {
 //     return view('fitur.sewazoom');
 // });
-Route::get('/inventaris', function () {
-    return view('fitur.inventaris');
-});
-Route::get('/profile', function () {
-    return view('profile');
-});
-Route::get('/aksesinternet', function () {
-    return view('fitur.aksesinternet');
-});
-Route::get('/revisidata', function () {
-    return view('fitur.revisidata');
-});
-Route::get('/aksesprogram', function () {
-    return view('fitur.aksesprogram');
-});
+
 
 
 // Route::group(['middleware' => 'prevent-back-history'],function(){
@@ -48,8 +34,11 @@ Route::get('/aksesprogram', function () {
 //         ],
 //     );
     
-    Route::get('/sewazoom','App\Http\Controllers\sewazoomController@index');
+    Route::get('/sewazoom','App\Http\Controllers\SewaZoomController@index');
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
+    Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
+    Route::get('/revisidata','App\Http\Controllers\RevisiDataController@index');
+
 
 
 

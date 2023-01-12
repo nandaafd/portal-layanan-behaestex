@@ -54,6 +54,7 @@
                                     <th>WAKTU MULAI</th>
                                     <th>WAKTU SELESAI</th>
                                     <th>STATUS</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,6 +67,10 @@
                                     <td>{{$sewa->jam_mulai}}</td>
                                     <td>{{$sewa->jam_selesai}}</td>
                                     <td><span class="badge bg-success">{{$sewa->status}}</span></td>
+                                    <td>
+                                        <a href="javascript:void(0)" id="btn-edit-sewazoom" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
+                                        <a href="javascript:void(0)" id="btn-delete-sewazoom" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
+                                    </td>
                                 </tr>
 
                                 @endforeach
