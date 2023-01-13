@@ -49,13 +49,13 @@ header a{
 }
 
 /* button */
-#btn-sewazoom{
+#btn-add-sewazoom{
     background-color: #3CADA2;
     border: none;
     width: 8rem;
     margin-top: 5px;
 }
-#btn-inventaris{
+#btn-add-inventaris{
     background-color: #3CADA2;
     border: none;
     width: 7rem;
@@ -83,10 +83,10 @@ header a{
     padding: 2px 5px;
     font-size: 12px;
 }
-#btn-sewazoom:hover{
+#btn-add-sewazoom:hover{
     background-color: black;
 }
-#btn-inventaris:hover{
+#btn-add-inventaris:hover{
     background-color: black;
 }
 #btn-aksesinternet:hover{

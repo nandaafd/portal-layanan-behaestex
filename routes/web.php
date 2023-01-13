@@ -18,9 +18,9 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
-// Route::get('/sewazoom', function () {
-//     return view('fitur.sewazoom');
-// });
+Route::get('/inventaris', function () {
+    return view('fitur.inventaris');
+});
 
 
 

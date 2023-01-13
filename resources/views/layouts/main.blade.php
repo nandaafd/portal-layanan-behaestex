@@ -54,6 +54,7 @@
     <script src="{{ asset('/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('/assets/js/main.js') }}"></script>
+    <script src="{{ asset('/js/modal.js') }}"></script>
     <script src="{{ asset('/assets/js/datetime.js') }}"></script>
     <script src="{{ asset('/assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('/assets/vendors/sweetalert2/sweetalert2.all.min.js') }}"></script>   

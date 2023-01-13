@@ -56,20 +56,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1 ?>
-                                @foreach ($akses_programs as $ap)
+                               
                                 <tr>
-                                    <td class="text-bold-500"><?php echo $no++ ?></td>
-                                    <td>{{$ap->departemen}}</td>
-                                    <td>{{$ap->nama_program}}</td>
-                                    <td><span class="badge bg-success">{{$ap->status}}</span></td>
+                                    <td class="text-bold-500"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="badge bg-success"></span></td>
                                     <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                             data-bs-target="#detail" id="btn-detail">Detail</button></td>
                                     <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aksesProgram-edit"
                                         id="btn-aksesprogram"><a href="">edit</a></button></td>
                                 </tr>
-                                                                   
-                                @endforeach
 
                             </tbody>
                         </table>
@@ -261,7 +258,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input readonly type="text" class="form-control" placeholder=""
-                                            id="first-name-icon" value="{{$ap->departemen}}">
+                                            id="first-name-icon" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -280,7 +277,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input readonly type="text" class="form-control" placeholder="" value="{{$ap->nama_program}}">
+                                        <input readonly type="text" class="form-control" placeholder="" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -300,7 +297,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->latar_belakang}}</textarea>
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -313,7 +310,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->proses_bisnis}}</textarea>
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -326,7 +323,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->sop}}
+                                                id="floatingTextarea2" style="height: 100px">
                                             </textarea>
                                         </div>
                                     </div>
@@ -340,7 +337,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->benefit}}</textarea>
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -353,7 +350,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->konsekuensi}}</textarea>
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -366,7 +363,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->fitur}}</textarea>
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -379,7 +376,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">{{$ap->prosedur_dan_dokumen}}</textarea>
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -416,7 +413,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon" value="{{$ap->departemen}}">
+                                            id="first-name-icon" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -435,7 +432,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Nama Program" value="{{$ap->nama_program}}">
+                                        <input type="text" class="form-control" placeholder="Nama Program" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -455,7 +452,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->latar_belakang}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -468,7 +465,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->proses_bisnis}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -481,7 +478,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->sop}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -494,7 +491,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->benefit}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -507,7 +504,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->konsekuensi}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -520,7 +517,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->fitur}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -533,7 +530,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px">{{$ap->prosedur_dan_dokumen}}</textarea>
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
