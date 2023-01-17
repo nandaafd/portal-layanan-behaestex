@@ -17,7 +17,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <div class="input-group mb-3">
-                                            <select class="form-select" id="inputGroupSelect02">
+                                            <select class="form-select" id="jenis_revisi">
                                                 <option selected>Choose...</option>
                                                 <option value="Belum Closing">Belum Closing</option>
                                                 <option value="Sudah Closing">Sudah closing</option>
@@ -32,7 +32,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" id="first-name-icon">
+                                        <input type="date" class="form-control" placeholder="" id="tanggal">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -51,7 +51,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="">
+                                        <input type="date" class="form-control" placeholder="" id="tanggal_data">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -70,7 +70,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Jenis data">
+                                        <input type="text" class="form-control" placeholder="Jenis data" id="jenis_data">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
@@ -91,7 +91,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Nama data">
+                                        <input type="text" class="form-control" placeholder="Nama data" id="nama_data">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -109,7 +109,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="detail_revisi"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -122,7 +122,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="alasan_revisi"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="store">Submit</button>
             </div>
         </div>
     </div>

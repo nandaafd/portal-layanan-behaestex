@@ -37,7 +37,7 @@ Route::get('/inventaris', function () {
     Route::get('/sewazoom','App\Http\Controllers\SewaZoomController@index');
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
-    Route::get('/revisidata','App\Http\Controllers\RevisiDataController@index');
+    Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
 
 
 
