@@ -13,7 +13,7 @@ class CreateAksesProgramsTable extends Migration
      */
     public function up()
     {
-        Schema::create('akses_programs', function (Blueprint $table) {
+        Schema::create('akses_program', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user');
@@ -28,7 +28,7 @@ class CreateAksesProgramsTable extends Migration
             $table->string('prosedur_dan_dokumen',255);
             $table->string('status',255);
             $table->timestamps();
-        }); 
+        });
     }
 
     /**

@@ -16,3 +16,23 @@ $('body').on('click','#btn-add-aksesinternet', function () {
 $('body').on('click','#btn-edit-aksesinternet', function () {
     $('#edit-aksesinternet-modal').modal('show');
 });
+$('body').on('click','#btn-add-aksesprogram', function () {
+    $('#add-aksesprogram-modal').modal('show');
+});
+$('body').on('click','#btn-view-aksesprogram', function () {
+    $('#view-aksesprogram-modal').modal('show');
+});
+$('body').on('click','#btn-edit-aksesprogram', function () {
+    $('#edit-aksesprogram-modal').modal('show');
+});
+$('body').on('click','#btn-add-revisidata', function () {
+    $('#add-revisidata-modal').modal('show');
+});
+$('body').on('click','#btn-view-revisidata', function () {
+    $('#view-revisidata-modal').modal('show');
+});
+$('body').on('click','#btn-edit-revisidata', function () {
+    $('#edit-revisidata-modal').modal('show');
+});
+
+

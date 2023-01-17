@@ -8,5 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class AksesInternet extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama','departemen','jabatan','keperluan_email','keperluan_browsing','status'];
+    protected $table = 'akses_internet';
+    protected $fillable = [
+        'nama',
+        'departemen',
+        'jabatan',
+        'keperluan_email',
+        'keperluan_browsing',
+        'status'
+    ];
 }

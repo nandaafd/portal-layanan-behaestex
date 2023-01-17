@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class SewaZoom extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['nama','departemen','topik','tanggal','jam_mulai','jam_selesai','status'];
+    protected $table = 'sewa_zoom';
+    protected $fillable = [
+        'nama',
+        'departemen',
+        'topik',
+        'tanggal',
+        'jam_mulai',
+        'jam_selesai',
+        'status'
+    ];
 }

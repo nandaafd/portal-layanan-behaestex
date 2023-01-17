@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 
 
+
 class SewaZoomController extends Controller
 {
     //
     public function index(){
-        $sewazoom = DB::table('sewazoom')->get();
+        $sewazoom = SewaZoom::all();
         return view('fitur.sewazoom',compact('sewazoom'));
     }
 }

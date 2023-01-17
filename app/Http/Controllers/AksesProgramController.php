@@ -8,11 +8,12 @@ use App\Models\AksesProgram;
 
 
 
+
 class AksesProgramController extends Controller
 {
     //
     public function index(){
-        $akses_programs = DB::table('akses_programs')->get();
-        return view('fitur.aksesprogram',['akses_programs'=>$akses_programs]);
+        $akses_program = AksesProgram::all();
+        return view('fitur.aksesprogram',compact('akses_program'));
     }
 }

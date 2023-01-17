@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSewazoomTable extends Migration
+class CreateSewaZoomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSewazoomTable extends Migration
      */
     public function up()
     {
-        Schema::create('sewazoom', function (Blueprint $table) {
+        Schema::create('sewa_zoom', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user');
@@ -35,6 +35,6 @@ class CreateSewazoomTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sewazoom');
+        Schema::dropIfExists('sewa_zoom');
     }
 }
