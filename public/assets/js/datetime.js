@@ -1,5 +1,4 @@
 
-
 const date = new Date();
 if (date.getTimezoneOffset() == 0) (a=date.getTime() + ( 7 *60*60*1000))
 else (a=date.getTime());

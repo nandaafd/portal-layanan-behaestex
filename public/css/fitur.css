@@ -98,9 +98,17 @@ header a{
 #btn-aksesprogram:hover{
     background-color: black;
 }
-#btn-detail{
-    font-size: 10px;
-    padding: 3px 15px;
+#btn-view > i{
+    color: black;
+    
+}
+#btn-edit > i{
+    color: white;
+    font-size: 17px;   
+}
+#btn-delete > i{
+    color: white;
+    font-size: 15px;
 }
 .btn-primary{
     background-color: #3CADA2;

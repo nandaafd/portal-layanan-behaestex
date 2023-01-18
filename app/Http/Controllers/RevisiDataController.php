@@ -56,13 +56,15 @@ class RevisiDataController extends Controller
      * @param  mixed $post
      * @return void
      */
-    public function show(RevisiData $revisidata)
+    public function show($id)
     {
-        //return response
+        
+
+        $data = RevisiData::find($id);
         return response()->json([
             'success' => true,
             'message' => 'Detail Data Post',
-            'data'    => $revisidata  
+            'data'    => $data
         ]); 
     }
     
