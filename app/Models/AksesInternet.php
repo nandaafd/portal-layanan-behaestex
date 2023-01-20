@@ -17,4 +17,5 @@ class AksesInternet extends Model
         'keperluan_browsing',
         'status'
     ];
+
 }

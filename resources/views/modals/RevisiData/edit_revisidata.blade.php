@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="form form-horizontal">
+                <form class="form form-horizontal" method="POST">
                     <div class="form-body">
                         
                         <div class="row">
@@ -146,8 +146,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <a href="javascript:void(0)" id="btn-edit-revisidata" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
+                <a href="javascript:void(0)" id="btn-delete-revisidata" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
             </div>
         </div>
     </div>

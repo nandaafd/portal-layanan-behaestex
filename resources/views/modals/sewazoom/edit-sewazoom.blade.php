@@ -10,14 +10,14 @@
                 <form class="form form-horizontal">
                     <div class="form-body">
                         <div class="row">
-                            <input hidden type="text" value="{{$sewa->id}}">
+                            <input hidden type="text" >
                             <div class="col-md-4">
                                 <label>Nama</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Name" id="first-name-icon" value="{{$sewa->nama}}">
+                                        <input type="text" class="form-control" placeholder="Name" id="first-name-icon" >
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>
@@ -31,7 +31,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon" value="{{$sewa->departemen}}">
+                                            id="first-name-icon" >
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -50,7 +50,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Topik (Untuk Judul Room)" value="{{$sewa->topik}}">
+                                        <input type="text" class="form-control" placeholder="Topik (Untuk Judul Room)" >
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -67,7 +67,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" value="{{$sewa->tanggal}}">
+                                        <input type="date" class="form-control" placeholder="" >
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -86,7 +86,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="time" class="form-control" placeholder="Jam Mulai" value="{{$sewa->jam_mulai}}">
+                                        <input type="time" class="form-control" placeholder="Jam Mulai" >
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
@@ -105,7 +105,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="time" class="form-control" placeholder="Jam Selesai" value="{{$sewa->jam_selesai}}">
+                                        <input type="time" class="form-control" placeholder="Jam Selesai" >
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">

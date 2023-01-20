@@ -97,7 +97,7 @@
 </div>
 
 @include('modals.RevisiData.edit_revisidata')
-@include('modals.RevisiData.add_revisidata')
+{{-- @include('modals.RevisiData.add_revisidata') --}}
 
 
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAksesProgramsTable extends Migration
+class CreateAksesInternetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,19 @@ class CreateAksesProgramsTable extends Migration
      */
     public function up()
     {
-        Schema::create('akses_program', function (Blueprint $table) {
+        Schema::create('akses_internet', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user');
+            $table->string('nama',255);
             $table->string('departemen',255);
-            $table->string('nama_program',255);
-            $table->string('latar_belakang',255);
-            $table->string('proses_bisnis',255);
-            $table->string('sop',255);
-            $table->string('benefit',255);
-            $table->string('konsekuensi',255);
-            $table->string('fitur',255);
-            $table->string('prosedur_dan_dokumen',255);
+            $table->string('jabatan',255);
+            $table->string('keperluan_email',255);
+            $table->string('keperluan_browsing',255);
             $table->string('status',255);
             $table->timestamps();
         });
+
     }
 
     /**
@@ -38,6 +35,6 @@ class CreateAksesProgramsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('akses_program');
+        Schema::dropIfExists('akses_internet');
     }
 }

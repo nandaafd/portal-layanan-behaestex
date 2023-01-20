@@ -38,7 +38,7 @@ Route::get('/inventaris', function () {
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
-
+   
 
 
 

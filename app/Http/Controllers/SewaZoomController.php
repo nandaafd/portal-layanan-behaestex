@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SewaZoom;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
-
-
-
+use App\Models\SewaZoom;
 
 class SewaZoomController extends Controller
 {
     //
     public function index(){
         $sewazoom = SewaZoom::all();
+        // var_dump($sewazoom);
+        // die();
         return view('fitur.sewazoom',compact('sewazoom'));
     }
+
 }

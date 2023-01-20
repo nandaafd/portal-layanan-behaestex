@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AksesInternet;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\AksesInternet;
 
-
-
-
-class AksesinternetController extends Controller
+class AksesInternetController extends Controller
 {
     //
     public function index(){
         $akses_internet = AksesInternet::all();
         return view('fitur.aksesinternet',compact('akses_internet'));
     }
+
 }

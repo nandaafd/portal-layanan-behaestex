@@ -19,4 +19,5 @@ class RevisiData extends Model
         'alasan_revisi',
         'status'
     ];
+
 }

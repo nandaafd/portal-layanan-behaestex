@@ -51,8 +51,8 @@
                                     <th>DEPARTMENT</th>
                                     <th>NAMA PROGRAM</th>
                                     <th>STATUS</th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>AKSI</th>
+                                    <th>OPSI</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,11 +68,11 @@
                                     <td>{{$ap->departemen}}</td>
                                     <td>{{$ap->nama_program}}</td>
                                     <td>{{$ap->status}}<span class="badge bg-success"></span></td>
-                                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                            data-bs-target="#detail" id="btn-view-aksesprogram">Detail</button></td>
+                                    <td><a href="javascript:void(0)" id="btn-view" data-id="{{$ap->id}}" class="btn btn-warning btn-sm"
+                                        title="detail"><i class="bi bi-eye-fill"></i></a></td>
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit-aksesprogram" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
-                                        <a href="javascript:void(0)" id="btn-delete-aksesprogram" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
+                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$ap->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                                @endforeach
@@ -91,6 +91,7 @@
 @include('modals.AksesProgram.add_aksesprogram')
 @include('modals.AksesProgram.edit_aksesprogram')
 @include('modals.AksesProgram.view_aksesprogram')
+
 
 
 @endsection

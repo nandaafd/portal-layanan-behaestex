@@ -21,4 +21,5 @@ class AksesProgram extends Model
         'prosedur_dan_dokumen',
         'status'
     ];
+
 }

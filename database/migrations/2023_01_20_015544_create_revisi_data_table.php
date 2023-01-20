@@ -27,6 +27,7 @@ class CreateRevisiDataTable extends Migration
             $table->string('status',255);
             $table->timestamps();
         });
+
     }
 
     /**

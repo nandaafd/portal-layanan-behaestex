@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\AksesProgram;
-
-
-
 
 class AksesProgramController extends Controller
 {
@@ -16,4 +12,5 @@ class AksesProgramController extends Controller
         $akses_program = AksesProgram::all();
         return view('fitur.aksesprogram',compact('akses_program'));
     }
+
 }

@@ -52,7 +52,7 @@
                                     <th>KEPERLUAN EMAIL</th>
                                     <th>KEPERLUAN BROWSING</th>
                                     <th>STATUS</th>
-                                    <th>AKSI</th>
+                                    <th>OPSI</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,8 +67,8 @@
                                     <td>{{$ai->keperluan_browsing}}</td>
                                     <td><span class="badge bg-success">{{$ai->status}}</span></td>
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit-aksesinternet" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
-                                        <a href="javascript:void(0)" id="btn-delete-aksesinternet" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
+                                        <a href="javascript:void(0)" id="btn-edit" data-id="${response.data.id}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="javascript:void(0)" id="btn-delete" data-id="${response.data.id}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -87,5 +87,5 @@
 @include('modals.AksesInternet.add_aksesinternet')
 @include('modals.AksesInternet.edit_aksesinternet')
 
-
+<script src="{{asset('js/modals/AksesInternet/modal-view.js')}}"></script>
 @endsection

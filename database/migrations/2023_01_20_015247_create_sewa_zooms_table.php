@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAksesInternetsTable extends Migration
+class CreateSewaZoomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,20 @@ class CreateAksesInternetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('akses_internet', function (Blueprint $table) {
+        Schema::create('sewa_zoom', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('nama',255);
             $table->string('departemen',255);
-            $table->string('jabatan',255);
-            $table->string('keperluan_email',255);
-            $table->string('keperluan_browsing',255);
+            $table->string('topik',255);
+            $table->date('tanggal');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
             $table->string('status',255);
             $table->timestamps();
         });
+
     }
 
     /**
@@ -34,6 +36,6 @@ class CreateAksesInternetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('akses_internet');
+        Schema::dropIfExists('sewa_zoom');
     }
 }

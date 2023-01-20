@@ -18,4 +18,5 @@ class SewaZoom extends Model
         'jam_selesai',
         'status'
     ];
+
 }
