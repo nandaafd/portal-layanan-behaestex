@@ -15,13 +15,11 @@ class HakAksesSeeder extends Seeder
     public function run()
     {
         //
-        $user = [
-            [
-                'nama_hak_akses' => 'admin'
-            ],
-            [
-                'nama_hak_akses' => 'user'
-            ]
+        $hak_akses = [
+
+                ['nama_hak_akses' => 'admin'],
+                ['nama_hak_akses' => 'user']
+            
 
             ];
             foreach ($hak_akses as $key => $value) {

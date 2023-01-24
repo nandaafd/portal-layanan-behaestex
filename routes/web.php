@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +16,12 @@ Route::get('/portal', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
-Route::get('/login', function () {
-    return view('auth.login');
-});
 Route::get('/inventaris', function () {
     return view('fitur.inventaris');
 });
+
+Route::post('proses-login', [LoginController::class, 'proses']);  
+Route::get('login', [LoginController::class, 'index']);
 
 
 

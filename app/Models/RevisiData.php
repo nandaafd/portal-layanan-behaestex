@@ -10,6 +10,7 @@ class RevisiData extends Model
     use HasFactory;
     protected $table = 'revisi_data';
     protected $fillable = [
+        'user_id',
         'jenis_revisi',
         'tanggal',
         'tanggal_data',

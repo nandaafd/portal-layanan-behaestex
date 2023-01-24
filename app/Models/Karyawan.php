@@ -14,6 +14,7 @@ class Karyawan extends Model
         'no_telp',
         'email',
         'jabatan',
-        'status'
+        'status',
+        'user_id'
     ];
 }

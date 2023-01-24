@@ -10,6 +10,7 @@ class AksesInternet extends Model
     use HasFactory;
     protected $table = 'akses_internet';
     protected $fillable = [
+        'user_id',
         'nama',
         'departemen',
         'jabatan',

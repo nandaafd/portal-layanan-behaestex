@@ -10,6 +10,7 @@ class SewaZoom extends Model
     use HasFactory;
     protected $table = 'sewa_zoom';
     protected $fillable = [
+        'user_id',
         'nama',
         'departemen',
         'topik',

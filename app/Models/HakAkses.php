@@ -9,5 +9,5 @@ class HakAkses extends Model
 {
     use HasFactory;
     protected $table = 'hak_akses';
-    protected $fillable = 'nama_hak_akses';
+    protected $fillable = ['nama_hak_akses'];
 }

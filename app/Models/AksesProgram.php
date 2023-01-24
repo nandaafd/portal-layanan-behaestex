@@ -10,6 +10,7 @@ class AksesProgram extends Model
     use HasFactory;
     protected $table = 'akses_program';
     protected $fillable = [
+        'user_id',
         'departemen',
         'nama_program',
         'latar_belakang',
