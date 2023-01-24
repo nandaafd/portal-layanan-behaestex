@@ -19,6 +19,9 @@ class AksesProgram extends Model
         'konsekuensi',
         'fitur',
         'prosedur_dan_dokumen',
+        'ttd_dir',
+        'ttd_manager',
+        'ttd_asisten_dirut',
         'status'
     ];
 

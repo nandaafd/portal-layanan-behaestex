@@ -24,7 +24,13 @@ class CreateRevisiDataTable extends Migration
             $table->string('nama_data',255);
             $table->string('detail_revisi',255);
             $table->string('alasan_revisi',255);
-            $table->string('status',255);
+            $table->string('ttd_ka_dept',255)->nullable();
+            $table->string('ttd_dir_terkait',255)->nullable();
+            $table->string('ttd_mgr_akunting',255)->nullable();
+            $table->string('ttd_mgr_ti',255)->nullable();
+            $table->string('ttd_asisten_dirut',255)->nullable();
+            $table->integer('status')->unsigned();
+            $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });
 

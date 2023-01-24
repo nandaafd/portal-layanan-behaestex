@@ -15,24 +15,18 @@ class CreateUserSeeder extends Seeder
     public function run()
     {
         $user = [
-            [
-                'name' => 'Muhammad Syahrul Irmansyah',
-                'email' => 'superadmin@gmail.com',
-                'password' => bcrypt('12345678'),
-                'role' => 'superadmin',
-            ],
-            [
-                'name' => 'Eka Ananda Rusli',
-                'email' => 'admin@gmail.com',
-                'password' => bcrypt('12345678'),
-                'role' => 'admin',
-            ],
-            [
-                'name' => 'Alfi Syahrin',
-                'email' => 'user@gmail.com',
-                'password' => bcrypt('12345678'),
-                'role' => 'user',
-            ],
+           [
+            'username' => 'admin',
+            'password' => bcrypt('admin'),
+            'nama' => 'admin',
+            'hak_akses_id' => 1
+           ],
+           [
+            'username' => 'nanda',
+            'password' => bcrypt('123456'),
+            'nama' => 'nanda',
+            'hak_akses_id' => 2
+           ]
         ];
 
         foreach($user as $key => $value) {

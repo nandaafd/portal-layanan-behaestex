@@ -22,7 +22,11 @@ class CreateAksesInternetsTable extends Migration
             $table->string('jabatan',255);
             $table->string('keperluan_email',255);
             $table->string('keperluan_browsing',255);
-            $table->string('status',255);
+            $table->string('ttd_ka_edp',255)->nullable();
+            $table->string('ttd_manager',255)->nullable();
+            $table->string('ttd_kabag_ybs',255)->nullable();
+            $table->integer('status')->unsigned();
+            $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTable extends Migration
+class CreateHakAksesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('hak_akses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username',255)->unique();
-            $table->string('password',255);
-            $table->string('nama',255);
-            $table->integer('hak_akses_id')->unsigned();
-            $table->foreign('hak_akses_id')->references('id')->on('hak_akses');
+            $table->string('nama_hak_akses');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('hak_akses');
     }
 }

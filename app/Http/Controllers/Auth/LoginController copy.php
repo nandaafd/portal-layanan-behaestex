@@ -67,14 +67,16 @@ class LoginController extends Controller
         $token->save();
         
         if (auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
-            if (auth()->user()->role == 'admin') {
-                return redirect()->route('portal');
+            if (auth()->user()->role == 'superadmin') {
+                return redirect()->route('superadmin.home');
+            } else if (auth()->user()->role == 'admin'){
+                return redirect()->route('admin.home');
             } else {
-                return redirect()->route('portal');
+                return redirect()->route('user.home');
             }
         } else {
             return redirect()->route('login')
-                    ->with('error', 'Username and Password are wrong');
+                    ->with('error', 'Usernae and Password are wrong');
         }
     }
 

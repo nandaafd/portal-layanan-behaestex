@@ -67,8 +67,8 @@
                                     <td>{{$sewa->jam_selesai}}</td>
                                     <td><span class="badge bg-success">{{$sewa->status}}</span></td>
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm">EDIT</a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm">DELETE</a>
+                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
 

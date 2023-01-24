@@ -26,7 +26,11 @@ class CreateAksesProgramsTable extends Migration
             $table->string('konsekuensi',255);
             $table->string('fitur',255);
             $table->string('prosedur_dan_dokumen',255);
-            $table->string('status',255);
+            $table->string('ttd_dir',255)->nullable();
+            $table->string('ttd_manager',255)->nullable();
+            $table->string('ttd_asisten_dirut',255)->nullable();
+            $table->integer('status')->unsigned();
+            $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });
 

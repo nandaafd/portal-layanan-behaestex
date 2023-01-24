@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AksesInternet extends Model
+class PeminjamanInventaris extends Model
 {
     use HasFactory;
-    protected $table = 'akses_internet';
+    protected $table = 'peminjaman_inventaris';
     protected $fillable = [
         'nama',
         'departemen',
-        'jabatan',
-        'keperluan_email',
-        'keperluan_browsing',
-        'ttd_ka_edp',
-        'ttd_manager',
+        'tanggal',
         'ttd_kabag_ybs',
+        'ttd_edp',
+        'ttd_pengembalian',
         'status'
     ];
-
 }

@@ -17,6 +17,11 @@ class RevisiData extends Model
         'nama_data',
         'detail_revisi',
         'alasan_revisi',
+        'ttd_ka_dept',
+        'ttd_dir_terkait',
+        'ttd_mgr_akunting',
+        'ttd_mgr_ti',
+        'ttd_asisten_dirut',
         'status'
     ];
 
