@@ -22,7 +22,7 @@ Route::get('/inventaris', function () {
 
 Route::post('proses-login', [LoginController::class, 'proses']);  
 Route::get('login', [LoginController::class, 'index']);
-
+Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
 
 
 // Route::group(['middleware' => 'prevent-back-history'],function(){
@@ -39,6 +39,7 @@ Route::get('login', [LoginController::class, 'index']);
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
+    Route::resource('/sewazoom',App\Http\Controllers\SewaZoomController::class);
    
 
 

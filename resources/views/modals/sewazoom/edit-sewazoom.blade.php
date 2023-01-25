@@ -8,7 +8,11 @@
             </div>
             <div class="modal-body">
                 <form class="form form-horizontal">
+                    @csrf
                     <div class="form-body">
+                        <input type="text" hidden name="id" id="id">
+                        <input type="text" hidden name="user_id" id="user_id">
+                        <input type="text" hidden name="status" id="status">
                         <div class="row">
                             <input hidden type="text" >
                             <div class="col-md-4">
@@ -16,12 +20,14 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
+                                    {{-- <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-nama-edit"></div> --}}
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Name" id="first-name-icon" >
+                                        <input type="text" class="form-control" placeholder="Nama" id="nama" name="nama" >
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>
                                     </div>
+                                    <div class="invalid-feedback d-none" id="alert-nama-edit"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -31,7 +37,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon" >
+                                            id="departemen" name="departemen">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -42,6 +48,7 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <div class="invalid-feedback d-none" id="alert-departemen-edit"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -50,7 +57,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Topik (Untuk Judul Room)" >
+                                        <input type="text" class="form-control" placeholder="Topik (Untuk Judul Room)" name="topik" id="topik">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -59,6 +66,7 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <div class="invalid-feedback d-none" id="alert-topik-edit">wajib diisi</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -67,7 +75,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" >
+                                        <input type="date" class="form-control" placeholder="" name="tanggal" id="tanggal">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -78,6 +86,7 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <div class="invalid-feedback d-none" id="alert-tanggal-edit">wajib diisi</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -86,7 +95,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="time" class="form-control" placeholder="Jam Mulai" >
+                                        <input type="time" class="form-control" placeholder="Jam Mulai" name="jam_mulai" id="jam_mulai">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
@@ -97,6 +106,7 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <div class="invalid-feedback d-none" id="alert-jam_mulai-edit"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -105,7 +115,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="time" class="form-control" placeholder="Jam Selesai" >
+                                        <input type="time" class="form-control" placeholder="Jam Selesai" name="jam_selesai" id="jam_selesai">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
@@ -116,20 +126,19 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <div class="invalid-feedback d-none" id="alert-jam_selesai-edit"></div>
                                 </div>
                             </div>
 
                             <div class="col-12 d-flex justify-content-end">
-
-                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                <button type="button" class="btn btn-primary" id="btn-edit-sewazoom">UPDATE</button>
+                <a href="javascript:void(0)" id="btn-delete-sewazoom" data-id="{{$sewa->id}} " class="btn btn-danger btn-sm">DELETE</a>
             </div>
         </div>
     </div>

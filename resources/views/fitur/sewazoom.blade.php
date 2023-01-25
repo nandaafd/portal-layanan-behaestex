@@ -39,12 +39,15 @@
                     <h5 class="card-subtitle" id="tb-date"></h5>
                 </div>
                 <div class="card-content">
-
-
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+                    
                     {{-- Tabel --}}
                     <div class="table-responsive">
 
-                        <table class="table mb-0 text-center table-bordered">
+                        <table class="table mb-0 text-center table-bordered" id="table-sewazoom">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>NO</th>
@@ -59,7 +62,7 @@
                             <tbody>
                                 <?php $no = 1 ?>
                                 @foreach ($sewazoom as $sewa)
-                                <tr>
+                                <tr id="index_{{ $sewa->id }}">
                                     <td class="text-bold-500"> <?php echo $no++ ?></td>
                                     <td>{{$sewa->nama}}</td>
                                     <td>{{$sewa->departemen}}</td>
@@ -85,7 +88,6 @@
 </div>
 @include('modals.sewazoom.add-sewazoom')
 @include('modals.sewazoom.edit-sewazoom')
-
 
 
 @endsection
