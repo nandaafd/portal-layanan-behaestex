@@ -9,12 +9,11 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </div>
-            <div class="col-11 text-center">
-                <h1 id="nav-tittle" class=" d-xl-none">PORTAL IT</h1>
+            <div class="col-10 text-center">
+                <h1 id="nav-tittle" class="d-xl-none">PORTAL IT</h1>
             </div>
         </div>
     </div>
-
 </header>
 <div class="container">
     <div class="row">
@@ -26,8 +25,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="main" id="">
     <div class="row" id="table-head">
         <div class="col-12">
@@ -68,11 +65,8 @@
                                     <td>
                                         <a href="javascript:void(0)" id="btn-edit-inventaris" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
                                         <a href="javascript:void(0)" id="btn-delete-inventaris" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
-                                    </td>
-                                        
+                                    </td>                                       
                                 </tr>
-
-
                             </tbody>
                         </table>
 

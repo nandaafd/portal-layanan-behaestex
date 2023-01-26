@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -57,5 +58,5 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
 //     });
 // });
 
-// Route::get('/failedLogin', 'App\Http\Controllers\ErrorController@failedLogin')->name('failedLogin');
+Route::get('/login', 'App\Http\Controllers\ErrorController@failedLogin')->name('failedLogin');
 ?>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SewaZoom;
+use App\Models\Status;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,7 +13,7 @@ class SewaZoomController extends Controller
 {
     //
     public function index(){
-        $sewazoom = SewaZoom::all();
+        $sewazoom = SewaZoom::with('detailStatus')->get();
         return view('fitur.sewazoom',compact('sewazoom'));
     }
 
@@ -20,22 +22,26 @@ class SewaZoomController extends Controller
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
             'nama' => 'required',
+            // 'user_id' => 'required',
             'departemen' => 'required',
             'topik' => 'required',
             'tanggal' => 'required',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required'
+            // 'status'=> 'required'
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(),422);
         }
         $sewazoom = SewaZoom::create([
             'nama' => $request->nama,
+            // 'user_id'=> $request->Auth::user()->id,
             'departemen' => $request->departemen,
             'topik'=> $request->topik,
             'tanggal' => $request->tanggal,
             'jam_mulai' => $request->jam_mulai,
             'jam_selesai'=>$request->jam_selesai
+            // 'status' => $request->status,
         ]);
         return response()->json([
             'success' => true,
@@ -103,5 +109,9 @@ class SewaZoomController extends Controller
         ]); 
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
 // Auth::user();

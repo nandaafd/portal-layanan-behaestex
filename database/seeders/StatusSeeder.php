@@ -16,9 +16,9 @@ class StatusSeeder extends Seeder
     {
         //
         $status = [
-            ['nama_status' => 'Accepted'],
-            ['nama_status' => 'Approved'],
             ['nama_status' => 'Waiting'],
+            ['nama_status' => 'Approved'],
+            ['nama_status' => 'Accepted'],
             ['nama_status' => 'End'],
             ['nama_status' => 'Declined'],
             ['nama_status' => 'Canceled']

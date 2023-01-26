@@ -9,6 +9,8 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     <div class="form-body">
+                        <input hidden type="text" name="user_id" id="user_id">
+                        <input hidden type="text" name="status" id="status">
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Name</label>
@@ -128,7 +130,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="store">SIMPAN</button>
+                <button type="button" class="btn btn-primary" id="store" onclick="setTimeout(function() { window.location=window.location;},1500); ">SIMPAN</button>
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@ class CreateSewaZoomsTable extends Migration
             $table->date('tanggal');
             $table->time('jam_mulai');
             $table->time('jam_selesai');
-            $table->integer('status')->unsigned();
+            $table->integer('status')->unsigned()->default(1);
             $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });

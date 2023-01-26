@@ -16,6 +16,6 @@ class LogoutController extends Controller
         
         Session::flush();
         Auth::logout();
-        return redirect('portal');
+        return redirect('login');
     }
 }

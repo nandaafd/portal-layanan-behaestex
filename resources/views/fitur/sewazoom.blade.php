@@ -39,24 +39,27 @@
                     <h5 class="card-subtitle" id="tb-date"></h5>
                 </div>
                 <div class="card-content">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form>
-                    
                     {{-- Tabel --}}
                     <div class="table-responsive">
 
-                        <table class="table mb-0 text-center table-bordered" id="table-sewazoom">
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>NO</th>
-                                    <th>NAMA</th>
-                                    <th>DEPARTEMEN</th>
-                                    <th>WAKTU MULAI</th>
-                                    <th>WAKTU SELESAI</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
+                                    <th class="th-sm">NO</th>
+                                    <th class="th-sm">NAMA</th>
+                                    <th class="th-sm">DEPARTEMEN</th>
+                                    @if (Auth::user()->hak_akses_id == 1)
+                                    <th class="th-sm">TOPIK</th>
+                                    @endif
+                                    <th class="th-sm">TANGGAL</th>
+                                    <th class="th-sm">WAKTU MULAI</th>
+                                    <th class="th-sm">WAKTU SELESAI</th>
+                                    <th class="th-sm">STATUS</th>
+                                    @if(Auth::user()->hak_akses_id == 1)
+                                    <th class="th-sm">ACTION</th>
+                                    <th class="th-sm">OPSI</th>
+                                    @endif
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,19 +69,27 @@
                                     <td class="text-bold-500"> <?php echo $no++ ?></td>
                                     <td>{{$sewa->nama}}</td>
                                     <td>{{$sewa->departemen}}</td>
+                                    @if(Auth::user()->hak_akses_id == 1)
+                                    <td>{{$sewa->topik}}</td>
+                                    @endif
+                                    <td>{{$sewa->tanggal}}</td>
                                     <td>{{$sewa->jam_mulai}}</td>
                                     <td>{{$sewa->jam_selesai}}</td>
-                                    <td><span class="badge bg-success">{{$sewa->status}}</span></td>
+                                    <td><span class="badge bg-success">{{ $sewa->detailStatus->nama_status }}</span></td>
+                                    @if (Auth::user()->hak_akses_id == 1)
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></a>
                                     </td>
-                                </tr>
-
+                                    <td>
+                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Approved"><i class="bi bi-check"></i></a>
+                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></a>
+                                    </td>
+                                    @endif
+                                    
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
 
                 </div>
@@ -89,5 +100,10 @@
 @include('modals.sewazoom.add-sewazoom')
 @include('modals.sewazoom.edit-sewazoom')
 
-
+<script>
+    $(document).ready(function () {
+  $('#table-sewazoom').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});
+</script>
 @endsection

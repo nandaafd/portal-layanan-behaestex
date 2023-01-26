@@ -49,6 +49,7 @@ $('#store').click(function(e) {
                 // <td class="text-bold-500"> <?php echo $no++ ?></td>
                 <td>${response.data.nama}</td>
                 <td>${response.data.departemen}</td>
+                <td>${response.data.tanggal}</td>
                 <td>${response.data.jam_mulai}</td>
                 <td>${response.data.jam_selesai}</td>
                 <td><span class="badge bg-success">${response.data.status}</span></td>
@@ -140,3 +141,5 @@ $('#store').click(function(e) {
     });
 
 });
+
+

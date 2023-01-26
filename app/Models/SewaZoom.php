@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class SewaZoom extends Model
 {
@@ -19,5 +20,13 @@ class SewaZoom extends Model
         'jam_selesai',
         'status'
     ];
-
+    /**
+     * Get the user associated with the SewaZoom
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function detailStatus()
+    {
+        return $this->hasOne(Status::class, 'id', 'status');
+    }
 }

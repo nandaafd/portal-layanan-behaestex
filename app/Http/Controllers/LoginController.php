@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function index(){
         if ($user = Auth::User()) {
             if ($user->hak_akses_id == '1') {
-                return redirect()->intended('portal');
+                return redirect()->intended('sewazoom');
             }elseif ($user->hak_akses_id == '2') {
                 return redirect()->intended('portal');
             }
@@ -30,6 +30,13 @@ class LoginController extends Controller
         
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            $user = Auth::user();
+            if ($user->hak_akses_id == '1') {
+                return redirect()->intended('portal');
+            }elseif ($user->hak_akses_id == '2') {
+                return redirect()->intended('portal');
+            }
             return redirect()->intended('portal')
                         ->withSuccess('Signed in');
         }   
