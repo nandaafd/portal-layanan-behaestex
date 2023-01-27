@@ -23,7 +23,7 @@ Route::get('/inventaris', function () {
 
 Route::post('proses-login', [LoginController::class, 'proses']);  
 Route::get('login', [LoginController::class, 'index']);
-Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
+// Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
 
 
 // Route::group(['middleware' => 'prevent-back-history'],function(){
@@ -35,8 +35,9 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
 //         'verify' => false, // Email Verification Routes...
 //         ],
 //     );
-    
-    Route::get('/sewazoom','App\Http\Controllers\SewaZoomController@index');
+   
+
+    Route::post('/sewazoom/{id}/update','App\Http\Controllers\SewaZoomController@update_status');
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
@@ -58,5 +59,5 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
 //     });
 // });
 
-Route::get('/login', 'App\Http\Controllers\ErrorController@failedLogin')->name('failedLogin');
+// Route::get('/login', 'App\Http\Controllers\ErrorController@failedLogin')->name('failedLogin');
 ?>

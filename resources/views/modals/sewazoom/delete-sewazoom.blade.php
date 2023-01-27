@@ -1,4 +1,4 @@
-<script>
+{{-- <script>
     //button create post event
     $('body').on('click', '#btn-delete', function () {
 
@@ -47,4 +47,4 @@
         })
         
     });
-</script>
+</script> --}}

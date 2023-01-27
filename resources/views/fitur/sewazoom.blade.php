@@ -45,7 +45,7 @@
                         <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th class="th-sm">NO</th>
+                                    
                                     <th class="th-sm">NAMA</th>
                                     <th class="th-sm">DEPARTEMEN</th>
                                     @if (Auth::user()->hak_akses_id == 1)
@@ -66,8 +66,7 @@
                                 <?php $no = 1 ?>
                                 @foreach ($sewazoom as $sewa)
                                 <tr id="index_{{ $sewa->id }}">
-                                    <td class="text-bold-500"> <?php echo $no++ ?></td>
-                                    <td>{{$sewa->nama}}</td>
+                                    <td class="text-bold-500">{{$sewa->nama}}</td>
                                     <td>{{$sewa->departemen}}</td>
                                     @if(Auth::user()->hak_akses_id == 1)
                                     <td>{{$sewa->topik}}</td>
@@ -75,16 +74,24 @@
                                     <td>{{$sewa->tanggal}}</td>
                                     <td>{{$sewa->jam_mulai}}</td>
                                     <td>{{$sewa->jam_selesai}}</td>
+                                    @if ($sewa->status == 1)
+                                    <td><span class="badge bg-warning">{{ $sewa->detailStatus->nama_status }}</span></td>
+                                    @elseif($sewa->status == 2)
                                     <td><span class="badge bg-success">{{ $sewa->detailStatus->nama_status }}</span></td>
+                                    @elseif($sewa->status == 5)
+                                    <td><span class="badge bg-danger">{{ $sewa->detailStatus->nama_status }}</span></td>
+                                    @endif
                                     @if (Auth::user()->hak_akses_id == 1)
                                     <td>
                                         <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></a>
                                         <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></a>
                                     </td>
+                           
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Approved"><i class="bi bi-check"></i></a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></a>
-                                    </td>
+                                        <a href="javascript:void(0)" id="btn-approve" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Approved"><i class="bi bi-check"></i></a>
+                                        <a href="javascript:void(0)" id="btn-decline" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></a>
+                                    </td>                                       
+                               
                                     @endif
                                     
                                 @endforeach
@@ -100,10 +107,4 @@
 @include('modals.sewazoom.add-sewazoom')
 @include('modals.sewazoom.edit-sewazoom')
 
-<script>
-    $(document).ready(function () {
-  $('#table-sewazoom').DataTable();
-  $('.dataTables_length').addClass('bs-select');
-});
-</script>
 @endsection

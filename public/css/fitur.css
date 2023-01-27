@@ -110,6 +110,14 @@ header a{
     color: white;
     font-size: 15px;
 }
+#btn-approve > i{
+    color: white;
+    font-size: 17px;
+}
+#btn-decline > i{
+    color: white;
+    font-size: 15px;
+}
 .btn-primary{
     background-color: #3CADA2;
     border: none;
@@ -267,3 +275,20 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
+#table-sewazoom_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
+
+#table-sewazoom_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-sewazoom_info{
+    padding: 3%;
+}
+#table-sewazoom_paginate{
+    padding: 3%;
+    padding-top: 1%;
+}
+

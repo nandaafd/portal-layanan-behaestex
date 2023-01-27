@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class SewaZoomController extends Controller
 {
-    //
+    public function __construct()
+    {
+        // $this->middleware('auth');
+    }
+
     public function index(){
         $sewazoom = SewaZoom::with('detailStatus')->get();
         return view('fitur.sewazoom',compact('sewazoom'));
@@ -109,9 +113,19 @@ class SewaZoomController extends Controller
         ]); 
     }
 
-    public function __construct()
+    public function update_status($id, Request $request)
     {
-        $this->middleware('auth');
+        $type = $request->type;
+        if($type == "approve"){
+            SewaZoom::find($request->id)->update(['status'=>2]);
+        }elseif($type == "decline"){
+            SewaZoom::find($request->id)->update(['status'=>5]);
+        }
+        return response()->json([
+            'success' => true,
+            'message' => 'Data Berhasil Diupdate!.',
+        ]); 
+
     }
 }
 // Auth::user();

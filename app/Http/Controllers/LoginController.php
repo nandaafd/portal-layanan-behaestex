@@ -11,6 +11,8 @@ class LoginController extends Controller
 {
     //
     public function index(){
+        // return'ok';
+        
         if ($user = Auth::User()) {
             if ($user->hak_akses_id == '1') {
                 return redirect()->intended('sewazoom');
@@ -19,6 +21,7 @@ class LoginController extends Controller
             }
         }else {
             return view('auth.login');
+            
         }
     }
 

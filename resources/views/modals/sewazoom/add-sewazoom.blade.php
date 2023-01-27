@@ -130,7 +130,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="store" onclick="setTimeout(function() { window.location=window.location;},1500); ">SIMPAN</button>
+                <button type="button" class="btn btn-primary" id="store" onclick="setTimeout(function() { window.location=window.location;},1200); ">SIMPAN</button>
             </div>
         </div>
     </div>

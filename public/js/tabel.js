@@ -4,7 +4,7 @@ $(document).ready(function () {
       "aaSorting": [],
       columnDefs: [{
       orderable: false,
-      targets: [0, 1, 2, 3, 6, 7, 8, 9]
+      targets: [0, 1, 2, 5,6,7,8]
       }]
     });
       $('.dataTables_length').addClass('bs-select');
