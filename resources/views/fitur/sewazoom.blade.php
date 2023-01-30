@@ -1,5 +1,7 @@
 @extends('layouts.main');
-
+@php
+    use Carbon\Carbon;
+@endphp
 @section('content')
 <header class="header d-flex py-2 py-4">
     <div class="container" id="nav-content">
@@ -14,8 +16,6 @@
             </div>
         </div>
     </div>
-
-
 </header>
 <div class="container">
     <div class="row">
@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title" id="tb-tittle">Meeting Lists</h4>
-                    <h5 class="card-subtitle" id="tb-date"></h5>
+                    <h5 class="card-subtitle">{{date('d-m-Y')}}</h5>
                 </div>
                 <div class="card-content">
                     {{-- Tabel --}}
@@ -88,7 +88,7 @@
                                     </td>
                            
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-approve" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Approved"><i class="bi bi-check"></i></a>
+                                        <button id="btn-approve" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
                                         <a href="javascript:void(0)" id="btn-decline" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></a>
                                     </td>                                       
                                

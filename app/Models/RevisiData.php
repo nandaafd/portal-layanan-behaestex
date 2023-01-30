@@ -25,5 +25,8 @@ class RevisiData extends Model
         'ttd_asisten_dirut',
         'status'
     ];
+    public function detailStatus(){
+        return $this->hasOne(Status::class, 'id','status');
+    }
 
 }

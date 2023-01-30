@@ -15,7 +15,7 @@ class CreateSewaZoomsTable extends Migration
     {
         Schema::create('sewa_zoom', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('nama',255);
             $table->string('departemen',255);

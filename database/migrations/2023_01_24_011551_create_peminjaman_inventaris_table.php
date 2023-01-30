@@ -15,7 +15,7 @@ class CreatePeminjamanInventarisTable extends Migration
     {
         Schema::create('peminjaman_inventaris', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('nama',255);
             $table->string('departemen',255);
@@ -25,7 +25,7 @@ class CreatePeminjamanInventarisTable extends Migration
             $table->string('ttd_kabag_ybs',255)->nullable();
             $table->string('ttd_edp',255)->nullable();
             $table->string('ttd_pengembalian',255)->nullable();
-            $table->integer('status')->unsigned();
+            $table->integer('status')->unsigned()->default(1);
             $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });

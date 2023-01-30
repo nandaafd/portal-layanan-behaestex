@@ -8,6 +8,7 @@ use App\Models\Status;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class SewaZoomController extends Controller
 {
@@ -17,7 +18,8 @@ class SewaZoomController extends Controller
     }
 
     public function index(){
-        $sewazoom = SewaZoom::with('detailStatus')->get();
+        $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d H:i:s'))->orderBy('tanggal', 'desc')->get();
+        // return $sewazoom;
         return view('fitur.sewazoom',compact('sewazoom'));
     }
 

@@ -10,7 +10,8 @@ class RevisiDataController extends Controller
 {
     //
     public function index(){
-        $revisidata = RevisiData::all();
+        $revisidata = RevisiData::with('detailStatus')->get();
+        // return $revisidata;
          return view('fitur.revisidata',compact('revisidata'));
      }
      /**
@@ -110,6 +111,16 @@ class RevisiDataController extends Controller
              'message' => 'Data Berhasil Diudapte!',
              'data'    => $revisidata  
          ]);
+     }
+
+    //  delete data
+     public function destroy($id){
+        RevisiData::where('id', $id)->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Data berhasil Dihapus!'
+        ]);
+     
      }
  
 }

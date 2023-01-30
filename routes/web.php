@@ -23,7 +23,7 @@ Route::get('/inventaris', function () {
 
 Route::post('proses-login', [LoginController::class, 'proses']);  
 Route::get('login', [LoginController::class, 'index']);
-// Route::get('/logout', 'App\Http\Controllers\LogoutController@perform');
+Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout');
 
 
 // Route::group(['middleware' => 'prevent-back-history'],function(){

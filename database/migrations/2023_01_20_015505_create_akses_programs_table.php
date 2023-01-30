@@ -15,7 +15,7 @@ class CreateAksesProgramsTable extends Migration
     {
         Schema::create('akses_program', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('departemen',255);
             $table->string('nama_program',255);
@@ -29,7 +29,7 @@ class CreateAksesProgramsTable extends Migration
             $table->string('ttd_dir',255)->nullable();
             $table->string('ttd_manager',255)->nullable();
             $table->string('ttd_asisten_dirut',255)->nullable();
-            $table->integer('status')->unsigned();
+            $table->integer('status')->unsigned()->default(1);
             $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });

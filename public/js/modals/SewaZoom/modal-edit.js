@@ -190,7 +190,9 @@ $('body').on('click', '#btn-approve', function () {
                         "type": "approve"
                     },
                     success:function(response){ 
-
+                        setTimeout(function(){
+                            window.location=window.location;
+                        },1220);
                         //show success message
                         Swal.fire({
                             type: 'success',
@@ -248,6 +250,9 @@ $('body').on('click', '#btn-decline', function () {
                             showConfirmButton: false,
                             timer: 3000
                         });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
 
                         //remove post on table
                         // $(`#index_${sewa_id}`).remove();

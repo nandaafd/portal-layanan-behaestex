@@ -15,7 +15,7 @@ class CreateRevisiDataTable extends Migration
     {
         Schema::create('revisi_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('jenis_revisi',255);
             $table->date('tanggal');
@@ -29,7 +29,7 @@ class CreateRevisiDataTable extends Migration
             $table->string('ttd_mgr_akunting',255)->nullable();
             $table->string('ttd_mgr_ti',255)->nullable();
             $table->string('ttd_asisten_dirut',255)->nullable();
-            $table->integer('status')->unsigned();
+            $table->integer('status')->unsigned()->default(1);
             $table->foreign('status')->references('id')->on('status');
             $table->timestamps();
         });

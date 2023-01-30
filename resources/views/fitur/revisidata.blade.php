@@ -46,10 +46,9 @@
                     {{-- Tabel --}}
                     <div class="table-responsive">
 
-                        <table class="table mb-0 text-center table-bordered">
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>NO</th>
                                     <th>JENIS REVISI</th>
                                     <th>TANGGAL</th>
                                     <th>TANGGAL DATA</th>
@@ -61,16 +60,14 @@
                                 </tr>
                             </thead>
                             <tbody id="table-revisidata">
-                                <?php $no = 1 ?>
                                 @foreach ($revisidata as $rev)
                                 <tr id="index_{{ $rev->id }}">
-                                    <td class="text-bold-500"><?php echo $no++ ?></td>
                                     <td>{{$rev->jenis_revisi}}</td>
                                     <td>{{$rev->tanggal}}</td>
                                     <td>{{$rev->tanggal_data}}</td>
                                     <td>{{$rev->jenis_data}}</td>
                                     <td>{{$rev->nama_data}}</td>
-                                    <td><span class="badge bg-success">{{$rev->status}}</span></td>
+                                    <td><span class="badge bg-success">{{$rev->detailStatus->nama_status}}</span></td>
                                     <td>
                                         <a href="javascript:void(0)" id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm"
                                             title="detail"><i class="bi bi-eye-fill"></i></a>
