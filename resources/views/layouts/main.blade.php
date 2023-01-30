@@ -55,8 +55,10 @@
     <script src="{{ asset('/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('/assets/js/main.js') }}"></script>
-    <script src="{{ asset('/js/modals/RevisiData/modal.js') }}"></script>
+    <script src="{{ asset('/js/modals/RevisiData/modal-add.js') }}"></script>
+    <script src="{{ asset('/js/modals/RevisiData/modal-edit.js') }}"></script>
     <script src="{{ asset('/js/modals/RevisiData/modal-view.js') }}"></script>
+    <script src="{{asset('js/modals/RevisiData/delete-revisidata.js')}}"></script>
     <script src="{{ asset('/assets/js/datetime.js') }}"></script>
     <script src="{{ asset('js/modals/SewaZoom/modal-add.js') }}"></script>
     <script src="{{asset('js/modals/SewaZoom/modal-edit.js')}}"></script>

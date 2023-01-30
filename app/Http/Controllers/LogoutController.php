@@ -12,11 +12,8 @@ class LogoutController extends Controller
 {
     
     public function perform(Request $request){
-        
+        Session::flush();
         Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/login');
+        return redirect('login');
     }
 }

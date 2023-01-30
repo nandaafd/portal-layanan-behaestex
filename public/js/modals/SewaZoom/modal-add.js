@@ -44,9 +44,7 @@ $('#store').click(function(e) {
             
             //data post
             let post = `
-                // <?php $no = 1; ?>
                 <tr id="index_${response.data.id}">
-                // <td class="text-bold-500"> <?php echo $no++ ?></td>
                 <td>${response.data.nama}</td>
                 <td>${response.data.departemen}</td>
                 <td>${response.data.tanggal}</td>

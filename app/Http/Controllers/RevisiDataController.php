@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RevisiData;
+use App\Models\SewaZoom;
 use Illuminate\Support\Facades\Validator;
 
 class RevisiDataController extends Controller
@@ -74,8 +75,9 @@ class RevisiDataController extends Controller
       * @param  mixed $post
       * @return void
       */
-     public function update(Request $request, RevisiData $revisidata)
+     public function update(Request $request, $id, RevisiData $revisidata)
      {
+        return 'asu';
          //define validation rules
          $validator = Validator::make($request->all(), [
              'jenis_revisi'=>'required',
@@ -121,6 +123,15 @@ class RevisiDataController extends Controller
             'message' => 'Data berhasil Dihapus!'
         ]);
      
+     }
+     public function update_status($id, Request $request){
+        $type = $request->type;
+        if ($type == "accept") {
+            # code...
+        } elseif($type == "decline") {
+            # code...
+        }
+        
      }
  
 }

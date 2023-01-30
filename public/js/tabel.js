@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    $('#table-sewazoom').DataTable({
+    $('#table-sewazoom-admin').DataTable({
       "aaSorting": [],
       columnDefs: [{
       orderable: false,
@@ -9,6 +9,18 @@ $(document).ready(function () {
     });
       $('.dataTables_length').addClass('bs-select');
   });
+
+  $(document).ready(function () {
+    $('#table-sewazoom-user').DataTable({
+      "aaSorting": [],
+      columnDefs: [{
+      orderable: false,
+      targets: [0,1,4,5]
+      }]
+    });
+      $('.dataTables_length').addClass('bs-select');
+  });
+  
 
   $(document).ready(function () {
     $('#table-revisidata').DataTable({

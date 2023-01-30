@@ -8,14 +8,10 @@ use App\Models\Status;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Carbon\Carbon;
 
 class SewaZoomController extends Controller
 {
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
+
 
     public function index(){
         $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d H:i:s'))->orderBy('tanggal', 'desc')->get();
@@ -69,6 +65,7 @@ class SewaZoomController extends Controller
 
     public function update(Request $request, SewaZoom $sewazoom)
      {
+        
          //define validation rules
          $validator = Validator::make($request->all(), [
             'nama' => 'required',
@@ -85,7 +82,7 @@ class SewaZoomController extends Controller
          }
  
          //create post
-         $sewazoom->update([
+         $sewazoom->find($request->id)->update([
 
             'nama' => $request->nama,
             'departemen' => $request->departemen,
@@ -111,7 +108,7 @@ class SewaZoomController extends Controller
         //return response
         return response()->json([
             'success' => true,
-            'message' => 'Data Post Berhasil Dihapus!.',
+            'message' => 'Data Berhasil Dihapus!.',
         ]); 
     }
 

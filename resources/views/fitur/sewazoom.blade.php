@@ -41,8 +41,12 @@
                 <div class="card-content">
                     {{-- Tabel --}}
                     <div class="table-responsive">
-
-                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom">
+                        @if (Auth::user()->hak_akses_id == 1)
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-admin">
+                        @elseif(Auth::user()->hak_akses_id == 2)
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-user"> 
+                        @endif
+                       
                             <thead class="thead-dark">
                                 <tr>
                                     
