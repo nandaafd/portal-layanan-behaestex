@@ -138,7 +138,6 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="btn-edit-sewazoom">UPDATE</button>
-                <a href="javascript:void(0)" id="btn-delete-sewazoom" data-id="{{$sewa->id}} " class="btn btn-danger btn-sm">DELETE</a>
             </div>
         </div>
     </div>

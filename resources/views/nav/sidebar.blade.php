@@ -22,8 +22,14 @@
         </ul>
        
        <div class="button">
-        <a href="http://127.0.0.1:8000/login" class="btn btn-primary" id="login">Login</a>
-        <a href="http://127.0.0.1:8000/register" class="btn btn-outline-primary" id="register">Register</a>
+        @if (Auth::user())
+        <a href="{{url('logout')}}" class="btn btn-primary" id="login">Logout</a>
+        
+        @else
+        <a href="{{url('login')}}" class="btn btn-primary" id="login">Login</a>
+        <a href="{{url('register')}}" class="btn btn-outline-primary" id="register">Register</a>
+        @endif
+        
     </div>
     </nav>
     

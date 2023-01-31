@@ -275,19 +275,35 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
-#table-sewazoom_length label{
+#table-sewazoom-admin_length label{
     margin-left: 5%;
     padding-bottom: 1rem;
 }
 
-#table-sewazoom_filter label{
+#table-sewazoom-admin_filter label{
     margin-right: 5%;
     padding-bottom: 1rem;
 }
-#table-sewazoom_info{
+#table-sewazoom-admin_info{
     padding: 3%;
 }
-#table-sewazoom_paginate{
+#table-sewazoom-admin_paginate{
+    padding: 3%;
+    padding-top: 1%;
+}
+#table-sewazoom-user_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
+
+#table-sewazoom-user_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-sewazoom-user_info{
+    padding: 3%;
+}
+#table-sewazoom-user_paginate{
     padding: 3%;
     padding-top: 1%;
 }

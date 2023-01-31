@@ -70,6 +70,9 @@
                                 <?php $no = 1 ?>
                                 @foreach ($sewazoom as $sewa)
                                 <tr id="index_{{ $sewa->id }}">
+                                    @if($sewa == null)
+                                    <p>no data</p>
+                                    @endif
                                     <td class="text-bold-500">{{$sewa->nama}}</td>
                                     <td>{{$sewa->departemen}}</td>
                                     @if(Auth::user()->hak_akses_id == 1)

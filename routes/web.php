@@ -26,15 +26,18 @@ Route::get('login', [LoginController::class, 'index']);
 Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout');
 
 
-// Route::middleware(['auth'])->group(function () {
-    Route::post('/sewazoom/{id}/update','App\Http\Controllers\SewaZoomController@update_status');
+
+
+
+
+Route::middleware(['isLogin'])->group(function () {
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
     Route::resource('/sewazoom',App\Http\Controllers\SewaZoomController::class);
-   
-    
-    // });
+    Route::post('/sewazoom/{id}/update','App\Http\Controllers\SewaZoomController@update_status');
+    });
+
    
 
     
