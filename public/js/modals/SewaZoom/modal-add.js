@@ -6,6 +6,7 @@ $('#store').click(function(e) {
     e.preventDefault();
 
     //define variable
+    let user_id =$('#add-user_id').val();
     let nama = $('#add-nama').val();
     let departemen = $('#add-departemen').val();
     let topik = $('#add-topik').val();
@@ -22,6 +23,7 @@ $('#store').click(function(e) {
         type: "POST",
         cache: false,
         data: {
+            'user_id':user_id,
             'nama':nama,
             'departemen':departemen,
             'topik':topik,

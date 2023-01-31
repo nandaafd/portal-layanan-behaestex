@@ -55,9 +55,8 @@
                                     <th>JENIS DATA</th>
                                     <th>NAMA DATA</th>
                                     <th>STATUS</th>
-                                    <th>AKSI</th>
-                                    <th>OPSI</th>
-                                    <th></th>
+                                    <th colspan="3">AKSI</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody id="table-revisidata">
@@ -75,22 +74,36 @@
                                     @elseif ($rev->status ==5)
                                     <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
                                     @endif
+                                    {{-- @if($rev->user_id == Auth::user()->id && Auth::user()->hak_akses_id == 1)
+                                    <td colspan="3">
+                                        
+                                        <a href="javascript:void(0)" id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                    </td>
+                                    @endif --}}
+                                    {{-- @if(Auth::user()->hak_akses_id == 1)
                                     <td>
                                         <a href="javascript:void(0)" id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm"
                                             title="detail"><i class="bi bi-eye-fill"></i></a>
-                                    </td>
-                                    @if(Auth::user()->hak_akses_id == 1) 
+                                    </td>  
+                                    @endif --}}
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$rev->id}}" class="btn btn-danger btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                                          </svg></i></a>
+                                        @if(Auth::user()->hak_akses_id == 1) 
+                                            <button id="btn-accept-rev" data-id="{{$rev->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                            <button id="btn-decline-rev" data-id="{{$rev->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                            <a href="javascript:void(0)" id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm"
+                                                title="detail"><i class="bi bi-eye-fill"></i></a>
+                                            <a href="javascript:void(0)" id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="javascript:void(0)" id="btn-delete-revisidata" data-id="{{$rev->id}}" class="btn btn-danger btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                                            </svg></i></a>
+                                        @else
+                                            @if(Auth::user()->id === $rev->user_id)
+                                                <a href="javascript:void(0)" id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm"
+                                                title="detail"><i class="bi bi-eye-fill"></i></a>
+                                                <a href="javascript:void(0)" id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                            @endif
+                                        @endif
                                     </td>
-                                    <td>
-                                        <button id="btn-approve" data-id="{{$rev->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
-                                        <button id="btn-decline" data-id="{{$rev->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
-                                    </td>
-                                    @endif
                                 </tr>
                                     
                                 @endforeach

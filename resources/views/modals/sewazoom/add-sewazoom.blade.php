@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     <div class="form-body">
-                        <input hidden type="text" name="user_id" id="user_id">
+                        <input hidden type="text" name="user_id" id="add-user_id" value="{{Auth::user()->id}}">
                         <input hidden type="text" name="status" id="status">
                         <div class="row">
                             <div class="col-md-4">

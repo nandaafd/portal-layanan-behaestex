@@ -24,7 +24,7 @@ class SewaZoomController extends Controller
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
             'nama' => 'required',
-            // 'user_id' => 'required',
+            'user_id' => 'required',
             'departemen' => 'required',
             'topik' => 'required',
             'tanggal' => 'required',
@@ -37,7 +37,7 @@ class SewaZoomController extends Controller
         }
         $sewazoom = SewaZoom::create([
             'nama' => $request->nama,
-            // 'user_id'=> $request->Auth::user()->id,
+            'user_id'=> $request->user_id,
             'departemen' => $request->departemen,
             'topik'=> $request->topik,
             'tanggal' => $request->tanggal,

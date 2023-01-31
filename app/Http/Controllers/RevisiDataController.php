@@ -23,6 +23,7 @@ class RevisiDataController extends Controller
       */
      public function store(Request $request){
          $validator = Validator::make($request->all(),[
+            'user_id'=>'required',
              'jenis_revisi'=>'required',
              'tanggal'=>'required',
              'tanggal_data'=>'required',
@@ -35,13 +36,14 @@ class RevisiDataController extends Controller
              return response()->json($validator->errors(),422);
          }
          $revisidata = RevisiData::create([
+            'user_id'=>$request->user_id,
              'jenis_revisi' =>$request->jenis_revisi,
              'tanggal' =>$request->tanggal,
              'tanggal_data' =>$request->tanggal_data,
              'jenis_data' =>$request->jenis_data,
              'nama_data' =>$request->nama_data,
              'detail_revisi' =>$request->detail_revisi,
-             'alasan_revisi' =>$request->alasan_revisi
+             'alasan_revisi' =>$request->alasan_revisi,
          ]);
          return response()->json([
              'success' => true,
@@ -77,7 +79,7 @@ class RevisiDataController extends Controller
       */
      public function update(Request $request, $id, RevisiData $revisidata)
      {
-        return 'asu';
+        // return 'asu';
          //define validation rules
          $validator = Validator::make($request->all(), [
              'jenis_revisi'=>'required',
@@ -95,8 +97,7 @@ class RevisiDataController extends Controller
          }
  
          //create post
-         $revisidata->update([
-
+         $revisidata->find($request->id)->update([
              'jenis_revisi' =>$request->jenis_revisi,
              'tanggal' =>$request->tanggal,
              'tanggal_data' =>$request->tanggal_data,
@@ -127,10 +128,14 @@ class RevisiDataController extends Controller
      public function update_status($id, Request $request){
         $type = $request->type;
         if ($type == "accept") {
-            # code...
+            RevisiData::find($request->id)->update(['status'=>3]);
         } elseif($type == "decline") {
-            # code...
+            RevisiData::find($request->id)->update(['status'=>5]);
         }
+        return response()->json([
+            'success' => true,
+            'message' => 'Status Berhasil Diupdate!'
+        ]);
         
      }
  

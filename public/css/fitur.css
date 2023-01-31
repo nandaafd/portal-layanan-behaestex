@@ -106,6 +106,10 @@ header a{
     color: white;
     font-size: 17px;   
 }
+#btn-update-revisidata > i{
+    color: white;
+    font-size: 17px;   
+}   
 #btn-delete > i{
     color: white;
     font-size: 15px;
@@ -114,7 +118,15 @@ header a{
     color: white;
     font-size: 17px;
 }
+#btn-accept-rev > i{
+    color: white;
+    font-size: 17px;
+}
 #btn-decline > i{
+    color: white;
+    font-size: 15px;
+}
+#btn-decline-rev > i{
     color: white;
     font-size: 15px;
 }
@@ -306,5 +318,7 @@ table.dataTable thead .sorting_desc_disabled:before {
 #table-sewazoom-user_paginate{
     padding: 3%;
     padding-top: 1%;
+    font-size: 12px;
 }
+
 

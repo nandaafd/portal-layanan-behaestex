@@ -2,15 +2,16 @@ $('body').on('click','#btn-add-revisidata', function () {
     $('#add-revisidata-modal').modal('show');
 });
 
-$('#store').click(function(e) {
+$('#add-revisidata').click(function(e) {
     e.preventDefault();
+    let user_id = $('#user_id').val();
     let jenis_revisi = $('#add-jenis_revisi').val();
     let tanggal = $('#add-tanggal').val();
     let tanggal_data = $('#add-tanggal_data').val();
     let jenis_data = $('#add-jenis_data').val();
     let nama_data = $('#add-nama_data').val();
     let detail_revisi = $('#add-detail_revisi').val();
-    let alasan_revisi = $('#alasan_revisi').val();
+    let alasan_revisi = $('#add-alasan_revisi').val();
     let token   = $("meta[name='csrf-token']").attr("content");
 
     $.ajax({
@@ -18,6 +19,7 @@ $('#store').click(function(e) {
         type: 'POST',
         cache:false,
         data:{
+            'user_id':user_id,
             'jenis_revisi':jenis_revisi,
             'tanggal':tanggal,
             'tanggal_data':tanggal_data,

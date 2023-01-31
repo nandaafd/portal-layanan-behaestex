@@ -44,12 +44,11 @@
                         @if (Auth::user()->hak_akses_id == 1)
                         <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-admin">
                         @elseif(Auth::user()->hak_akses_id == 2)
-                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-user"> 
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-user">
                         @endif
-                       
+
                             <thead class="thead-dark">
                                 <tr>
-                                    
                                     <th class="th-sm">NAMA</th>
                                     <th class="th-sm">DEPARTEMEN</th>
                                     @if (Auth::user()->hak_akses_id == 1)
@@ -59,8 +58,10 @@
                                     <th class="th-sm">WAKTU MULAI</th>
                                     <th class="th-sm">WAKTU SELESAI</th>
                                     <th class="th-sm">STATUS</th>
+                                    @foreach ($sewazoom as $sewa)
+                                    @endforeach
                                     @if(Auth::user()->hak_akses_id == 1)
-                                    <th class="th-sm">ACTION</th>
+                                    <th class="th-sm">AKSI</th> 
                                     <th class="th-sm">OPSI</th>
                                     @endif
                                     

@@ -20,7 +20,16 @@ $(document).ready(function () {
     });
       $('.dataTables_length').addClass('bs-select');
   });
-  
+  $(document).ready(function () {
+    $('#table-sewazoom-user-add').DataTable({
+      "aaSorting": [],
+      columnDefs: [{
+      orderable: false,
+      targets: [3]
+      }]
+    });
+      $('.dataTables_length').addClass('bs-select');
+  });
 
   $(document).ready(function () {
     $('#table-revisidata').DataTable({

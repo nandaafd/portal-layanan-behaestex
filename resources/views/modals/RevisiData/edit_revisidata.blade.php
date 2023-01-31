@@ -22,12 +22,12 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <div class="input-group mb-3">
-                                            <input type="text" id="jenis_revisi" class="form-control">
-                                            {{-- <select class="form-select" id="inputGroupSelect02">
+                                            {{-- <input type="text" id="jenis_revisi" class="form-control"> --}}
+                                            <select class="form-select" id="jenis_revisi">
                                                 <option selected>Choose...</option>
                                                 <option value="Belum Closing">Belum Closing</option>
                                                 <option value="Sudah Closing">Sudah closing</option>
-                                            </select> --}}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -115,9 +115,9 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <input type="text" id="detail_revisi" class="form-control">
-                                            {{-- <textarea class="form-control" placeholder="" id="detail_revisi" 
-                                                style="height: 100px"></textarea> --}}
+                                            {{-- <input type="text" id="detail_revisi" class="form-control"> --}}
+                                            <textarea class="form-control" placeholder="" id="detail_revisi" 
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -129,9 +129,9 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <input type="text" id="alasan_revisi" class="form-control">
-                                            {{-- <textarea class="form-control" placeholder="" id="alasan_revisi"
-                                                style="height: 100px"></textarea> --}}
+                                            {{-- <input type="text" id="alasan_revisi" class="form-control"> --}}
+                                            <textarea class="form-control" placeholder="" id="alasan_revisi"
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +147,6 @@
             </div>
             <div class="modal-footer">
                 <a href="javascript:void(0)" id="btn-edit-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm">EDIT</a>
-                <a href="javascript:void(0)" id="btn-delete-revisidata" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
             </div>
         </div>
     </div>
@@ -168,9 +167,9 @@
                     <div class="form-body">
                         
                         <div class="row">
-                            <input hidden type="text" id="id">
-                            <input hidden type="text" id="user_id" >
-                            <input hidden type="text" id="status" >
+                            <input hidden type="text" id="view-id">
+                            <input hidden type="text" id="view-user_id" >
+                            <input hidden type="text" id="view-status" >
                             <div class="col-md-4">
                                 <label>Jenis Revisi</label>
                             </div>
@@ -178,12 +177,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <div class="input-group mb-3">
-                                            <input type="text" id="jenis_revisi" class="form-control">
-                                            {{-- <select class="form-select" id="inputGroupSelect02">
-                                                <option selected>Choose...</option>
-                                                <option value="Belum Closing">Belum Closing</option>
-                                                <option value="Sudah Closing">Sudah closing</option>
-                                            </select> --}}
+                                            <input readonly type="text" class="form-control" placeholder="" id="view-jenis_revisi">
                                         </div>
                                     </div>
                                 </div>
@@ -194,7 +188,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" id="tanggal">
+                                        <input readonly type="date" class="form-control" placeholder="" id="view-tanggal">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -213,7 +207,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" id="tanggal_data">
+                                        <input readonly type="date" class="form-control" placeholder="" id="view-tanggal_data">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -232,7 +226,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Jenis data" id="jenis_data">
+                                        <input readonly type="text" class="form-control" placeholder="Jenis data" id="view-jenis_data">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
@@ -253,7 +247,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Nama data" id="nama_data">
+                                        <input readonly type="text" class="form-control" placeholder="Nama data" id="view-nama_data">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -271,9 +265,8 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <input type="text" id="detail_revisi" class="form-control">
-                                            {{-- <textarea class="form-control" placeholder="" id="detail_revisi" 
-                                                style="height: 100px"></textarea> --}}
+                                            <textarea readonly class="form-control" placeholder="" id="view-detail_revisi" 
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -285,9 +278,8 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <input type="text" id="alasan_revisi" class="form-control">
-                                            {{-- <textarea class="form-control" placeholder="" id="alasan_revisi"
-                                                style="height: 100px"></textarea> --}}
+                                            <textarea readonly class="form-control" placeholder="" id="view-alasan_revisi"
+                                                style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -303,7 +295,6 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </div>

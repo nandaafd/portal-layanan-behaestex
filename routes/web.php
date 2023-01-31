@@ -34,6 +34,7 @@ Route::middleware(['isLogin'])->group(function () {
     Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
+    Route::post('/revisidata/{id}/update','App\Http\Controllers\RevisiDataController@update_status');
     Route::resource('/sewazoom',App\Http\Controllers\SewaZoomController::class);
     Route::post('/sewazoom/{id}/update','App\Http\Controllers\SewaZoomController@update_status');
     });

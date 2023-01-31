@@ -1,6 +1,6 @@
 
     //button create post event
-    $('body').on('click', '#btn-delete', function () {
+    $('body').on('click', '#btn-delete-revisidata', function () {
 
         let revisidata_id = $(this).data('id');
         let token   = $("meta[name='csrf-token']").attr("content");
@@ -18,7 +18,7 @@
                 //fetch to delete data
                 $.ajax({
 
-                    url: `/sewazoom/${revisidata_id}`,
+                    url: `/revisidata/${revisidata_id}`,
                     type: "DELETE",
                     cache: false,
                     data: {

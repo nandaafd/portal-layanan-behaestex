@@ -1,4 +1,4 @@
-$('body').on('click', '#btn-edit', function () {
+$('body').on('click', '#btn-update-revisidata', function () {
     let revisidata_id = $(this).data('id');
     console.log(revisidata_id)
     //fetch detail post with ajax
@@ -25,9 +25,6 @@ $('body').on('click', '#btn-edit', function () {
         }
     });
 });
-
-
-
 
 $('#btn-edit-revisidata').click(function(e) {
     e.preventDefault();
@@ -134,8 +131,8 @@ $('#btn-edit-revisidata').click(function(e) {
 });
 
 
-$('body').on('click', '#btn-decline', function () {
-    let sewa_id = $(this).data('id');
+$('body').on('click', '#btn-decline-rev', function () {
+    let revisidata_id = $(this).data('id');
     let token   = $("meta[name='csrf-token']").attr("content");
     
         Swal.fire({
@@ -153,12 +150,12 @@ $('body').on('click', '#btn-decline', function () {
                 //fetch to delete data
                 $.ajax({
 
-                    url: `/sewazoom/${sewa_id}/update`,
+                    url: `/revisidata/${revisidata_id}/update`,
                     type: "POST",
                     cache: false,
                     data: {
                         "_token": token,
-                        "id": sewa_id,
+                        "id": revisidata_id,
                         "type": "decline"
                     },
                     success:function(response){ 
@@ -176,7 +173,56 @@ $('body').on('click', '#btn-decline', function () {
                         }, 1200);
 
                         //remove post on table
-                        // $(`#index_${sewa_id}`).remove();
+                        // $(`#index_${revisidata_id}`).remove();
+                    }
+                });
+
+                
+            }
+        })
+        
+});
+
+$('body').on('click', '#btn-accept-rev', function () {
+    let revisidata_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "ingin menerima pengajuan ini?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, TOLAK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/revisidata/${revisidata_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": revisidata_id,
+                        "type": "accept"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${revisidata_id}`).remove();
                     }
                 });
 
