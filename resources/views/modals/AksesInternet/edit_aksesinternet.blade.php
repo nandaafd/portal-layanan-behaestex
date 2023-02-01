@@ -8,6 +8,8 @@
             </div>
             <div class="modal-body">
                 <form class="form form-horizontal">
+                    @csrf
+                    <input type="text" id="user_id">
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
@@ -16,7 +18,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Name" id="first-name-icon">
+                                        <input type="text" class="form-control" placeholder="Name" id="nama">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>
@@ -30,7 +32,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon">
+                                            id="departemen">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -49,7 +51,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Jabatan">
+                                        <input type="text" class="form-control" placeholder="Jabatan" id="jabatan">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -68,7 +70,7 @@
                                     <div class="position-relative">
                                         <div class="form-floating">
                                             <textarea class="form-control" placeholder="Keperluan Email"
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="keperluan_email" style="height: 100px"></textarea>
                                             <label for="floatingTextarea2">Keperluan Email</label>
                                         </div>
                                     </div>
@@ -82,7 +84,7 @@
                                     <div class="position-relative">
                                         <div class="form-floating">
                                             <textarea class="form-control" placeholder="Keperluan Browsing"
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="keperluan_browsing" style="height: 100px"></textarea>
                                             <label for="floatingTextarea2">Keperluan Browsing</label>
                                         </div>
                                     </div>
@@ -100,7 +102,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="btn-edit-aksesinternet">Submit</button>
             </div>
         </div>
     </div>

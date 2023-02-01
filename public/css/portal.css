@@ -111,6 +111,19 @@ section{
     border: none;
     letter-spacing: normal;
 }
+.navbar #logout{
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    padding: .7rem 2rem;
+    margin-left: -2rem;
+    font-size: 1rem;
+    width: 90%;
+}
+.navbar #logout:hover{
+    background-color: black;
+    color: white;
+}
 .button{
     margin-left: 6rem;
 }

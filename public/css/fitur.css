@@ -287,6 +287,8 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
+
+/* filter tabel sewazoom */
 #table-sewazoom-admin_length label{
     margin-left: 5%;
     padding-bottom: 1rem;
@@ -303,6 +305,7 @@ table.dataTable thead .sorting_desc_disabled:before {
     padding: 3%;
     padding-top: 1%;
 }
+/* filter tabel revisidata */
 #table-sewazoom-user_length label{
     margin-left: 5%;
     padding-bottom: 1rem;
@@ -316,6 +319,42 @@ table.dataTable thead .sorting_desc_disabled:before {
     padding: 3%;
 }
 #table-sewazoom-user_paginate{
+    padding: 3%;
+    padding-top: 1%;
+    font-size: 12px;
+}
+
+/* filter tabel revisidata */
+#table-revisidata-user_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
+
+#table-revisidata-user_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-revisidata-user_info{
+    padding: 3%;
+}
+#table-revisidata-user_paginate{
+    padding: 3%;
+    padding-top: 1%;
+    font-size: 12px;
+}
+#table-revisidata-admin_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
+
+#table-revisidata-admin_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-revisidata-admin_info{
+    padding: 3%;
+}
+#table-revisidata-admin_paginate{
     padding: 3%;
     padding-top: 1%;
     font-size: 12px;

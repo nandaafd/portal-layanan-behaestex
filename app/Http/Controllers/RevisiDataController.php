@@ -11,7 +11,7 @@ class RevisiDataController extends Controller
 {
     //
     public function index(){
-        $revisidata = RevisiData::with('detailStatus')->get();
+        $revisidata = RevisiData::with('detailStatus')->orderBy('created_at', 'desc')->get();
         // return $revisidata;
          return view('fitur.revisidata',compact('revisidata'));
      }

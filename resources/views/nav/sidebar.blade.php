@@ -23,7 +23,7 @@
        
        <div class="button">
         @if (Auth::user())
-        <a href="{{url('logout')}}" class="btn btn-primary" id="login">Logout</a>
+        <a href="{{url('logout')}}" class="btn btn-primary" id="logout">Logout</a>
         
         @else
         <a href="{{url('login')}}" class="btn btn-primary" id="login">Login</a>

@@ -46,7 +46,11 @@
                     {{-- Tabel --}}
                     <div class="table-responsive">
 
-                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata">
+                        @if (Auth::user()->hak_akses_id == 1)
+                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata-admin">
+                        @elseif(Auth::user()->hak_akses_id == 2)
+                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata-user">
+                        @endif
                             <thead class="thead-dark">
                                 <tr>
                                     <th>JENIS REVISI</th>
@@ -68,24 +72,12 @@
                                     <td>{{$rev->jenis_data}}</td>
                                     <td>{{$rev->nama_data}}</td>
                                     @if ($rev->status ==1)
-                                    <td><span class="badge bg-warning">{{$rev->detailStatus->nama_status}}</span></td>
+                                        <td><span class="badge bg-warning">{{$rev->detailStatus->nama_status}}</span></td>
                                     @elseif($rev->status ==3)
-                                    <td><span class="badge bg-success">{{$rev->detailStatus->nama_status}}</span></td>
+                                        <td><span class="badge bg-success">{{$rev->detailStatus->nama_status}}</span></td>
                                     @elseif ($rev->status ==5)
-                                    <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
+                                        <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
                                     @endif
-                                    {{-- @if($rev->user_id == Auth::user()->id && Auth::user()->hak_akses_id == 1)
-                                    <td colspan="3">
-                                        
-                                        <a href="javascript:void(0)" id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                    </td>
-                                    @endif --}}
-                                    {{-- @if(Auth::user()->hak_akses_id == 1)
-                                    <td>
-                                        <a href="javascript:void(0)" id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm"
-                                            title="detail"><i class="bi bi-eye-fill"></i></a>
-                                    </td>  
-                                    @endif --}}
                                     <td>
                                         @if(Auth::user()->hak_akses_id == 1) 
                                             <button id="btn-accept-rev" data-id="{{$rev->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>

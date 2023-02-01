@@ -58,17 +58,17 @@
                             <tbody>
                                 <?php $no = 1; ?>
                                 @foreach ($akses_internet as $ai)
-                                <tr>
+                                <tr id="index__{{$ai->id}}">
                                     <td class="text-bold-500"><?php echo $no++ ?></td>
                                     <td>{{$ai->nama}}</td>
                                     <td>{{$ai->departemen}}</td>
                                     <td>{{$ai->jabatan}}</td>
                                     <td>{{$ai->keperluan_email}}</td>
                                     <td>{{$ai->keperluan_browsing}}</td>
-                                    <td><span class="badge bg-success">{{$ai->status}}</span></td>
+                                    <td><span class="badge bg-success">{{$ai->detailStatus->nama_status}}</span></td>
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit" data-id="${response.data.id}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="${response.data.id}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                        <a href="javascript:void(0)" id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$ai->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

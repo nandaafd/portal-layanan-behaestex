@@ -1,6 +1,5 @@
 $('body').on('click', '#btn-update-revisidata', function () {
     let revisidata_id = $(this).data('id');
-    console.log(revisidata_id)
     //fetch detail post with ajax
     $.ajax({
         url: `/revisidata/${revisidata_id}`,
@@ -40,7 +39,6 @@ $('#btn-edit-revisidata').click(function(e) {
     let alasan_revisi = $('#alasan_revisi').val();
     let status = $('#status').val();
     let token   = $("meta[name='csrf-token']").attr("content");
-    console.log('UPDATE');
     //ajax
     $.ajax({
 

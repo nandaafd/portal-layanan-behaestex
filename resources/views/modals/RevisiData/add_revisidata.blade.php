@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     <div class="form-body">
-                        <input type="text" name="user_id" id="user_id" value="{{Auth::id()}}">
+                        <input hidden type="text" name="user_id" id="user_id" value="{{Auth::id()}}">
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Jenis Revisi</label>
@@ -28,12 +28,12 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label>Tanggal</label>
+                                <label>Tanggal Pengajuan</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" id="add-tanggal">
+                                        <input type="date" class="form-control" placeholder="" id="add-tanggal" value="{{date('d-m-Y')}}">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">

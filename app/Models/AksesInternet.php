@@ -22,4 +22,8 @@ class AksesInternet extends Model
         'status'
     ];
 
+    public function detailStatus(){
+        return $this->hasOne(Status::class, 'id','status');
+    }
+
 }

@@ -34,16 +34,17 @@ $('#store').click(function(e) {
             "_token": token
         },
         success:function(response){
-
+          
             //show success message
+
             Swal.fire({
-                type: 'success',
-                icon: 'success',
+                type: `${response.type}`,
+                icon: `${response.icon}`,
                 title: `${response.message}`,
                 showConfirmButton: false,
                 timer: 3000
             });
-            
+
             //data post
             let post = `
                 <tr id="index_${response.data.id}">

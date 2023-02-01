@@ -31,8 +31,8 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
 
 Route::middleware(['isLogin'])->group(function () {
-    Route::get('/aksesinternet','App\Http\Controllers\AksesinternetController@index');
     Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
+    Route::resource('/aksesinternet',App\Http\Controllers\AksesInternetController::class);
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);
     Route::post('/revisidata/{id}/update','App\Http\Controllers\RevisiDataController@update_status');
     Route::resource('/sewazoom',App\Http\Controllers\SewaZoomController::class);
@@ -44,19 +44,4 @@ Route::middleware(['isLogin'])->group(function () {
     
 
 
-
-//     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//     Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
-//         // Route::get('superadmin/home', [App\Http\Controllers\HomeController::class, 'superadminHome'])->name('superadmin.home');
-//     });
-    
-//     Route::group(['middleware' => ['auth', 'role:admin']], function () {
-//     });
-    
-//     Route::group(['middleware' => ['auth', 'role:user']], function () {
-//     });
-// });
-
-// Route::get('/login', 'App\Http\Controllers\ErrorController@failedLogin')->name('failedLogin');
 ?>
