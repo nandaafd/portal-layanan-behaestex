@@ -14,6 +14,10 @@ $('#add-revisidata').click(function(e) {
     let alasan_revisi = $('#add-alasan_revisi').val();
     let token   = $("meta[name='csrf-token']").attr("content");
 
+    setTimeout(() => {
+        window.location=window.location;
+    }, 1200);
+    
     $.ajax({
         url: '/revisidata',
         type: 'POST',

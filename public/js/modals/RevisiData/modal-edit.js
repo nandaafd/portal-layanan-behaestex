@@ -39,6 +39,11 @@ $('#btn-edit-revisidata').click(function(e) {
     let alasan_revisi = $('#alasan_revisi').val();
     let status = $('#status').val();
     let token   = $("meta[name='csrf-token']").attr("content");
+    //auto refresh page
+    setTimeout(() => {
+        window.location=window.location;
+    }, 1200);
+
     //ajax
     $.ajax({
 
@@ -143,7 +148,10 @@ $('body').on('click', '#btn-decline-rev', function () {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                console.log('test');
+                  //auto refresh page
+                setTimeout(() => {
+                    window.location=window.location;
+                }, 1200);
 
                 //fetch to delete data
                 $.ajax({
@@ -194,6 +202,11 @@ $('body').on('click', '#btn-accept-rev', function () {
             confirmButtonText: 'YA, TOLAK'
         }).then((result) => {
             if (result.isConfirmed) {
+
+                  //auto refresh page
+                setTimeout(() => {
+                    window.location=window.location;
+                }, 1200);
                 //fetch to delete data
                 $.ajax({
 

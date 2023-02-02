@@ -34,41 +34,51 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title" id="tb-tittle">Daftar pengajuan</h4>
-                    <h5 class="card-subtitle" id="tb-date"></h5>
+                    <h5 class="card-subtitle">{{date('d-m-Y')}}</h5>
                 </div>
                 <div class="card-content">
-
-
                     {{-- Tabel --}}
                     <div class="table-responsive">
 
-                        <table class="table mb-0 text-center table-bordered">
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-aksesinternet">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>NO</th>
                                     <th>NAMA</th>
                                     <th>DEPARTMENT</th>
                                     <th>JABATAN</th>
                                     <th>KEPERLUAN EMAIL</th>
                                     <th>KEPERLUAN BROWSING</th>
                                     <th>STATUS</th>
-                                    <th>OPSI</th>
+                                    <th>AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1; ?>
                                 @foreach ($akses_internet as $ai)
                                 <tr id="index__{{$ai->id}}">
-                                    <td class="text-bold-500"><?php echo $no++ ?></td>
                                     <td>{{$ai->nama}}</td>
                                     <td>{{$ai->departemen}}</td>
                                     <td>{{$ai->jabatan}}</td>
                                     <td>{{$ai->keperluan_email}}</td>
                                     <td>{{$ai->keperluan_browsing}}</td>
+                                    @if($ai->status === 1)
+                                        <td><span class="badge bg-warning">{{$ai->detailStatus->nama_status}}</span></td>
+                                    @elseif ($ai->status === 2)
                                     <td><span class="badge bg-success">{{$ai->detailStatus->nama_status}}</span></td>
+                                    @elseif($ai->status === 5)
+                                    <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
+                                    @endif
+                                    
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$ai->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                        @if(Auth::user()->hak_akses_id == 1)
+                                            <button id="btn-accept-internet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                            <button id="btn-decline-internet" data-id="{{$ai->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                            <button id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
+                                            <button id="btn-delete-aksesinternet" data-id="{{$ai->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                        @else
+                                            @if($ai->user_id === Auth::id())
+                                                <button id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
+                                            @endif 
+                                        @endif   
                                     </td>
                                 </tr>
                                 @endforeach

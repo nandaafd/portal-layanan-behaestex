@@ -21,10 +21,8 @@ $('body').on('click','#btn-update-aksesinternet', function () {
     });
 });
 $('#btn-edit-aksesinternet').click(function(e){
-    let internet_id = $(this).data('id');
-    console.log(internet_id)
     e.preventDefault();
-    let id =$('#id').val();
+    let internet_id =$('#id').val();
     let user_id =$('#user_id').val();
     let nama = $('#nama').val();
     let departemen = $('#departemen').val();
@@ -32,8 +30,13 @@ $('#btn-edit-aksesinternet').click(function(e){
     let keperluan_email = $('#keperluan_email').val();
     let keperluan_browsing = $('#keperluan_browsing').val();
     let token   = $("meta[name='csrf-token']").attr("content");
+
+    setTimeout(() => {
+        window.location=window.location;
+    }, 2200);
+
     $.ajax({
-        url: `/aksesinternet/${id}`,
+        url: `/aksesinternet/${internet_id}`,
         type: "PUT",
         cache: false,   
         data: { 
@@ -81,5 +84,104 @@ $('#btn-edit-aksesinternet').click(function(e){
             
 
         }
-    })
-})
+    });
+});
+
+
+$('body').on('click', '#btn-accept-internet', function () {
+    let internet_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "ingin menerima pengajuan ini?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, TERIMA'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/aksesinternet/${internet_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": internet_id,
+                        "type": "approve"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${revisidata_id}`).remove();
+                    }
+                });
+
+                
+            }
+        })
+        
+});
+
+$('body').on('click', '#btn-decline-internet', function () {
+    let internet_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "ingin menolak pengajuan ini?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, TOLAK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/aksesinternet/${internet_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": internet_id,
+                        "type": "decline"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${revisidata_id}`).remove();
+                    }
+                });
+
+                
+            }
+        })
+        
+});

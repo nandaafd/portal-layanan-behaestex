@@ -110,7 +110,15 @@ header a{
     color: white;
     font-size: 17px;   
 }   
+#btn-update-aksesinternet > i{
+    color: white;
+    font-size: 17px;   
+}
 #btn-delete > i{
+    color: white;
+    font-size: 15px;
+}
+#btn-delete-aksesinternet > i{
     color: white;
     font-size: 15px;
 }
@@ -122,11 +130,19 @@ header a{
     color: white;
     font-size: 17px;
 }
+#btn-accept-internet > i{
+    color: white;
+    font-size: 17px;
+}
 #btn-decline > i{
     color: white;
     font-size: 15px;
 }
 #btn-decline-rev > i{
+    color: white;
+    font-size: 15px;
+}
+#btn-decline-internet > i{
     color: white;
     font-size: 15px;
 }
@@ -360,4 +376,21 @@ table.dataTable thead .sorting_desc_disabled:before {
     font-size: 12px;
 }
 
+/* filter tabel akses internet */
+#table-aksesinternet_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
 
+#table-aksesinternet_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-aksesinternet_info{
+    padding: 3%;
+}
+#table-aksesinternet_paginate{
+    padding: 3%;
+    padding-top: 1%;
+    font-size: 12px;
+}

@@ -15,8 +15,5 @@ class Status extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function sewazoom()
-    {
-        return $this->belongsTo(Sewazoom::class, 'status','id');
-    }
+
 }

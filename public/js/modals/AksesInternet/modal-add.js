@@ -3,6 +3,10 @@ $('body').on('click', '#btn-add-aksesinternet', function(){
 });
 
 $('#store-aksesinternet').click(function(e){
+    setTimeout(() => {
+        window.location=window.location;
+    }, 1200);
+    
     e.preventDefault();
     let user_id =$('#add-user_id').val();
     let nama = $('#add-nama').val();
@@ -26,6 +30,7 @@ $('#store-aksesinternet').click(function(e){
             'keperluan_browsing':keperluan_browsing,
             "_token": token
         },
+        
         success:function(response){
           
             //show success message
@@ -132,6 +137,12 @@ $('#store-aksesinternet').click(function(e){
 
         // }
         
-
+        
     });
-})
+});
+
+$('body').on('click', '#store-aksesinternet'), function(){
+    setTimeout(() => {
+        window.location=window.location;
+    }, 1200);
+}

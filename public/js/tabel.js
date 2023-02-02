@@ -41,3 +41,13 @@ $(document).ready(function () {
     });
       $('.dataTables_length').addClass('bs-select');
   });
+  $(document).ready(function () {
+    $('#table-aksesinternet').DataTable({
+      "aaSorting": [],
+      columnDefs: [{
+      orderable: false,
+      targets: [3,4,5,6]
+      }]
+    });
+      $('.dataTables_length').addClass('bs-select');
+  });

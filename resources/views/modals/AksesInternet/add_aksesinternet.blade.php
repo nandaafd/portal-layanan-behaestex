@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     @csrf
-                    <input type="text" id="add-user_id" value="{{Auth::id()}}">
+                    <input hidden type="text" id="add-user_id" value="{{Auth::id()}}">
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">

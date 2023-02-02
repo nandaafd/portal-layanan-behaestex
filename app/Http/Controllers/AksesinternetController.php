@@ -10,7 +10,7 @@ class AksesInternetController extends Controller
 {
     //
     public function index(){
-        $akses_internet = AksesInternet::with('detailStatus')->get();
+        $akses_internet = AksesInternet::with('detailStatus')->orderBy('created_at', 'desc')->get();
         return view('fitur.aksesinternet',compact('akses_internet'));
     }
     public function store(Request $request){
@@ -59,7 +59,7 @@ class AksesInternetController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(),422);
         }
-        $aksesInternet->find($request->id)->update([
+        $aksesInternet->where('id', $id)->update([
             // 'user_id'=>$request->user_id,
             'nama'=>$request->nama,
             'departemen'=>$request->departemen,
@@ -74,19 +74,23 @@ class AksesInternetController extends Controller
         ]);
     }
     public function destroy($id){
-        AksesInternet::where('id', $id)->delete;
-        return response()->json([
+        AksesInternet::where('id',$id)->delete();
+        return response()->json([   
             'success'=>true,
             'message'=>'Data berhasil dihapus!'
         ]);
     }
     public function update_status(Request $request){
         $type = $request->type;
-        if ($type == "approved") {
-            # code...
-        } elseif ($type == $request->type) {
-            # code...
+        if ($type == "approve") {
+            AksesInternet::find($request->id)->update(['status'=>2]);
+        } elseif ($type == "decline") {
+            AksesInternet::find($request->id)->update(['status'=>5]);
         } 
+        return response()->json([
+            'success'=>true,
+            'message'=>'Status Berhasil Diubah',
+        ]);
     }
 
 }
