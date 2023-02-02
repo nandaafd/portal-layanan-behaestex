@@ -14,8 +14,8 @@ class SewaZoomController extends Controller
 
 
     public function index(){
-        $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d'))->orderBy('tanggal', 'desc')->get();
-        // return $sewazoom;
+        $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d'))
+                            ->orderBy('tanggal', 'asc')->get();
         return view('fitur.sewazoom',compact('sewazoom'));
     }
 
@@ -57,7 +57,6 @@ class SewaZoomController extends Controller
                     'tanggal' => $request->tanggal,
                     'jam_mulai' => $request->jam_mulai,
                     'jam_selesai'=>$request->jam_selesai
-                    // 'status' => $request->status,
                 ]);
                 
                 return response()->json([
@@ -72,8 +71,6 @@ class SewaZoomController extends Controller
     }
     public function show($id)
      {
-         
- 
          $data = SewaZoom::find($id);
          return response()->json([
              'success' => true,
@@ -84,7 +81,6 @@ class SewaZoomController extends Controller
 
     public function update(Request $request, SewaZoom $sewazoom)
      {
-        
          //define validation rules
          $validator = Validator::make($request->all(), [
             'nama' => 'required',
@@ -99,19 +95,15 @@ class SewaZoomController extends Controller
          if ($validator->fails()) {
              return response()->json($validator->errors(), 422);
          }
- 
          //create post
          $sewazoom->find($request->id)->update([
-
             'nama' => $request->nama,
             'departemen' => $request->departemen,
             'topik'=> $request->topik,
             'tanggal' => $request->tanggal,
             'jam_mulai' => $request->jam_mulai,
             'jam_selesai'=>$request->jam_selesai
-
          ]);
- 
          //return response
          return response()->json([
              'success' => true,
@@ -147,4 +139,3 @@ class SewaZoomController extends Controller
 
     }
 }
-// Auth::user();

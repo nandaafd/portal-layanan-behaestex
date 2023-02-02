@@ -1,7 +1,4 @@
 @extends('layouts.main');
-@php
-    use Carbon\Carbon;
-@endphp
 @section('content')
 <header class="header d-flex py-2 py-4">
     <div class="container" id="nav-content">
@@ -111,3 +108,8 @@
 @include('modals.sewazoom.edit-sewazoom')
 
 @endsection
+@push('js')
+    <script src="{{ asset('js/modals/SewaZoom/modal-add.js') }}"></script>
+    <script src="{{asset('js/modals/SewaZoom/modal-edit.js')}}"></script>
+    <script src="{{asset('js/modals/SewaZoom/delete-sewazoom.js')}}"></script>
+@endpush
