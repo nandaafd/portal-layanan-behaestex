@@ -16,6 +16,11 @@ $('#store').click(function(e) {
     // let status = $('#status').val();
     let token   = $("meta[name='csrf-token']").attr("content");
     
+    // auto refresh
+    setTimeout(() => {
+        window.location=window.location;
+    }, 1200);
+    
     //ajax
     $.ajax({
 

@@ -17,10 +17,10 @@
 <div class="container">
     <div class="row">
         <div class="col-9">
-            <h1 id="tittle">Sewa room zoom</h1>
+            <h1 id="tittle">Order room zoom</h1>
         </div>
         <div class="col-3 text-center">
-            <a href="javascript:void(0)" class="btn btn-primary" id="btn-add-sewazoom">Sewa Zoom</a>
+            <a href="javascript:void(0)" class="btn btn-primary" id="btn-add-sewazoom">Order Zoom</a>
         </div>
     </div>
 </div>
@@ -32,7 +32,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="tb-tittle">Meeting Lists</h4>
+                    <h4 class="card-title" id="tb-tittle">Daftar Order</h4>
                     <h5 class="card-subtitle">{{date('d-m-Y')}}</h5>
                 </div>
                 <div class="card-content">

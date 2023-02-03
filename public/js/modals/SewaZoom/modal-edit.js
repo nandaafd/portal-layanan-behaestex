@@ -28,9 +28,6 @@ $('body').on('click','#btn-edit', function () {
 
 $('#btn-edit-sewazoom').click(function(e) {
     e.preventDefault();
-    // let sewazoom_id = $(this).data('id');
-    // console.log(sewazoom_id)
-    //define variable
     let id = $('#id').val();
     let user_id = $('#user_id').val();
     let nama = $('#nama').val();
@@ -41,7 +38,12 @@ $('#btn-edit-sewazoom').click(function(e) {
     let jam_selesai = $('#jam_selesai').val();
     let status = $('#status').val();
     let token   = $("meta[name='csrf-token']").attr("content");
-    console.log(id)
+
+     // auto refresh
+     setTimeout(() => {
+        window.location=window.location;
+    }, 1200);
+    
     //ajax
     $.ajax({
 
@@ -176,8 +178,6 @@ $('body').on('click', '#btn-approve', function () {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                console.log('test');
-
                 //fetch to delete data
                 $.ajax({
 
@@ -202,8 +202,6 @@ $('body').on('click', '#btn-approve', function () {
                             timer: 3000
                         });
 
-                        //remove post on table
-                        // $(`#index_${sewa_id}`).remove();
                     }
                 });
 

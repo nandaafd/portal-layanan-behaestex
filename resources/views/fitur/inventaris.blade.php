@@ -31,40 +31,39 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title" id="tb-tittle">Daftar peminjam inventaris</h4>
-                    <h5 class="card-subtitle" id="tb-date"></h5>
+                    <h5 class="card-subtitle" id="">{{date('d-m-Y')}}</h5>
                 </div>
                 <div class="card-content">
 
                     {{-- Tabel --}}
                     <div class="table-responsive">
 
-                        <table class="table mb-0 text-center table-bordered">
+                        <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-inventaris">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>NO</th>
-                                    <th>TANGGAL PINJAM</th>
                                     <th>NAMA</th>
                                     <th>DEPARTEMEN</th>
-                                    <th>KETERANGAN</th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>ITEM DIPINJAM</th>
+                                    <th>TANGGAL PINJAM</th>
+                                    <th>TANGGAL DIKEMBALIKAN</th>
+                                    <th>STATUS</th>
+                                    <th>AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr id="index">
                                     <td class="text-bold-500"></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#pengembalian" id="btn-pengembalian">
-                                            Kembalikan
-                                        </button>
-                                    </td>
+                                    <td><span class="badge bg-warning">tes</span></td>
                                     <td>
-                                        <a href="javascript:void(0)" id="btn-edit-inventaris" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
-                                        <a href="javascript:void(0)" id="btn-delete-inventaris" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
+                                        <button id="btn-kembalikan" data-id="" class="btn btn-warning btn-sm" title="Kembalikan"><i class="bi bi-capslock-fill"></i></button>
+                                        <button id="btn-accept-inventaris" data-id="" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                        <button id="btn-decline-inventaris" data-id="" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                        <button id="btn-update-inventaris" data-id="" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
+                                        <button id="btn-delete-inventaris" data-id="" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </td>                                       
                                 </tr>
                             </tbody>
@@ -79,6 +78,7 @@
 
 @include('modals.PeminjamanInventaris.add_peminjaman')   
 @include('modals.PeminjamanInventaris.edit_peminjaman')
-
-
 @endsection
+@push('js')
+    <script src="{{asset('js/modals/PeminjamanInventaris/modal-add.js')}}"></script>
+@endpush

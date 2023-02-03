@@ -199,7 +199,7 @@ $('body').on('click', '#btn-accept-rev', function () {
             icon: 'question',
             showCancelButton: true,
             cancelButtonText: 'TIDAK',
-            confirmButtonText: 'YA, TOLAK'
+            confirmButtonText: 'YA, TERIMA'
         }).then((result) => {
             if (result.isConfirmed) {
 

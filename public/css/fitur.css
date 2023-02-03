@@ -99,8 +99,11 @@ header a{
     background-color: black;
 }
 #btn-view > i{
-    color: black;
-    
+    color: black; 
+}
+#btn-kembalikan > i{
+    color: white; 
+    font-size: 15px;
 }
 #btn-edit > i{
     color: white;
@@ -114,7 +117,15 @@ header a{
     color: white;
     font-size: 17px;   
 }
+#btn-update-inventaris > i{
+    color: white;
+    font-size: 17px;   
+}
 #btn-delete > i{
+    color: white;
+    font-size: 15px;
+}
+#btn-delete-inventaris > i{
     color: white;
     font-size: 15px;
 }
@@ -127,6 +138,10 @@ header a{
     font-size: 17px;
 }
 #btn-accept-rev > i{
+    color: white;
+    font-size: 17px;
+}
+#btn-accept-inventaris > i{
     color: white;
     font-size: 17px;
 }
@@ -143,6 +158,10 @@ header a{
     font-size: 15px;
 }
 #btn-decline-internet > i{
+    color: white;
+    font-size: 15px;
+}
+#btn-decline-inventaris > i{
     color: white;
     font-size: 15px;
 }
@@ -390,6 +409,25 @@ table.dataTable thead .sorting_desc_disabled:before {
     padding: 3%;
 }
 #table-aksesinternet_paginate{
+    padding: 3%;
+    padding-top: 1%;
+    font-size: 12px;
+}
+
+/* filter tabel inventaris */
+#table-inventaris_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
+
+#table-inventaris_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-inventaris_info{
+    padding: 3%;
+}
+#table-inventaris_paginate{
     padding: 3%;
     padding-top: 1%;
     font-size: 12px;

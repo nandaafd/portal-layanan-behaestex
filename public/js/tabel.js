@@ -51,3 +51,13 @@ $(document).ready(function () {
     });
       $('.dataTables_length').addClass('bs-select');
   });
+  $(document).ready(function () {
+    $('#table-inventaris').DataTable({
+      "aaSorting": [],
+      columnDefs: [{
+      orderable: false,
+      targets: [0,1,2,5,6]
+      }]
+    });
+      $('.dataTables_length').addClass('bs-select');
+  });

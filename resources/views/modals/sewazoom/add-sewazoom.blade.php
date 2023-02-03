@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Form Sewa room Zoom</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Form order room zoom</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -68,7 +68,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="" name="tanggal" id="add-tanggal">
+                                        <input type="date" class="form-control" placeholder="" name="tanggal" id="add-tanggal" value="{{date('d-m-Y')}}">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">

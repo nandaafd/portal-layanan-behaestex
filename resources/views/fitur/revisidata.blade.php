@@ -114,6 +114,10 @@
 @include('modals.RevisiData.add_revisidata')
 @include('modals.RevisiData.edit_revisidata')
 
-
-
 @endsection
+@push('js')
+<script src="{{ asset('/js/modals/RevisiData/modal-add.js') }}"></script>
+<script src="{{ asset('/js/modals/RevisiData/modal-edit.js') }}"></script>
+<script src="{{ asset('/js/modals/RevisiData/modal-view.js') }}"></script>
+<script src="{{asset('js/modals/RevisiData/delete-revisidata.js')}}"></script> 
+@endpush

@@ -97,5 +97,9 @@
 @include('modals.AksesInternet.add_aksesinternet')
 @include('modals.AksesInternet.edit_aksesinternet')
 
-<script src="{{asset('js/modals/AksesInternet/modal-view.js')}}"></script>
 @endsection
+@push('js')
+<script src="{{ asset('/js/modals/AksesInternet/modal-add.js')}}"></script>
+<script src="{{ asset('/js/modals/AksesInternet/modal-edit.js')}}"></script>
+<script src="{{ asset('/js/modals/AksesInternet/delete-aksesinternet.js')}}"></script>
+@endpush
