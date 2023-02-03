@@ -19,7 +19,12 @@ class SewaZoomController extends Controller
         return view('fitur.sewazoom',compact('sewazoom'));
     }
 
-    
+    public function table(){
+        $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','==', date('Y-m-d'))
+                    ->orderBy('tanggal', 'asc')->get();
+                    return $sewazoom;
+        return view('fitur.sewazoom',compact('sewazoom'));
+    }
 
     public function store(Request $request){
         $validator = Validator::make($request->all(),[

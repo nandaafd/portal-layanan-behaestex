@@ -10,4 +10,7 @@ class ItemPeminjaman extends Model
     use HasFactory;
     protected $table = 'item_peminjaman';
     protected $fillable = ['peminjaman_id','master_inventaris_id'];
+    
+
 }
+

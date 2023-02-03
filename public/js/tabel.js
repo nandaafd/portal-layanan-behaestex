@@ -61,3 +61,13 @@ $(document).ready(function () {
     });
       $('.dataTables_length').addClass('bs-select');
   });
+  $(document).ready(function () {
+    $('#table-aksesprogram').DataTable({
+      "aaSorting": [],
+      columnDefs: [{
+      orderable: false,
+      targets: [1]
+      }]
+    });
+      $('.dataTables_length').addClass('bs-select');
+  });

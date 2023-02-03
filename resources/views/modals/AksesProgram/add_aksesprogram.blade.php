@@ -9,6 +9,7 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     <div class="form-body">
+                        <input hidden type="text" name="user_id" id="user_id" value="{{$ap->id}}">
                         <div class="row">
 
                             <div class="col-md-4">
@@ -18,7 +19,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon">
+                                            id="add-departemen">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -37,7 +38,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Nama Program">
+                                        <input type="text" class="form-control" placeholder="Nama Program" id="add-nama_program">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -56,7 +57,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-latar_belakang"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -69,7 +70,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-proses_bisnis"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -82,7 +83,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-sop"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -95,7 +96,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-benefit"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -108,7 +109,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-konsekuensi"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -121,7 +122,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-fitur"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -134,7 +135,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="add-prosedur_dan_dokumen"
                                                 style="height: 100px"></textarea>
                                         </div>
                                     </div>
@@ -151,7 +152,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="store-aksesprogram">Submit</button>
             </div>
         </div>
     </div>

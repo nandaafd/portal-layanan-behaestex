@@ -30,7 +30,7 @@
 <footer>
     @include('footer.footer')
 </footer>
-<script src="{{ asset('/assets/js/portal.js') }}"></script>
+<script src="{{ asset('/js/portal.js') }}"></script>
 @stack('js')
 </body>
 </html>

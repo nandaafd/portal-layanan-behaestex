@@ -101,6 +101,9 @@ header a{
 #btn-view > i{
     color: black; 
 }
+#btn-view-aksesprogram > i{
+    color: black; 
+}
 #btn-kembalikan > i{
     color: white; 
     font-size: 15px;
@@ -121,6 +124,10 @@ header a{
     color: white;
     font-size: 17px;   
 }
+#btn-update-aksesprogram > i{
+    color: white;
+    font-size: 17px;   
+}
 #btn-delete > i{
     color: white;
     font-size: 15px;
@@ -133,6 +140,10 @@ header a{
     color: white;
     font-size: 15px;
 }
+#btn-delete-aksesprogram > i{
+    color: white;
+    font-size: 15px;
+}
 #btn-approve > i{
     color: white;
     font-size: 17px;
@@ -142,6 +153,10 @@ header a{
     font-size: 17px;
 }
 #btn-accept-inventaris > i{
+    color: white;
+    font-size: 17px;
+}
+#btn-accept-aksesprogram > i{
     color: white;
     font-size: 17px;
 }
@@ -162,6 +177,10 @@ header a{
     font-size: 15px;
 }
 #btn-decline-inventaris > i{
+    color: white;
+    font-size: 15px;
+}
+#btn-decline-aksesprogram > i{
     color: white;
     font-size: 15px;
 }
@@ -432,3 +451,23 @@ table.dataTable thead .sorting_desc_disabled:before {
     padding-top: 1%;
     font-size: 12px;
 }
+
+/* filter tabel aksesprogram */
+#table-aksesprogram_length label{
+    margin-left: 5%;
+    padding-bottom: 1rem;
+}
+
+#table-aksesprogram_filter label{
+    margin-right: 5%;
+    padding-bottom: 1rem;
+}
+#table-aksesprogram_info{
+    padding: 3%;
+}
+#table-aksesprogram_paginate{
+    padding: 3%;
+    padding-top: 1%;
+    font-size: 12px;
+}
+

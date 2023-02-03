@@ -31,7 +31,7 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
 
 Route::middleware(['isLogin'])->group(function () {
-    Route::get('/aksesprogram','App\Http\Controllers\AksesProgramController@index');
+    Route::resource('/aksesprogram', App\Http\Controllers\AksesProgramController::class);
     Route::resource('/aksesinternet',App\Http\Controllers\AksesInternetController::class);
     Route::post('/aksesinternet/{id}/update','App\Http\Controllers\AksesInternetController@update_status');
     Route::resource('/revisidata',App\Http\Controllers\RevisiDataController::class);

@@ -19,7 +19,8 @@ class CreatePeminjamanInventarisTable extends Migration
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('nama',255);
             $table->string('departemen',255);
-            $table->string('tanggal',255);
+            $table->date('tanggal_pinjam',255);
+            $table->date('tanggal_dikembalikan',255)->nullable();
             $table->string('ttd_kabag_ybs',255)->nullable();
             $table->string('ttd_edp',255)->nullable();
             $table->string('ttd_pengembalian',255)->nullable();

@@ -24,9 +24,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="main">
     <div class="row" id="table-head">
         <div class="col-12">
@@ -46,7 +43,6 @@
 
                             <thead class="thead-dark">
                                 <tr>
-                                    
                                     <th class="th-sm">NAMA</th>
                                     <th class="th-sm">DEPARTEMEN</th>
                                     @if (Auth::user()->hak_akses_id == 1)
@@ -82,23 +78,20 @@
                                     @endif
                                         <td>
                                     @if (Auth::user()->hak_akses_id == 1)
-                                        <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="javascript:void(0)" id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></a>
+                                        <button id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <button id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
                                         <button id="btn-approve" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
-                                        <a href="javascript:void(0)" id="btn-decline" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></a>
+                                        <button id="btn-decline" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button>
                                     @else
                                         @if(Auth::user()->id == $sewa->user_id)                                       
-                                            <a href="javascript:void(0)" id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <button id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
                                         @endif
                                      @endif
-                                    </td>
-                               
-                                    
+                                    </td>  
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -106,7 +99,6 @@
 </div>
 @include('modals.sewazoom.add-sewazoom')
 @include('modals.sewazoom.edit-sewazoom')
-
 @endsection
 @push('js')
     <script src="{{ asset('js/modals/SewaZoom/modal-add.js') }}"></script>
