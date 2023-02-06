@@ -14,8 +14,6 @@
             </div>
         </div>
     </div>
-
-
 </header>
 
 <div class="container">
@@ -30,27 +28,14 @@
     </div>
 </div>
 
-
-
 <div class="main">
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title" id="tb-tittle">Daftar pengajuan revisi data</h4>
-                    <h5 class="card-subtitle">{{date('d-m-Y')}}</h5>
-                </div>
                 <div class="card-content">
-
-
                     {{-- Tabel --}}
                     <div class="table-responsive">
-
-                        @if (Auth::user()->hak_akses_id == 1)
-                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata-admin">
-                        @elseif(Auth::user()->hak_akses_id == 2)
-                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata-user">
-                        @endif
+                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-revisidata">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>JENIS REVISI</th>
@@ -64,7 +49,7 @@
                                 </tr>
                             </thead>
                             <tbody id="table-revisidata">
-                                @foreach ($revisidata as $rev)
+                                @forelse ($revisidata as $rev)
                                 <tr id="index_{{ $rev->id }}">
                                     <td>{{$rev->jenis_revisi}}</td>
                                     <td>{{$rev->tanggal}}</td>
@@ -96,9 +81,9 @@
                                         @endif
                                     </td>
                                 </tr>
-                                    
-                                @endforeach
-
+                                @empty
+                                   <h5 id="emptydata-info">Tidak ada pengajuan masuk hari ini.</h5> 
+                                @endforelse
                             </tbody>
                         </table>
 

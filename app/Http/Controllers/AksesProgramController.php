@@ -10,7 +10,7 @@ class AksesProgramController extends Controller
 {
     //
     public function index(){
-        $akses_program = AksesProgram::all();
+        $akses_program = AksesProgram::with('detailStatus')->orderBy('created_at','desc')->get();
         return view('fitur.aksesprogram',compact('akses_program'));
     }
     public function store(Request $request){

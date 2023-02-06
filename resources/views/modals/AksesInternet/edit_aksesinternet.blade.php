@@ -9,7 +9,6 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     @csrf
-                    <input hidden type="text" id="id" value="{{$ai->id}}">
                     <input hidden type="text" id="user_id">
                     <div class="form-body">
                         <div class="row">

@@ -30,10 +30,6 @@
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title" id="tb-tittle">Daftar pengajuan akses program</h4>
-                    <h5 class="card-subtitle" id="">{{date('d-m-Y')}}</h5>
-                </div>
                 <div class="card-content">
                     {{-- Tabel --}}
                     <div class="table-responsive">
@@ -47,20 +43,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               @foreach ($akses_program as $ap)
+                                @forelse ($akses_program as $ap)
                                 <tr id="index__{{$ap->id}}">
                                     <td>{{$ap->departemen}}</td>
                                     <td>{{$ap->nama_program}}</td>
-                                    <td><span class="badge bg-success">{{$ap->status}}</span></td>
+                                    <td><span class="badge bg-success">{{$ap->detailStatus->nama_status}}</span></td>
                                     <td>
                                         <button id="btn-accept-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
                                         <button id="btn-decline-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
                                         <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
-                                        <button id="btn-update-revisidata" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                        <button id="btn-update-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
                                         <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
                                     </td>
                                 </tr>
-                               @endforeach
+                                @empty
+                                <h5 id="emptydata-info">Tidak ada pengajuan masuk</h5> 
+                                @endforelse
+
                             </tbody>
                         </table>
                     </div>

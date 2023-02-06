@@ -47,12 +47,49 @@ header a{
     padding: 0;
     font-size: 2rem;
 }
+#emptydata-info{
+    font-size: 1rem;
+    margin-top: 2%;
+    margin-left: 2%;
+    color: rgb(169, 0, 0); 
+}
 
 /* button */
+#btn-hariini{
+    border: none;
+    width: 5rem;
+    margin-top: 5px;
+    height: 1.8rem;
+    font-size: 12px;
+}
+#btn-semua{
+    border: none;
+    width: 5rem;
+    margin-top: 5px;
+    height: 1.8rem;
+    font-size: 12px;    
+}
+#btn-today-rev{
+    border: none;
+    width: 5rem;
+    margin-top: 5px;
+    height: 1.8rem;
+    font-size: 12px;
+}
+#btn-all-rev{
+    border: none;
+    width: 5rem;
+    margin-top: 5px;
+    height: 1.8rem;
+    font-size: 12px;    
+}
+
 #btn-add-sewazoom{
     background-color: #3CADA2;
     border: none;
-    width: 8rem;
+    width: 7rem;
+    font-size: 12px;
+    height: 1.8rem;
     margin-top: 5px;
 }
 #btn-add-inventaris{
@@ -61,25 +98,29 @@ header a{
     width: 7rem;
     margin-top: 5px;
 }
-#btn-aksesinternet{
+#btn-add-aksesinternet{
     background-color: #3CADA2;
     border: none;
     width: 7rem;
     margin-top: 5px;
 }
-#btn-revisidata{
-    background-color: #3CADA2;
-    border: none;
-    width: 8rem;
-    margin-top: 5px;
-}
-#btn-aksesprogram{
+#btn-add-revisidata{
     background-color: #3CADA2;
     border: none;
     width: 7rem;
+    font-size: 12px;
+    height: 1.8rem;
     margin-top: 5px;
 }
-#btn-pengembalian{
+#btn-add-aksesprogram{
+    background-color: #3CADA2;
+    border: none;
+    width: 7rem;
+    font-size: 12px;
+    height: 1.8rem;
+    margin-top: 5px;
+}
+#btn-add-pengembalian{
     padding: 2px 5px;
     font-size: 12px;
 }
@@ -89,13 +130,13 @@ header a{
 #btn-add-inventaris:hover{
     background-color: black;
 }
-#btn-aksesinternet:hover{
+#btn-add-aksesinternet:hover{
     background-color: black;
 }
-#btn-revisidata:hover{
+#btn-add-revisidata:hover{
     background-color: black;
 }
-#btn-aksesprogram:hover{
+#btn-add-aksesprogram:hover{
     background-color: black;
 }
 #btn-view > i{
@@ -276,6 +317,16 @@ th, td{
         font-size: .5rem;
         padding: none;
     }
+    #btn-hariini{
+        width: 4.5rem;
+        font-size: .5rem;
+        padding: none;
+    }
+    #btn-semua{
+        width: 4.5rem;
+        font-size: .5rem;
+        padding: none;
+    }
     #btn-inventaris{
         width: 3.5rem;
         padding: .2rem;
@@ -345,11 +396,13 @@ table.dataTable thead .sorting_desc_disabled:before {
 /* filter tabel sewazoom */
 #table-sewazoom-admin_length label{
     margin-left: 5%;
+    margin-top: 5%;
     padding-bottom: 1rem;
 }
 
 #table-sewazoom-admin_filter label{
     margin-right: 5%;
+    margin-top: 5%;
     padding-bottom: 1rem;
 }
 #table-sewazoom-admin_info{
@@ -359,7 +412,6 @@ table.dataTable thead .sorting_desc_disabled:before {
     padding: 3%;
     padding-top: 1%;
 }
-/* filter tabel revisidata */
 #table-sewazoom-user_length label{
     margin-left: 5%;
     padding-bottom: 1rem;
@@ -379,49 +431,37 @@ table.dataTable thead .sorting_desc_disabled:before {
 }
 
 /* filter tabel revisidata */
-#table-revisidata-user_length label{
+#table-revisidata_length label{
     margin-left: 5%;
+    margin-top: 5%;
     padding-bottom: 1rem;
 }
 
-#table-revisidata-user_filter label{
+#table-revisidata_filter label{
     margin-right: 5%;
+    margin-top: 5%;
     padding-bottom: 1rem;
 }
-#table-revisidata-user_info{
+#table-revisidata_info{
     padding: 3%;
 }
-#table-revisidata-user_paginate{
+#table-revisidata_paginate{
     padding: 3%;
     padding-top: 1%;
     font-size: 12px;
 }
-#table-revisidata-admin_length label{
-    margin-left: 5%;
-    padding-bottom: 1rem;
-}
 
-#table-revisidata-admin_filter label{
-    margin-right: 5%;
-    padding-bottom: 1rem;
-}
-#table-revisidata-admin_info{
-    padding: 3%;
-}
-#table-revisidata-admin_paginate{
-    padding: 3%;
-    padding-top: 1%;
-    font-size: 12px;
-}
 
 /* filter tabel akses internet */
 #table-aksesinternet_length label{
     margin-left: 5%;
+    margin-top: 3%;
     padding-bottom: 1rem;
 }
 
 #table-aksesinternet_filter label{
     margin-right: 5%;
+    margin-top: 3%;
     padding-bottom: 1rem;
 }
 #table-aksesinternet_info{
@@ -455,11 +495,13 @@ table.dataTable thead .sorting_desc_disabled:before {
 /* filter tabel aksesprogram */
 #table-aksesprogram_length label{
     margin-left: 5%;
+    margin-top: 3%;
     padding-bottom: 1rem;
 }
 
 #table-aksesprogram_filter label{
     margin-right: 5%;
+    margin-top: 3%;
     padding-bottom: 1rem;
 }
 #table-aksesprogram_info{

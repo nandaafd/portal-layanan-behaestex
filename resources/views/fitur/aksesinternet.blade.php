@@ -30,10 +30,6 @@
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title" id="tb-tittle">Daftar pengajuan</h4>
-                    <h5 class="card-subtitle">{{date('d-m-Y')}}</h5>
-                </div>
                 <div class="card-content">
                     {{-- Tabel --}}
                     <div class="table-responsive">
@@ -51,7 +47,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($akses_internet as $ai)
+                                @forelse ($akses_internet as $ai)
+
                                 <tr id="index__{{$ai->id}}">
                                     <td>{{$ai->nama}}</td>
                                     <td>{{$ai->departemen}}</td>
@@ -78,8 +75,10 @@
                                             @endif 
                                         @endif   
                                     </td>
-                                </tr>
-                                @endforeach
+                                </tr>                                 
+                                @empty
+                                    <h5 id="emptydata-info">Tidak ada pengajuan masuk.</h5>
+                                @endforelse
 
                             </tbody>
                         </table>

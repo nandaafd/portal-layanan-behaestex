@@ -8,9 +8,9 @@
             </div>
             <div class="modal-body">
                 <form class="form form-horizontal">
+                    <input type="text" hidden id="user_id">
                     <div class="form-body">
                         <div class="row">
-
                             <div class="col-md-4">
                                 <label>Departement</label>
                             </div>
@@ -18,7 +18,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon" value="">
+                                            id="departemen" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -37,7 +37,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Nama Program" value="">
+                                        <input type="text" class="form-control" placeholder="Nama Program" value="" id="nama_program"
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -57,7 +57,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="latar_belakang"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="proses_bisnis"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="sop"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="benefit"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="konsekuensi"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="fitur"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea class="form-control" placeholder="" id="floatingTextarea2"
-                                                style="height: 100px"></textarea>
+                                                style="height: 100px" id="prosedur_dan_dokumen"></textarea>
                                         </div>
                                     </div>
                                 </div>

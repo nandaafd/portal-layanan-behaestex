@@ -21,7 +21,7 @@ Route::get('/inventaris', function () {
     return view('fitur.inventaris');
 });
 
-Route::post('proses-login', [LoginController::class, 'proses']);  
+Route::post('/proses-login', [LoginController::class, 'proses']);  
 Route::get('login', [LoginController::class, 'index']);
 Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout');
 

@@ -9,7 +9,8 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     <div class="form-body">
-                        <input hidden type="text" name="user_id" id="user_id" value="{{$ap->id}}">
+                             
+                        <input hidden type="text" name="user_id" id="user_id" value="{{Auth::id()}}">
                         <div class="row">
 
                             <div class="col-md-4">

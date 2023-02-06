@@ -146,7 +146,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="javascript:void(0)" id="btn-edit-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm">EDIT</a>
+                <a href="javascript:void(0)" id="btn-edit-revisidata" class="btn btn-primary btn-sm">EDIT</a>
             </div>
         </div>
     </div>

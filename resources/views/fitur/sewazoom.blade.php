@@ -16,11 +16,13 @@
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-9">
-            <h1 id="tittle">Order room zoom</h1>
+        <div class="col-sm-7">
+            <h1 id="tittle">Daftar zoom</h1>
         </div>
-        <div class="col-3 text-center">
-            <a href="javascript:void(0)" class="btn btn-primary" id="btn-add-sewazoom">Order Zoom</a>
+        <div class="col-sm-5 text-center">
+            <button class="btn btn-info" id="btn-hariini">Hari ini</button>
+            <button class="btn btn-warning" id="btn-semua">Semua</button>
+            <a href="javascript:void(0)" class="btn btn-primary" id="btn-add-sewazoom">Daftar Zoom</a>
         </div>
     </div>
 </div>
@@ -28,39 +30,66 @@
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title" id="tb-tittle">Daftar Order</h4>
-                    <h5 class="card-subtitle">{{date('d-m-Y')}}</h5>
-                </div>
                 <div class="card-content">
                     {{-- Tabel --}}
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="table-today">
+                      
                         @if (Auth::user()->hak_akses_id == 1)
-                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-admin">
+                            <table class="table mb-0 text-center table-bordered table-striped" id="table-sewazoom-admin">
                         @elseif(Auth::user()->hak_akses_id == 2)
-                            <table class="table mb-0 text-center table-bordered table-striped table-sm" id="table-sewazoom-user">
+                            <table class="table mb-0 text-center table-bordered table-striped" id="table-sewazoom-user">
                         @endif
-
-                            <thead class="thead-dark">
+                                
+                            <thead class="thead-dark">  
                                 <tr>
-                                    <th class="th-sm">NAMA</th>
-                                    <th class="th-sm">DEPARTEMEN</th>
+                                    <th class="">NAMA</th>
+                                    <th class="">DEPARTEMEN</th>
                                     @if (Auth::user()->hak_akses_id == 1)
-                                        <th class="th-sm">TOPIK</th>
+                                        <th class="">TOPIK</th>
                                     @endif
-                                    <th class="th-sm">TANGGAL</th>
-                                    <th class="th-sm">WAKTU MULAI</th>
-                                    <th class="th-sm">WAKTU SELESAI</th>
-                                    <th class="th-sm">STATUS</th>
-                                    <th class="th-sm" colspan="3">AKSI</th>
+                                    <th class="">TANGGAL</th>
+                                    <th class="">WAKTU MULAI</th>
+                                    <th class="">WAKTU SELESAI</th>
+                                    <th class="">STATUS</th>
+                                    <th class="" colspan="3">AKSI</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach ($sewazoom as $sewa)
-                                <tr id="index_{{ $sewa->id }}">
-                                    @if($sewa == null)
-                                        <p>no data</p>
+                            <tbody id="today">
+                                @forelse ($sewazoom_today as $today)
+                                <tr id="index_{{ $today->id }}" class="today">
+                                        <td class="text-bold-500">{{$today->nama}}</td>
+                                        <td>{{$today->departemen}}</td>
+                                    @if(Auth::user()->hak_akses_id == 1)
+                                        <td>{{$today->topik}}</td>
                                     @endif
+                                        <td>{{$today->tanggal}}</td>
+                                        <td>{{$today->jam_mulai}}</td>
+                                        <td>{{$today->jam_selesai}}</td>
+                                    @if ($today->status == 1)
+                                        <td><span class="badge bg-warning">{{ $today->detailStatus->nama_status }}</span></td>
+                                    @elseif($today->status == 2)
+                                        <td><span class="badge bg-success">{{ $today->detailStatus->nama_status }}</span></td>
+                                    @elseif($today->status == 5)
+                                        <td><span class="badge bg-danger">{{ $today->detailStatus->nama_status }}</span></td>
+                                    @endif
+                                        <td>
+                                    @if (Auth::user()->hak_akses_id == 1)
+                                        <button id="btn-edit" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <button id="btn-delete" data-id="{{$today->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                        <button id="btn-approve" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                        <button id="btn-decline" data-id="{{$today->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button>
+                                    @else
+                                        @if(Auth::user()->id == $today->user_id)                                        
+                                            <button id="btn-edit" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        @endif
+                                     @endif
+                                    </td>  
+                                    @empty
+                                    @endforelse
+                            </tbody>
+                            <tbody id="all">
+                                @forelse ($sewazoom as $sewa)
+                                <tr id="index_{{ $sewa->id }}" class="all">
                                         <td class="text-bold-500">{{$sewa->nama}}</td>
                                         <td>{{$sewa->departemen}}</td>
                                     @if(Auth::user()->hak_akses_id == 1)
@@ -88,9 +117,12 @@
                                         @endif
                                      @endif
                                     </td>  
-                                @endforeach
+                                    @empty
+                                    @endforelse
                             </tbody>
+                            
                         </table>
+
                     </div>
                 </div>
             </div>

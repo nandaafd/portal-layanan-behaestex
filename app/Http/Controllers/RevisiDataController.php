@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RevisiData;
-use App\Models\SewaZoom;
 use Illuminate\Support\Facades\Validator;
 
 class RevisiDataController extends Controller
@@ -12,15 +11,9 @@ class RevisiDataController extends Controller
     //
     public function index(){
         $revisidata = RevisiData::with('detailStatus')->orderBy('created_at', 'desc')->get();
-        // return $revisidata;
          return view('fitur.revisidata',compact('revisidata'));
      }
-     /**
-      * store
-      *
-      * @param  mixed $request
-      * @return void
-      */
+
      public function store(Request $request){
          $validator = Validator::make($request->all(),[
             'user_id'=>'required',
@@ -52,12 +45,7 @@ class RevisiDataController extends Controller
          ]);
      }
  
-     /**
-      * show
-      *
-      * @param  mixed $post
-      * @return void
-      */
+
      public function show($id)
      {
          
@@ -69,14 +57,7 @@ class RevisiDataController extends Controller
              'data'    => $data
          ]); 
      }
-     
-     /**
-      * update
-      *
-      * @param  mixed $request
-      * @param  mixed $post
-      * @return void
-      */
+
      public function update(Request $request, $id, RevisiData $revisidata)
      {
         // return 'asu';
