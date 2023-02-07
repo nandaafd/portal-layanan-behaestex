@@ -55,6 +55,10 @@ header a{
 }
 
 /* button */
+#btn-status{
+    font-size: 12px;
+    padding: 3px 7px;
+}
 #btn-hariini{
     border: none;
     width: 5rem;
@@ -186,7 +190,7 @@ header a{
     font-size: 15px;
 }
 #btn-approve > i{
-    color: white;
+    color: green;
     font-size: 17px;
 }
 #btn-accept-rev > i{
@@ -206,7 +210,7 @@ header a{
     font-size: 17px;
 }
 #btn-decline > i{
-    color: white;
+    color: red;
     font-size: 15px;
 }
 #btn-decline-rev > i{
@@ -229,14 +233,14 @@ header a{
     color: white;
     font-size: 14px;
 }
-.btn-cancel{
-    background-color: red;
-    border: none;
-    color: white;
-}
-.btn-cancel i{
+
+#btn-cancel i{
     font-size: 16px;
-    color: white;
+    color: rgb(198, 3, 3);
+}
+#btn-end i{
+    font-size: 16px;
+    color: grey;
 }
 .btn-primary{
     background-color: #3CADA2;
@@ -428,11 +432,13 @@ table.dataTable thead .sorting_desc_disabled:before {
 #table-sewazoom-user_length label{
     margin-left: 5%;
     padding-bottom: 1rem;
+    margin-top: 5%;
 }
 
 #table-sewazoom-user_filter label{
     margin-right: 5%;
     padding-bottom: 1rem;
+    margin-top: 5%;
 }
 #table-sewazoom-user_info{
     padding: 3%;

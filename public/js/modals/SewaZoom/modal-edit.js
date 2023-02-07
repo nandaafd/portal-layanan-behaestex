@@ -262,3 +262,104 @@ $('body').on('click', '#btn-decline', function () {
         })
         
 });
+
+$('body').on('click', '#btn-end', function () {
+    let sewa_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "order zoom ini telah selesai?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, SELESAI'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                console.log('test');
+
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/sewazoom/${sewa_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": sewa_id,
+                        "type": "end"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${sewa_id}`).remove();
+                    }
+                });
+            }
+        })
+});
+
+$('body').on('click', '#btn-cancel', function () {
+    let sewa_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "ingin membatalkan pengajuan ini?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, BATALKAN'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                console.log('test');
+
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/sewazoom/${sewa_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": sewa_id,
+                        "type": "cancel"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${sewa_id}`).remove();
+                    }
+                });
+
+                
+            }
+        })
+        
+});

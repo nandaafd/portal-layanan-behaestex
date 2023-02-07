@@ -1,3 +1,4 @@
+$('.all').show();
 $('.today').hide();
 $('body').on('click', '#btn-hariini', function() {
   $('.today').show();
@@ -5,7 +6,7 @@ $('body').on('click', '#btn-hariini', function() {
 });
 $('body').on('click', '#btn-semua', function() {
   $('.today').hide();
-  $('.all').show();
+  $('.all').show(); 
 });
 
 

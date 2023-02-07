@@ -105,6 +105,10 @@ class AksesProgramController extends Controller
         }elseif ($type == 'cancel') {
             AksesProgram::find($request->id)->update(['status'=>6]);
         }
+        return response()->json([
+            'success'=>true,
+            'message'=>'status berhasil diubah!'
+        ]);
     }
 
 }

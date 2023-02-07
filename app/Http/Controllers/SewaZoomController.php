@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SewaZoom;
-use App\Models\Status;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class SewaZoomController extends Controller
@@ -35,6 +32,7 @@ class SewaZoomController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(),422);
         }
+        
         $isBooked = SewaZoom::where('tanggal', $request->tanggal)
             ->where('jam_mulai', '<=', $request->jam_selesai)
             ->where('jam_selesai', '>', $request->jam_mulai)
@@ -132,6 +130,10 @@ class SewaZoomController extends Controller
             SewaZoom::find($request->id)->update(['status'=>2]);
         }elseif($type == "decline"){
             SewaZoom::find($request->id)->update(['status'=>5]);
+        }elseif($type == "end"){
+            SewaZoom::find($request->id)->update(['status'=>4]);
+        }elseif($type == "cancel"){
+            SewaZoom::find($request->id)->update(['status'=>6]);
         }
         return response()->json([
             'success' => true,
