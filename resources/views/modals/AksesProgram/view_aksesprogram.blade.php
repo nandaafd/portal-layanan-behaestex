@@ -19,7 +19,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input readonly type="text" class="form-control" placeholder=""
-                                            id="first-name-icon" value="">
+                                            id="view-departemen" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -38,7 +38,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input readonly type="text" class="form-control" placeholder="" value="">
+                                        <input readonly type="text" class="form-control" id="veiw-nama_program" placeholder="" value="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -58,7 +58,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="view-latar_belakang" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="view-proses_bisnis" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px">
+                                                id="view-sop" style="height: 100px">
                                             </textarea>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="view-benefit" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="view-konsekuensi" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="view-fitur" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                                     <div class="position-relative">
                                         <div class="form">
                                             <textarea readonly class="form-control" placeholder=""
-                                                id="floatingTextarea2" style="height: 100px"></textarea>
+                                                id="view-prosedur_dan_dokumen" style="height: 100px"></textarea>
                                         </div>
                                     </div>
                                 </div>

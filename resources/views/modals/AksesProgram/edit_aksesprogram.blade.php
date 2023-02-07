@@ -9,6 +9,7 @@
             <div class="modal-body">
                 <form class="form form-horizontal">
                     <input type="text" hidden id="user_id">
+                    <input type="text" hidden id="id">
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
@@ -37,7 +38,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Nama Program" value="" id="nama_program"
+                                        <input type="text" class="form-control" placeholder="Nama Program" value="" id="nama_program">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
@@ -56,7 +57,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="latar_belakang"
                                                 style="height: 100px" id="latar_belakang"></textarea>
                                         </div>
                                     </div>
@@ -69,7 +70,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="proses_bisnis"
                                                 style="height: 100px" id="proses_bisnis"></textarea>
                                         </div>
                                     </div>
@@ -82,7 +83,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="sop"
                                                 style="height: 100px" id="sop"></textarea>
                                         </div>
                                     </div>
@@ -95,7 +96,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="benefit"
                                                 style="height: 100px" id="benefit"></textarea>
                                         </div>
                                     </div>
@@ -108,7 +109,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="konsekuensi"
                                                 style="height: 100px" id="konsekuensi"></textarea>
                                         </div>
                                     </div>
@@ -121,7 +122,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder="" id="fitur"
                                                 style="height: 100px" id="fitur"></textarea>
                                         </div>
                                     </div>
@@ -134,7 +135,7 @@
                                 <div class="form-group">
                                     <div class="position-relative">
                                         <div class="form">
-                                            <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                            <textarea class="form-control" placeholder=""
                                                 style="height: 100px" id="prosedur_dan_dokumen"></textarea>
                                         </div>
                                     </div>
@@ -150,7 +151,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                <button type="button" class="btn btn-primary" id="btn-edit-aksesprogram">Simpan</button>
             </div>
         </div>
     </div>

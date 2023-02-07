@@ -225,6 +225,19 @@ header a{
     color: white;
     font-size: 15px;
 }
+.bi-slash-circle{
+    color: white;
+    font-size: 14px;
+}
+.btn-cancel{
+    background-color: red;
+    border: none;
+    color: white;
+}
+.btn-cancel i{
+    font-size: 16px;
+    color: white;
+}
 .btn-primary{
     background-color: #3CADA2;
     border: none;

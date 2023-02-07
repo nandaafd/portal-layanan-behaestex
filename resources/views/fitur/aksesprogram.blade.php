@@ -47,13 +47,62 @@
                                 <tr id="index__{{$ap->id}}">
                                     <td>{{$ap->departemen}}</td>
                                     <td>{{$ap->nama_program}}</td>
-                                    <td><span class="badge bg-success">{{$ap->detailStatus->nama_status}}</span></td>
+                                    @if ($ap->status == 1)
+                                        <td><span class="badge bg-warning">{{$ap->detailStatus->nama_status}}</span></td>
+                                    @elseif ($ap->status == 3)
+                                        <td><span class="badge bg-success">{{$ap->detailStatus->nama_status}}</span></td>
+                                    @elseif ($ap->status == 4)
+                                        <td><span class="badge bg-secondary">{{$ap->detailStatus->nama_status}}</span></td>
+                                    @elseif ($ap->status == 5)
+                                        <td><span class="badge bg-danger">{{$ap->detailStatus->nama_status}}</span></td>
+                                    @elseif ($ap->status == 6)
+                                        <td><span class="badge bg-danger">{{$ap->detailStatus->nama_status}}</span></td>
+                                    @endif
                                     <td>
-                                        <button id="btn-accept-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
-                                        <button id="btn-decline-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
-                                        <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
-                                        <button id="btn-update-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
-                                        <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                        @if (Auth::user()->hak_akses_id == 1)
+                                            @if ($ap->status == 4)
+                                                <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                                <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                            @endif
+                                            @if ($ap->status == 1)
+                                                <button id="btn-accept-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                                <button id="btn-decline-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                                <button id="btn-end-aksesprogram" data-id="{{$ap->id}}" class="btn btn-secondary btn-sm" title="End"><i class="bi bi-slash-circle"></i></button> 
+                                                <button id="btn-cancel-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm btn-cancel" title="Cancel"><i class="bi bi-x-circle"></i></button> 
+                                                <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                                <button id="btn-update-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                                <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                            @endif
+                                            @if ($ap->status == 3)
+                                                <button id="btn-accept-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                                <button id="btn-decline-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                                <button id="btn-end-aksesprogram" data-id="{{$ap->id}}" class="btn btn-secondary btn-sm" title="End"><i class="bi bi-slash-circle"></i></button> 
+                                                <button id="btn-cancel-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm btn-cancel" title="Cancel"><i class="bi bi-x-circle"></i></button> 
+                                                <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                                <button id="btn-update-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                                <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                            @endif
+                                            @if ($ap->status == 5)
+                                                <button id="btn-accept-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
+                                                <button id="btn-decline-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                                <button id="btn-end-aksesprogram" data-id="{{$ap->id}}" class="btn btn-secondary btn-sm" title="End"><i class="bi bi-slash-circle"></i></button> 
+                                                <button id="btn-cancel-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm btn-cancel" title="Cancel"><i class="bi bi-x-circle"></i></button> 
+                                                <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                                <button id="btn-update-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                                <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                            @endif
+                                            @if ($ap->status == 6)
+                                                <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                                <button id="btn-delete-aksesprogram" data-id="{{$ap->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                            @endif
+                                        @else
+                                            @if (Auth::user()->id == $ap->user_id)
+                                                <button id="btn-view-aksesprogram" data-id="{{$ap->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                                <button id="btn-update-aksesprogram" data-id="{{$ap->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                            @endif
+                                        @endif
+                                        
+                                       
                                     </td>
                                 </tr>
                                 @empty
@@ -75,4 +124,7 @@
 @endsection
 @push('js') 
     <script src="{{asset('js/modals/AksesProgram/modal-add.js')}}"></script>
+    <script src="{{asset('js/modals/AksesProgram/modal-edit.js')}}"></script>
+    <script src="{{asset('js/modals/AksesProgram/modal-view.js')}}"></script>
+    <script src="{{asset('js/modals/AksesProgram/delete-aksesprogram.js')}}"></script>
 @endpush
