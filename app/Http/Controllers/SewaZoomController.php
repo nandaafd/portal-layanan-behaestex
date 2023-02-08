@@ -10,11 +10,14 @@ class SewaZoomController extends Controller
 {
 
 
-    public function index(){
+    public function index( Request $request){
+        // return $request->all();
         $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d'))
                             ->orderBy('tanggal', 'asc')->get();
         $sewazoom_today = SewaZoom::with('detailStatus')->where('tanggal', date('Y-m-d'))
                             ->get();
+
+        // return $sewazoom;
         return view('fitur.sewazoom',compact('sewazoom','sewazoom_today'));
     }
 

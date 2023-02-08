@@ -27,6 +27,7 @@
     </div>
 </div>
 <div class="main">
+    
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
@@ -74,10 +75,27 @@
                                     @endif
                                         <td>
                                     @if (Auth::user()->hak_akses_id == 1)
-                                        <button id="btn-edit" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
-                                        <button id="btn-delete" data-id="{{$today->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
-                                        <button id="btn-approve" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
-                                        <button id="btn-decline" data-id="{{$today->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button>
+                                    <button id="btn-status" title="edit status" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">status</button>
+                                    <ul class="dropdown-menu" aria-labelledby="btn-status">
+                                        @if ($today->status == 1)
+                                        <li><button class="dropdown-item" id="btn-approve" data-id="{{$today->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                        <li><button class="dropdown-item" id="btn-decline" data-id="{{$today->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                        <li><button class="dropdown-item" id="btn-end" data-id="{{$today->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                        <li><button class="dropdown-item" id="btn-cancel" data-id="{{$today->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                        @elseif ($today->status == 2)
+                                        <li><button class="dropdown-item" id="btn-decline" data-id="{{$today->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                        <li><button class="dropdown-item" id="btn-end" data-id="{{$today->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                        <li><button class="dropdown-item" id="btn-cancel" data-id="{{$today->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                        @elseif ($today->status == 5)
+                                        <li><button class="dropdown-item" id="btn-approve" data-id="{{$today->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                        <li><button class="dropdown-item" id="btn-end" data-id="{{$today->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                        <li><button class="dropdown-item" id="btn-cancel" data-id="{{$today->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                        @elseif ($today->status == 6)
+                                        <li><button class="dropdown-item" id="btn-end" data-id="{{$sewa->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                        @endif
+                                    </ul>
+                                    <button id="btn-edit" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                    <button id="btn-delete" data-id="{{$today->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
                                     @else
                                         @if(Auth::user()->id == $today->user_id)                                        
                                             <button id="btn-edit" data-id="{{$today->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
@@ -113,10 +131,22 @@
                                     @if (Auth::user()->hak_akses_id == 1)
                                         <button id="btn-status" title="edit status" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">status</button>
                                         <ul class="dropdown-menu" aria-labelledby="btn-status">
+                                            @if ($sewa->status == 1)
                                             <li><button class="dropdown-item" id="btn-approve" data-id="{{$sewa->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
                                             <li><button class="dropdown-item" id="btn-decline" data-id="{{$sewa->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
                                             <li><button class="dropdown-item" id="btn-end" data-id="{{$sewa->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
                                             <li><button class="dropdown-item" id="btn-cancel" data-id="{{$sewa->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                            @elseif ($sewa->status == 2)
+                                            <li><button class="dropdown-item" id="btn-decline" data-id="{{$sewa->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                            <li><button class="dropdown-item" id="btn-end" data-id="{{$sewa->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                            <li><button class="dropdown-item" id="btn-cancel" data-id="{{$sewa->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                            @elseif ($sewa->status == 5)
+                                            <li><button class="dropdown-item" id="btn-approve" data-id="{{$sewa->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                            <li><button class="dropdown-item" id="btn-end" data-id="{{$sewa->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                            <li><button class="dropdown-item" id="btn-cancel" data-id="{{$sewa->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                            @elseif ($sewa->status == 6)
+                                            <li><button class="dropdown-item" id="btn-end" data-id="{{$sewa->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                            @endif
                                         </ul>
                                         <button id="btn-edit" data-id="{{$sewa->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
                                         <button id="btn-delete" data-id="{{$sewa->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
