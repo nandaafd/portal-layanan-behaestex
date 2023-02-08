@@ -11,14 +11,17 @@ class SewaZoomController extends Controller
 
 
     public function index( Request $request){
+        $status = $request->status;
+        $nama = $request->nama;
+        $departemen = $request->departemen;
+        $tanggal = $request->tanggal;
         // return $request->all();
         $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d'))
-                            ->orderBy('tanggal', 'asc')->get();
-        $sewazoom_today = SewaZoom::with('detailStatus')->where('tanggal', date('Y-m-d'))
-                            ->get();
-
+                            ->where('status','like','%'.$status.'%')->where('nama','like','%'.$nama.'%')
+                            ->where('departemen','like','%'.$departemen.'%')->where('tanggal','like','%'.$tanggal.'%')->orderBy('tanggal', 'asc')->get();
+       
         // return $sewazoom;
-        return view('fitur.sewazoom',compact('sewazoom','sewazoom_today'));
+        return view('fitur.sewazoom',compact('sewazoom'));
     }
 
 
@@ -140,7 +143,7 @@ class SewaZoomController extends Controller
         }
         return response()->json([
             'success' => true,
-            'message' => 'Data Berhasil Diupdate!.',
+            'message' => 'Status Berhasil Diubah!',
         ]); 
 
     }

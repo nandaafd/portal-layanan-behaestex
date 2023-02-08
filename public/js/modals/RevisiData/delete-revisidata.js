@@ -4,7 +4,6 @@
 
         let revisidata_id = $(this).data('id');
         let token   = $("meta[name='csrf-token']").attr("content");
-        console.log(revisidata_id)
         Swal.fire({
             title: 'Apakah Kamu Yakin?',
             text: "ingin menghapus data ini!",

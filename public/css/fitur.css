@@ -59,43 +59,24 @@ header a{
     font-size: 12px;
     padding: 3px 7px;
 }
-#btn-hariini{
-    border: none;
-    width: 5rem;
-    margin-top: 5px;
-    height: 1.8rem;
-    font-size: 12px;
+#btn-cari{padding-right: 15px;}
+#btn-cari  i{
+    color: white;
+    margin-right: 5px;
 }
-#btn-semua{
-    border: none;
-    width: 5rem;
-    margin-top: 5px;
-    height: 1.8rem;
-    font-size: 12px;    
-}
-#btn-today-rev{
-    border: none;
-    width: 5rem;
-    margin-top: 5px;
-    height: 1.8rem;
-    font-size: 12px;
-}
-#btn-all-rev{
-    border: none;
-    width: 5rem;
-    margin-top: 5px;
-    height: 1.8rem;
-    font-size: 12px;    
-}
-
 #btn-add-sewazoom{
     background-color: #3CADA2;
     border: none;
     width: 7rem;
-    font-size: 12px;
-    height: 1.8rem;
+    font-size: 14px;
+    height: 2rem;
     margin-top: 5px;
 }
+#btn-status{
+    background-color: rgb(77, 77, 169);
+    border: none;
+}
+#btn-add-sewazoom i{color: white;}
 #btn-add-inventaris{
     background-color: #3CADA2;
     border: none;
@@ -415,12 +396,14 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin-left: 5%;
     margin-top: 5%;
     padding-bottom: 1rem;
+    display: none;
 }
 
 #table-sewazoom-admin_filter label{
     margin-right: 5%;
     margin-top: 5%;
     padding-bottom: 1rem;
+    display: none;
 }
 #table-sewazoom-admin_info{
     padding: 3%;
@@ -433,12 +416,14 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin-left: 5%;
     padding-bottom: 1rem;
     margin-top: 5%;
+    display: none;
 }
 
 #table-sewazoom-user_filter label{
     margin-right: 5%;
     padding-bottom: 1rem;
     margin-top: 5%;
+    display: none;
 }
 #table-sewazoom-user_info{
     padding: 3%;

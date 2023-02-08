@@ -1,14 +1,3 @@
-$('.all').show();
-$('.today').hide();
-$('body').on('click', '#btn-hariini', function() {
-  $('.today').show();
-  $('.all').hide();
-});
-$('body').on('click', '#btn-semua', function() {
-  $('.today').hide();
-  $('.all').show(); 
-});
-
 
 $(document).ready(function () {
     $('#table-sewazoom-admin').DataTable({
