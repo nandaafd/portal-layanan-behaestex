@@ -32,6 +32,41 @@
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <form action="" method="get" class="row row-cols-sm-auto g-1">
+                        <div class="col-sm">
+                            <input class="form-control form-control-sm" type="date" name="tanggal" value="{{$tanggal}}" placeholder="tanggal pengajuan">
+                        </div>
+                        <div class="col-sm">
+                            <div class="input-group">
+                                <select class="form-select form-select-sm" name="status" id="">
+                                    <option value="">Status..</option>
+                                    <option value="1" {{ $status==1? 'selected' : '' }}>waiting</option>
+                                    <option value="3" {{$status==3? 'selected' : ''}}>accepted</option>
+                                    <option value="5" {{$status==5? 'selected' : ''}}>decline</option>
+                                    <option value="4" {{$status==4? 'selected' : ''}}>end</option>
+                                    <option value="6" {{$status==6? 'selected' : ''}}>canceled</option>
+                                </select> 
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="input-group">
+                                <select class="form-select form-select-sm" name="jenis_revisi" id="">
+                                    <option value="">Jenis revisi..</option>
+                                    <option value="Sudah Closing" {{ $jenis_revisi=='Sudah closing'? 'selected' : '' }}>Sudah Closing</option>
+                                    <option value="Belum Closing" {{$jenis_revisi=='Belum closing'? 'selected' : ''}}>Belum Closing</option>
+                                </select> 
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <input class="form-control form-control-sm" type="text" name="nama_data" placeholder="cari nama data.." value="{{$nama_data}}">
+                        </div>  
+                        <div class="col-sm">
+                            <input type="reset" class="btn btn-secodary" value="Reset">
+                            <button class="btn btn-primary btn-sm" id="btn-cari" type="submit"><i class="fas fa-search pe-2"></i>Cari</button>
+                        </div>
+                    </form>
+                </div>
                 <div class="card-content">
                     {{-- Tabel --}}
                     <div class="table-responsive">

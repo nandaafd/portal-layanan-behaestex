@@ -9,9 +9,15 @@ use Illuminate\Support\Facades\Validator;
 class RevisiDataController extends Controller
 {
     //
-    public function index(){
-        $revisidata = RevisiData::with('detailStatus')->orderBy('created_at', 'desc')->get();
-         return view('fitur.revisidata',compact('revisidata'));
+    public function index(Request $request){
+        $status = $request->status;
+        $tanggal = $request->tanggal;
+        $nama_data = $request->nama_data;
+        $jenis_revisi = $request->jenis_revisi;
+        $revisidata = RevisiData::with('detailStatus')->where('status','like','%'.$status.'%')
+                                ->where('tanggal','like','%'.$tanggal.'%')->where('nama_data','like','%'.$nama_data.'%')
+                                ->where('jenis_revisi','like','%'.$jenis_revisi.'%')->orderBy('created_at', 'desc')->get();
+         return view('fitur.revisidata',compact('revisidata','tanggal','nama_data','jenis_revisi','status'));
      }
 
      public function store(Request $request){
