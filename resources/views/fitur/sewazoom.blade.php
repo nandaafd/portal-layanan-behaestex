@@ -1,5 +1,6 @@
 @extends('layouts.main');
 @section('content')
+
 <header class="header d-flex py-2 py-4">
     <div class="container" id="nav-content">
         <div class="row">
@@ -31,28 +32,28 @@
                 <div class="card-header">
                     <form action="" method="get" class="row row-cols-sm-auto g-1">
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="date" name="tanggal">
+                            <input class="form-control form-control-sm" type="date" name="tanggal" value="{{$tanggal}}">
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
                                 <select class="form-select form-select-sm" name="status" id="">
                                     <option value="">Status..</option>
-                                    <option value="1">waiting</option>
-                                    <option value="2">approved</option>
-                                    <option value="5">decline</option>
-                                    <option value="4">end</option>
-                                    <option value="6">canceled</option>
-                                    
-                                </select>
+                                    <option value="1" {{ $status==1? 'selected' : '' }}>waiting</option>
+                                    <option value="2" {{$status==2? 'selected' : ''}}>approved</option>
+                                    <option value="5" {{$status==5? 'selected' : ''}}>decline</option>
+                                    <option value="4" {{$status==4? 'selected' : ''}}>end</option>
+                                    <option value="6" {{$status==6? 'selected' : ''}}>canceled</option>
+                                </select> 
                             </div>
                         </div>
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="text" name="nama" placeholder="cari nama..">
+                            <input class="form-control form-control-sm" type="text" name="nama" placeholder="cari nama.." value="{{$nama}}">
+                        </div>  
+                        <div class="col-sm">
+                            <input class="form-control form-control-sm" type="text" name="departemen" placeholder="cari departemen.." value="{{$departemen}}">
                         </div>
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="text" name="departemen" placeholder="cari departemen..">
-                        </div>
-                        <div class="col-sm">
+                            <input type="reset" class="btn btn-secodary" value="Reset">
                             <button class="btn btn-primary btn-sm" id="btn-cari" type="submit"><i class="fas fa-search pe-2"></i>Cari</button>
                         </div>
                     </form>

@@ -18,10 +18,11 @@ class SewaZoomController extends Controller
         // return $request->all();
         $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d'))
                             ->where('status','like','%'.$status.'%')->where('nama','like','%'.$nama.'%')
-                            ->where('departemen','like','%'.$departemen.'%')->where('tanggal','like','%'.$tanggal.'%')->orderBy('tanggal', 'asc')->get();
+                            ->where('departemen','like','%'.$departemen.'%')->where('tanggal','like','%'.$tanggal.'%')
+                            ->orderBy('tanggal', 'asc')->get();
        
         // return $sewazoom;
-        return view('fitur.sewazoom',compact('sewazoom'));
+        return view('fitur.sewazoom',compact('sewazoom','status','nama','departemen','tanggal'));
     }
 
 

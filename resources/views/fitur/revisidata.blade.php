@@ -65,14 +65,30 @@
                                     @endif
                                     <td>
                                         @if(Auth::user()->hak_akses_id == 1) 
-                                            <button id="btn-accept-rev" data-id="{{$rev->id}}" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
-                                            <button id="btn-decline-rev" data-id="{{$rev->id}}" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
+                                            <button id="btn-status" title="edit status" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">status</button>
+                                            <ul class="dropdown-menu" aria-labelledby="btn-status">
+                                                @if ($rev->status == 1)
+                                                <li><button class="dropdown-item" id="btn-accept-rev" data-id="{{$rev->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                                <li><button class="dropdown-item" id="btn-decline-rev" data-id="{{$rev->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                @elseif ($rev->status == 3)
+                                                <li><button class="dropdown-item" id="btn-decline-rev" data-id="{{$rev->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                @elseif ($rev->status == 5)
+                                                <li><button class="dropdown-item" id="btn-accept-rev" data-id="{{$rev->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                @elseif ($rev->status == 6)
+                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>  
+                                                @elseif ($rev->status == 4)  
+                                                <li style="margin-left:10px;">Status tidak dapat diubah</li>
+                                                @endif
+                                            </ul>
                                             <button id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
-                                            <button id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
-                                            <button id="btn-delete-revisidata" data-id="{{$rev->id}}" class="btn btn-danger btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                                                    </svg>
-                                            </button>
+                                            <button id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                            <button id="btn-delete-revisidata" data-id="{{$rev->id}}" class="btn btn-danger btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
                                         @else
                                             @if(Auth::user()->id === $rev->user_id)
                                                 <button id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>

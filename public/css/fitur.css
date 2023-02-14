@@ -162,6 +162,10 @@ header a{
     color: white;
     font-size: 15px;
 }
+#btn-delete-revisidata > i{
+    color: white;
+    font-size: 15px;
+}
 #btn-delete-aksesinternet > i{
     color: white;
     font-size: 15px;
@@ -175,7 +179,7 @@ header a{
     font-size: 17px;
 }
 #btn-accept-rev > i{
-    color: white;
+    color: green;
     font-size: 17px;
 }
 #btn-accept-inventaris > i{
@@ -195,7 +199,7 @@ header a{
     font-size: 15px;
 }
 #btn-decline-rev > i{
-    color: white;
+    color: red;
     font-size: 15px;
 }
 #btn-decline-internet > i{
@@ -219,7 +223,15 @@ header a{
     font-size: 16px;
     color: rgb(198, 3, 3);
 }
+#btn-cancel-rev i{
+    font-size: 16px;
+    color: rgb(198, 3, 3);
+}
 #btn-end i{
+    font-size: 16px;
+    color: grey;
+}
+#btn-end-rev i{
     font-size: 16px;
     color: grey;
 }
