@@ -242,3 +242,111 @@ $('body').on('click', '#btn-accept-rev', function () {
         })
         
 });
+
+$('body').on('click', '#btn-cancel-rev', function () {
+    let revisidata_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "ingin membatalkan pengajuan ini?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, BATALKAN'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                  //auto refresh page
+                setTimeout(() => {
+                    window.location=window.location;
+                }, 1200);
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/revisidata/${revisidata_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": revisidata_id,
+                        "type": "cancel"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${revisidata_id}`).remove();
+                    }
+                });
+
+                
+            }
+        })
+        
+});
+
+$('body').on('click', '#btn-end-rev', function () {
+    let revisidata_id = $(this).data('id');
+    let token   = $("meta[name='csrf-token']").attr("content");
+    
+        Swal.fire({
+            title: 'Apakah Kamu Yakin',
+            text: "pengajuan ini telah selesai?",
+            icon: 'question',
+            showCancelButton: true,
+            cancelButtonText: 'TIDAK',
+            confirmButtonText: 'YA, SELESAI'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                  //auto refresh page
+                setTimeout(() => {
+                    window.location=window.location;
+                }, 1200);
+                //fetch to delete data
+                $.ajax({
+
+                    url: `/revisidata/${revisidata_id}/update`,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "_token": token,
+                        "id": revisidata_id,
+                        "type": "end"
+                    },
+                    success:function(response){ 
+
+                        //show success message
+                        Swal.fire({
+                            type: 'success',
+                            icon: 'success',
+                            title: `${response.message}`,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            window.location=window.location;
+                        }, 1200);
+
+                        //remove post on table
+                        // $(`#index_${revisidata_id}`).remove();
+                    }
+                });
+
+                
+            }
+        })
+        
+});

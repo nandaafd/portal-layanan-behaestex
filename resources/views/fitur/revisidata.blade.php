@@ -62,6 +62,10 @@
                                         <td><span class="badge bg-success">{{$rev->detailStatus->nama_status}}</span></td>
                                     @elseif ($rev->status ==5)
                                         <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
+                                    @elseif ($rev->status ==4)
+                                        <td><span class="badge bg-secondary">{{$rev->detailStatus->nama_status}}</span></td>
+                                    @elseif ($rev->status ==6)
+                                        <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
                                     @endif
                                     <td>
                                         @if(Auth::user()->hak_akses_id == 1) 

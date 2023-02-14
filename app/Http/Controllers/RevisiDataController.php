@@ -112,6 +112,10 @@ class RevisiDataController extends Controller
             RevisiData::find($request->id)->update(['status'=>3]);
         } elseif($type == "decline") {
             RevisiData::find($request->id)->update(['status'=>5]);
+        }elseif($type == "cancel") {
+            RevisiData::find($request->id)->update(['status'=>6]);
+        }elseif($type == "end") {
+            RevisiData::find($request->id)->update(['status'=>4]);
         }
         return response()->json([
             'success' => true,
