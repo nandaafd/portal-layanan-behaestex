@@ -85,9 +85,15 @@ $('body').on('click','#btn-reset-zoom', function () {
 
 // event listener reset filter revisidata
 $('body').on('click','#btn-reset-rev', function () {
-    console.log('tes');
     $('#filter-namadata-rev').val('')
     $('#filter-tanggal-rev').val('')
     $('#filter-status-rev').prop('selectedIndex',0)
     $('#filter-jenisrevisi-rev').prop('selectedIndex',0)
+})
+
+// event listener reset filter akses internet
+$('body').on('click','#btn-reset-internet', function () {
+    $('#filter-nama-internet').val('')
+    $('#filter-departemen-internet').val('')
+    $('#filter-status-internet').prop('selectedIndex',0)
 })

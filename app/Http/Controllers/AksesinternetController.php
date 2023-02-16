@@ -9,9 +9,14 @@ use Illuminate\Support\Facades\Validator;
 class AksesInternetController extends Controller
 {
     //
-    public function index(){
-        $akses_internet = AksesInternet::with('detailStatus')->orderBy('created_at', 'desc')->get();
-        return view('fitur.aksesinternet',compact('akses_internet'));
+    public function index(Request $request){
+        $nama = $request->nama;
+        $departemen = $request->departemen;
+        $status = $request->status;
+        $akses_internet = AksesInternet::with('detailStatus')->where('nama','like','%'.$nama.'%')
+                        ->where('departemen','like','%'.$departemen.'%')->where('status','like','%'.$status.'%')
+                        ->orderBy('created_at', 'desc')->get();
+        return view('fitur.aksesinternet',compact('akses_internet','nama','departemen','status'));
     }
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
@@ -86,6 +91,12 @@ class AksesInternetController extends Controller
             AksesInternet::find($request->id)->update(['status'=>2]);
         } elseif ($type == "decline") {
             AksesInternet::find($request->id)->update(['status'=>5]);
+        }
+        elseif ($type == "end") {
+            AksesInternet::find($request->id)->update(['status'=>4]);
+        }
+        elseif ($type == "cancel") {
+            AksesInternet::find($request->id)->update(['status'=>6]);
         } 
         return response()->json([
             'success'=>true,

@@ -65,6 +65,8 @@ header a{
 #btn-reset-zoom:hover{background-color: grey; color: white;}
 #btn-reset-rev{background-color: rgb(197, 197, 197); border: none; color:white}
 #btn-reset-rev:hover{background-color: grey; color: white;}
+#btn-reset-internet{background-color: rgb(197, 197, 197); border: none; color:white}
+#btn-reset-internet:hover{background-color: grey; color: white;}
 #btn-cari{padding-right: 15px;}
 #btn-cari  i{
     color: white;
@@ -92,9 +94,12 @@ header a{
 #btn-add-aksesinternet{
     background-color: #3CADA2;
     border: none;
-    width: 7rem;
+    width: 6.2rem;
+    font-size: 14px;
+    height: 2rem;
     margin-top: 5px;
 }
+#btn-add-aksesinternet i{color: white;}
 #btn-add-revisidata{
     background-color: #3CADA2;
     border: none;
@@ -198,7 +203,7 @@ header a{
     font-size: 17px;
 }
 #btn-accept-internet > i{
-    color: white;
+    color: green;
     font-size: 17px;
 }
 #btn-decline > i{
@@ -210,7 +215,7 @@ header a{
     font-size: 15px;
 }
 #btn-decline-internet > i{
-    color: white;
+    color: red;
     font-size: 15px;
 }
 #btn-decline-inventaris > i{
@@ -234,11 +239,19 @@ header a{
     font-size: 16px;
     color: rgb(198, 3, 3);
 }
+#btn-cancel-internet i{
+    font-size: 16px;
+    color: rgb(198, 3, 3);
+}
 #btn-end i{
     font-size: 16px;
     color: grey;
 }
 #btn-end-rev i{
+    font-size: 16px;
+    color: grey;
+}
+#btn-end-internet i{
     font-size: 16px;
     color: grey;
 }
@@ -482,12 +495,14 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin-left: 5%;
     margin-top: 3%;
     padding-bottom: 1rem;
+    display: none;
 }
 
 #table-aksesinternet_filter label{
     margin-right: 5%;
     margin-top: 3%;
     padding-bottom: 1rem;
+    display: none;
 }
 #table-aksesinternet_info{
     padding: 3%;

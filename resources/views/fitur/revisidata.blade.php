@@ -107,22 +107,22 @@
                                             <button id="btn-status" title="edit status" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">status</button>
                                             <ul class="dropdown-menu" aria-labelledby="btn-status">
                                                 @if ($rev->status == 1)
-                                                <li><button class="dropdown-item" id="btn-accept-rev" data-id="{{$rev->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
-                                                <li><button class="dropdown-item" id="btn-decline-rev" data-id="{{$rev->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
-                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                                <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                    <li><button class="dropdown-item" id="btn-accept-rev" data-id="{{$rev->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                                    <li><button class="dropdown-item" id="btn-decline-rev" data-id="{{$rev->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                                    <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                    <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
                                                 @elseif ($rev->status == 3)
-                                                <li><button class="dropdown-item" id="btn-decline-rev" data-id="{{$rev->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
-                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                                <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                    <li><button class="dropdown-item" id="btn-decline-rev" data-id="{{$rev->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                                    <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                    <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
                                                 @elseif ($rev->status == 5)
-                                                <li><button class="dropdown-item" id="btn-accept-rev" data-id="{{$rev->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
-                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                                <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                    <li><button class="dropdown-item" id="btn-accept-rev" data-id="{{$rev->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                                    <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                    <li><button class="dropdown-item" id="btn-cancel-rev" data-id="{{$rev->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
                                                 @elseif ($rev->status == 6)
-                                                <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>  
+                                                    <li><button class="dropdown-item" id="btn-end-rev" data-id="{{$rev->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>  
                                                 @elseif ($rev->status == 4)  
-                                                <li style="margin-left:10px;">Status tidak dapat diubah</li>
+                                                    <li style="margin-left:10px;">Status tidak dapat diubah</li>
                                                 @endif
                                             </ul>
                                             <button id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
