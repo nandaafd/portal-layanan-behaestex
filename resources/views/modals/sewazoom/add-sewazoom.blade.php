@@ -13,7 +13,7 @@
                         <input hidden type="text" name="status" id="status">
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Name</label>
+                                <label>Nama</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
@@ -26,12 +26,12 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label>Departement</label>
+                                <label>Departemen</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Department"
+                                        <input type="text" class="form-control" placeholder="Departemen"
                                             id="add-departemen" name="departemen">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -129,8 +129,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="store" >SIMPAN</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary" id="store" >Daftar</button>
             </div>
         </div>
     </div>

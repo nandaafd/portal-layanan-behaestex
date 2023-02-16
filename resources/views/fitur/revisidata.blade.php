@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
-                                <select class="form-select form-select-sm" name="jenis_revisi" id="">
+                                <select class="form-select form-select-sm" name="jenis_revisi" id="filter-jenisrevisi">
                                     <option value="">Jenis revisi..</option>
                                     <option value="Sudah Closing" {{ $jenis_revisi=='Sudah closing'? 'selected' : '' }}>Sudah Closing</option>
                                     <option value="Belum Closing" {{$jenis_revisi=='Belum closing'? 'selected' : ''}}>Belum Closing</option>
@@ -59,10 +59,10 @@
                             </div>
                         </div>
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="text" name="nama_data" placeholder="cari nama data.." value="{{$nama_data}}">
+                            <input class="form-control form-control-sm" type="text" name="nama_data" placeholder="cari nama data.." value="{{$nama_data}}" id="filter-namadata">
                         </div>  
                         <div class="col-sm">
-                            <input type="reset" class="btn btn-secodary" value="Reset">
+                            <input type="reset" class="btn btn-secodary" value="Reset" id="resrev">
                             <button class="btn btn-primary btn-sm" id="btn-cari" type="submit"><i class="fas fa-search pe-2"></i>Cari</button>
                         </div>
                     </form>
@@ -141,7 +141,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-
+        
                     </div>
 
                 </div>
@@ -149,7 +149,9 @@
         </div>
     </div>
 </div>
-
+<script>
+   
+</script>
 @include('modals.RevisiData.add_revisidata')
 @include('modals.RevisiData.edit_revisidata')
 

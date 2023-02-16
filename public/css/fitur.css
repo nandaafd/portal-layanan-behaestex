@@ -53,12 +53,16 @@ header a{
     margin-left: 2%;
     color: rgb(169, 0, 0); 
 }
-
+.card-header{
+    padding-bottom: 0px;
+}
 /* button */
 #btn-status{
     font-size: 12px;
     padding: 3px 7px;
 }
+#btn-reset-zoom{background-color: rgb(197, 197, 197); color:white}
+#btn-reset-zoom:hover{background-color: grey; color: white;}
 #btn-cari{padding-right: 15px;}
 #btn-cari  i{
     color: white;

@@ -30,15 +30,15 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <form action="" method="get" class="row row-cols-sm-auto g-1">
+                    <form action="" method="get" class="row row-cols-sm-auto g-1" id="reset">
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="date" name="tanggal" value="{{$tanggal}}">
+                            <input class="form-control form-control-sm" type="date" name="tanggal" value="{{$tanggal}}" id="filter-tanggal-zoom">
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
-                                <select class="form-select form-select-sm" name="status" id="">
-                                    <option value="">Status..</option>
-                                    <option value="1" {{ $status==1? 'selected' : '' }}>waiting</option>
+                                <select class="form-select form-select-sm" name="status" id="filter-status-zoom">
+                                    <option value="">status..</option>
+                                    <option value="1" {{$status==1? 'selected' : '' }}>waiting</option>
                                     <option value="2" {{$status==2? 'selected' : ''}}>approved</option>
                                     <option value="5" {{$status==5? 'selected' : ''}}>decline</option>
                                     <option value="4" {{$status==4? 'selected' : ''}}>end</option>
@@ -47,13 +47,13 @@
                             </div>
                         </div>
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="text" name="nama" placeholder="cari nama.." value="{{$nama}}">
+                            <input class="form-control form-control-sm" type="text" name="nama" placeholder="cari nama.." value="{{$nama}}" id="filter-nama-zoom">
                         </div>  
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="text" name="departemen" placeholder="cari departemen.." value="{{$departemen}}">
+                            <input class="form-control form-control-sm" type="text" name="departemen" placeholder="cari departemen.." value="{{$departemen}}" id="filter-departemen-zoom">
                         </div>
                         <div class="col-sm">
-                            <input type="reset" class="btn btn-secodary" value="Reset">
+                            <input type="button" class="btn btn-secodary btn-sm" value="Reset" onclick="" id="btn-reset-zoom">
                             <button class="btn btn-primary btn-sm" id="btn-cari" type="submit"><i class="fas fa-search pe-2"></i>Cari</button>
                         </div>
                     </form>
@@ -144,7 +144,13 @@
         </div>
     </div>
 </div>
-
+<script>
+    function reset() {
+        console.log('cek')
+        $('#namasearch').val('')
+    }
+    
+</script>
 @include('modals.sewazoom.add-sewazoom')
 @include('modals.sewazoom.edit-sewazoom')
 @endsection

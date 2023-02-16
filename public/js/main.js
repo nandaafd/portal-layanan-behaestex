@@ -41,9 +41,6 @@ document.querySelector('.sidebar-hide').addEventListener('click', () => {
     document.querySelector('.header').classList.remove('py-4');
 });
 
-const date = new Date();
-document.getElementById('tb-date').innerHTML = date.toLocaleDateString();
-
 // append
 $(document).ready(function () {
     var max_fields = 10; 
@@ -78,5 +75,9 @@ if (typeof PerfectScrollbar == 'function') {
     });
 }
 
-// Scroll into active sidebar
-document.querySelector('.sidebar-item.active').scrollIntoView(false)
+$('body').on('click','#btn-reset-zoom', function () {
+    $('#filter-nama-zoom').val('')
+    $('#filter-tanggal-zoom').val('')
+    $('#filter-departemen-zoom').val('')
+    $('#filter-status-zoom').prop('selectedIndex',0)
+})
