@@ -63,6 +63,8 @@ header a{
 }
 #btn-reset-zoom{background-color: rgb(197, 197, 197); color:white}
 #btn-reset-zoom:hover{background-color: grey; color: white;}
+#btn-reset-rev{background-color: rgb(197, 197, 197); border: none; color:white}
+#btn-reset-rev:hover{background-color: grey; color: white;}
 #btn-cari{padding-right: 15px;}
 #btn-cari  i{
     color: white;
@@ -71,7 +73,7 @@ header a{
 #btn-add-sewazoom{
     background-color: #3CADA2;
     border: none;
-    width: 7rem;
+    width: 6.2rem;
     font-size: 14px;
     height: 2rem;
     margin-top: 5px;
@@ -96,11 +98,12 @@ header a{
 #btn-add-revisidata{
     background-color: #3CADA2;
     border: none;
-    width: 7rem;
-    font-size: 12px;
-    height: 1.8rem;
+    width: 6.2rem;
+    font-size: 14px;
+    height: 2rem;
     margin-top: 5px;
 }
+#btn-add-revisidata i{color: white;}
 #btn-add-aksesprogram{
     background-color: #3CADA2;
     border: none;
@@ -455,12 +458,14 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin-left: 5%;
     margin-top: 5%;
     padding-bottom: 1rem;
+    display: none;
 }
 
 #table-revisidata_filter label{
     margin-right: 5%;
     margin-top: 5%;
     padding-bottom: 1rem;
+    display: none;
 }
 #table-revisidata_info{
     padding: 3%;

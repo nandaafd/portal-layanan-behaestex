@@ -27,3 +27,12 @@ $('body').on('click', '#btn-view', function () {
         }
     });
 });
+
+// event listener reset filter revisidata
+$('body').on('click','#btn-reset-rev', function () {
+    console.log('tes');
+    $('#filter-namadata-rev').val('')
+    $('#filter-tanggal-rev').val('')
+    $('#filter-status-rev').prop('selectedIndex',0)
+    $('#filter-jenisrevisi-rev').prop('selectedIndex',0)
+})

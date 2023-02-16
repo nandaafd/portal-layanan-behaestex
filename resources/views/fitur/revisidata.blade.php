@@ -23,7 +23,7 @@
         </div>
         <div class="col-3 text-center">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=""
-                id="btn-add-revisidata">Revisi Data</button>
+                id="btn-add-revisidata"><i class="fas fa-plus pe-2"></i>Ajukan</button>
         </div>
     </div>
 </div>
@@ -35,12 +35,12 @@
                 <div class="card-header">
                     <form action="" method="get" class="row row-cols-sm-auto g-1">
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="date" name="tanggal" value="{{$tanggal}}" placeholder="tanggal pengajuan">
+                            <input class="form-control form-control-sm" type="date" name="tanggal" value="{{$tanggal}}" placeholder="tanggal pengajuan" id="filter-tanggal-rev">
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
-                                <select class="form-select form-select-sm" name="status" id="">
-                                    <option value="">Status..</option>
+                                <select class="form-select form-select-sm" name="status" id="filter-status-rev">
+                                    <option value="">status..</option>
                                     <option value="1" {{ $status==1? 'selected' : '' }}>waiting</option>
                                     <option value="3" {{$status==3? 'selected' : ''}}>accepted</option>
                                     <option value="5" {{$status==5? 'selected' : ''}}>decline</option>
@@ -51,18 +51,18 @@
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
-                                <select class="form-select form-select-sm" name="jenis_revisi" id="filter-jenisrevisi">
+                                <select class="form-select form-select-sm" name="jenis_revisi" id="filter-jenisrevisi-rev">
                                     <option value="">Jenis revisi..</option>
-                                    <option value="Sudah Closing" {{ $jenis_revisi=='Sudah closing'? 'selected' : '' }}>Sudah Closing</option>
-                                    <option value="Belum Closing" {{$jenis_revisi=='Belum closing'? 'selected' : ''}}>Belum Closing</option>
+                                    <option value="Sudah Closing" {{ $jenis_revisi=='Sudah Closing'? 'selected' : '' }}>Sudah Closing</option>
+                                    <option value="Belum Closing" {{$jenis_revisi=='Belum Closing'? 'selected' : ''}}>Belum Closing</option>
                                 </select> 
                             </div>
                         </div>
                         <div class="col-sm">
-                            <input class="form-control form-control-sm" type="text" name="nama_data" placeholder="cari nama data.." value="{{$nama_data}}" id="filter-namadata">
+                            <input class="form-control form-control-sm" type="text" name="nama_data" placeholder="cari nama data.." value="{{$nama_data}}" id="filter-namadata-rev">
                         </div>  
                         <div class="col-sm">
-                            <input type="reset" class="btn btn-secodary" value="Reset" id="resrev">
+                            <input type="button" class="btn btn-secodary btn-sm" value="Reset" onclick="" id="btn-reset-rev">
                             <button class="btn btn-primary btn-sm" id="btn-cari" type="submit"><i class="fas fa-search pe-2"></i>Cari</button>
                         </div>
                     </form>

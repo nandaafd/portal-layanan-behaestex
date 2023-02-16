@@ -75,9 +75,19 @@ if (typeof PerfectScrollbar == 'function') {
     });
 }
 
+// event listener reset filter sewazoom
 $('body').on('click','#btn-reset-zoom', function () {
     $('#filter-nama-zoom').val('')
     $('#filter-tanggal-zoom').val('')
     $('#filter-departemen-zoom').val('')
     $('#filter-status-zoom').prop('selectedIndex',0)
+});
+
+// event listener reset filter revisidata
+$('body').on('click','#btn-reset-rev', function () {
+    console.log('tes');
+    $('#filter-namadata-rev').val('')
+    $('#filter-tanggal-rev').val('')
+    $('#filter-status-rev').prop('selectedIndex',0)
+    $('#filter-jenisrevisi-rev').prop('selectedIndex',0)
 })
