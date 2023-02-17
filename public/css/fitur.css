@@ -112,11 +112,12 @@ header a{
 #btn-add-aksesprogram{
     background-color: #3CADA2;
     border: none;
-    width: 7rem;
-    font-size: 12px;
-    height: 1.8rem;
+    width: 6.2rem;
+    font-size: 14px;
+    height: 2rem;
     margin-top: 5px;
 }
+#btn-add-aksesprogram i{color: white;}
 #btn-add-pengembalian{
     padding: 2px 5px;
     font-size: 12px;
@@ -199,7 +200,7 @@ header a{
     font-size: 17px;
 }
 #btn-accept-aksesprogram > i{
-    color: white;
+    color: green;
     font-size: 17px;
 }
 #btn-accept-internet > i{
@@ -223,7 +224,7 @@ header a{
     font-size: 15px;
 }
 #btn-decline-aksesprogram > i{
-    color: white;
+    color: red;
     font-size: 15px;
 }
 .bi-slash-circle{
@@ -243,6 +244,10 @@ header a{
     font-size: 16px;
     color: rgb(198, 3, 3);
 }
+#btn-cancel-aksesprogram i{
+    font-size: 16px;
+    color: rgb(198, 3, 3);
+}
 #btn-end i{
     font-size: 16px;
     color: grey;
@@ -252,6 +257,10 @@ header a{
     color: grey;
 }
 #btn-end-internet i{
+    font-size: 16px;
+    color: grey;
+}
+#btn-end-aksesprogram i{
     font-size: 16px;
     color: grey;
 }
@@ -537,12 +546,14 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin-left: 5%;
     margin-top: 3%;
     padding-bottom: 1rem;
+    display: none;
 }
 
 #table-aksesprogram_filter label{
     margin-right: 5%;
     margin-top: 3%;
     padding-bottom: 1rem;
+    display: none;
 }
 #table-aksesprogram_info{
     padding: 3%;

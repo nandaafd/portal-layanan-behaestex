@@ -7,6 +7,7 @@
             </div>
             <div class="modal-body">
                 <form class="form form-horizontal">
+                    <input type="text" hidden name="user_id" id="add-user_id" value="{{Auth::id()}}">
                     <div class="form-body">
                         <div class="row" id="form-area">
                             <div class="col-md-4">
@@ -16,7 +17,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Name"
-                                            id="first-name-icon">
+                                            id="add-nama" name="nama">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>
@@ -29,8 +30,8 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon">
+                                        <input type="text" class="form-control" placeholder="Department" name="departemen"
+                                            id="add-departemen">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -49,7 +50,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="">
+                                        <input type="date" class="form-control" placeholder="" name="tanggal_pinjam" id="tanggal_pinjam">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -100,7 +101,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="store-inventaris">Submit</button>
             </div>
         </div>
     </div>

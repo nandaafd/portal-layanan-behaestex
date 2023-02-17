@@ -3,10 +3,7 @@ $('body').on('click', '#btn-add-aksesinternet', function(){
 });
 
 $('#store-aksesinternet').click(function(e){
-    setTimeout(() => {
-        window.location=window.location;
-    }, 1200);
-    
+  
     e.preventDefault();
     let user_id =$('#add-user_id').val();
     let nama = $('#add-nama').val();
@@ -32,9 +29,10 @@ $('#store-aksesinternet').click(function(e){
         },
         
         success:function(response){
-          
+            setTimeout(() => {
+                window.location=window.location;
+            }, 1200);       
             //show success message
-
             Swal.fire({
                 type: 'success',
                 icon: 'success',

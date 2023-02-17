@@ -17,9 +17,7 @@ Route::get('/portal', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
-Route::get('/inventaris', function () {
-    return view('fitur.inventaris');
-});
+
 
 Route::post('/proses-login', [LoginController::class, 'proses']);  
 Route::get('login', [LoginController::class, 'index']);
@@ -31,6 +29,8 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
 
 Route::middleware(['isLogin'])->group(function () {
+    Route::resource('inventaris', \App\Http\Controllers\PeminjamanInventarisController::class);
+    Route::resource('profile',\App\Http\Controllers\ProfileController::class);
     Route::resource('/aksesprogram', App\Http\Controllers\AksesProgramController::class);
     Route::post('aksesprogram/{id}/update', 'App\Http\Controllers\AksesProgramController@update_status');
     Route::resource('/aksesinternet',App\Http\Controllers\AksesInternetController::class);

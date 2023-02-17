@@ -34,7 +34,7 @@ $('#btn-edit-aksesinternet').click(function(e){
     setTimeout(() => {
         window.location=window.location;
     }, 2200);
-
+    
     $.ajax({
         url: `/aksesinternet/${internet_id}`,
         type: "PUT",

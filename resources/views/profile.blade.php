@@ -1,6 +1,9 @@
 @extends('layouts.main');
 
 @section('content')
+@forelse ($profile as $data)
+    
+
 <div class="container bootstrap snippets bootdey">
     <div class="panel-body inf-content">
         <div class="row">
@@ -15,7 +18,7 @@
                 </ul>
             </div>
             <div class="col-md-6">
-                <strong>Information</strong><br>
+                <strong>Profile</strong><br>
                 <div class="table-responsive">
                 <table class="table table-user-information">
                     <tbody>
@@ -23,11 +26,11 @@
                             <td>
                                 <strong>
                                     <span class="glyphicon glyphicon-asterisk text-primary"></span>
-                                    Identificacion                                                
+                                    ID                                                
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                123456789     
+                                {{Auth::id()}}     
                             </td>
                         </tr>
                         <tr>    
@@ -38,7 +41,7 @@
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                Bootdey     
+                                 
                             </td>
                         </tr>
                         <tr>        
@@ -116,5 +119,9 @@
             </div>
         </div>
     </div>
-    </div>                                        
+    </div>   
+    
+    @empty
+    
+@endforelse
 @endsection

@@ -30,8 +30,30 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="tb-tittle">Daftar peminjam inventaris</h4>
-                    <h5 class="card-subtitle" id="">{{date('d-m-Y')}}</h5>
+                    {{-- <form action="" method="get" class="row row-cols-sm-auto g-1">
+                        <div class="col-sm">
+                            <div class="input-group">
+                                <select class="form-select form-select-sm" name="status" id="filter-status-internet">
+                                    <option value="">status..</option>
+                                    <option value="1" {{$status==1? 'selected' : '' }}>waiting</option>
+                                    <option value="3" {{$status==2? 'selected' : ''}}>approved</option>
+                                    <option value="5" {{$status==5? 'selected' : ''}}>decline</option>
+                                    <option value="4" {{$status==4? 'selected' : ''}}>end</option>
+                                    <option value="6" {{$status==6? 'selected' : ''}}>canceled</option>
+                                </select> 
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <input class="form-control form-control-sm" type="text" name="nama" placeholder="cari nama.." value="{{$nama_program}}" id="filter-nama-internet">
+                        </div>
+                        <div class="col-sm">
+                            <input class="form-control form-control-sm" type="text" name="departemen" placeholder="cari departemen.." value="{{$departemen}}" id="filter-departemen-internet">
+                        </div>  
+                        <div class="col-sm">
+                            <input type="button" class="btn btn-secodary btn-sm" value="Reset" onclick="" id="btn-reset-internet">
+                            <button class="btn btn-primary btn-sm" id="btn-cari" type="submit"><i class="fas fa-search pe-2"></i>Cari</button>
+                        </div>
+                    </form> --}}
                 </div>
                 <div class="card-content">
 
@@ -51,12 +73,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse ($inventaris as $data)
+                                    
+                               
                                 <tr id="index">
-                                    <td class="text-bold-500"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="text-bold-500">{{$data->nama}}</td>
+                                    <td>{{$data->departemen}}</td>
+                                    <td>item</td>
+                                    <td>{{$data->tanggal_pinjam}}</td>
+                                    <td>{{$data->tanggal_dikembalikan}}</td>
                                     <td><span class="badge bg-warning">tes</span></td>
                                     <td>
                                         <button id="btn-kembalikan" data-id="" class="btn btn-warning btn-sm" title="Kembalikan"><i class="bi bi-capslock-fill"></i></button>
@@ -66,6 +91,9 @@
                                         <button id="btn-delete-inventaris" data-id="" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </td>                                       
                                 </tr>
+                                @empty
+                                    
+                                @endforelse
                             </tbody>
                         </table>
 

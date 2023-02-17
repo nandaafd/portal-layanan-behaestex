@@ -9,9 +9,15 @@ use Illuminate\Support\Facades\Validator;
 class AksesProgramController extends Controller
 {
     //
-    public function index(){
-        $akses_program = AksesProgram::with('detailStatus')->orderBy('created_at','desc')->get();
-        return view('fitur.aksesprogram',compact('akses_program'));
+    public function index(Request $request){
+        
+        $departemen = $request->departemen;
+        $status = $request->status;
+        $nama_program = $request->nama_program;
+        $akses_program = AksesProgram::with('detailStatus')->where('nama_program','like','%'.$nama_program.'%')
+                        ->where('departemen','like','%'.$departemen.'%')->where('status','like','%'.$status.'%')
+                        ->orderBy('created_at','desc')->get();
+        return view('fitur.aksesprogram',compact('akses_program','departemen','status','nama_program'));
     }
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
@@ -41,6 +47,7 @@ class AksesProgramController extends Controller
             'fitur'=>$request->fitur,
             'prosedur_dan_dokumen'=>$request->prosedur_dan_dokumen
         ]);
+        // return $request->all();
         return response()->json([
             'success'=>true,
             'message'=>'Pengajuan Berhasil Ditambah',

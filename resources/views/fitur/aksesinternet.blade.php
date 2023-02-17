@@ -21,7 +21,7 @@
             <h1 id="tittle">Pengajuan Akses internet</h1>
         </div>
         <div class="col-3 text-center">
-            <a href="" class="btn btn-primary" id="btn-add-aksesinternet"><i class="fas fa-plus pe-2"></i>Ajukan</a>
+            <button class="btn btn-primary" id="btn-add-aksesinternet"><i class="fas fa-plus pe-2"></i>Ajukan</button>
         </div>
     </div>
 </div>
@@ -36,7 +36,7 @@
                             <div class="input-group">
                                 <select class="form-select form-select-sm" name="status" id="filter-status-internet">
                                     <option value="">status..</option>
-                                    <option value="1" {{ $status==1? 'selected' : '' }}>waiting</option>
+                                    <option value="1" {{$status==1? 'selected' : '' }}>waiting</option>
                                     <option value="2" {{$status==2? 'selected' : ''}}>approved</option>
                                     <option value="5" {{$status==5? 'selected' : ''}}>decline</option>
                                     <option value="4" {{$status==4? 'selected' : ''}}>end</option>

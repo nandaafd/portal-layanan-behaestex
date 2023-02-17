@@ -27,7 +27,7 @@
         <li class="sidebar-title">Menu</li>
         
         <li
-            class="sidebar-item">
+            class="sidebar-item {{ request()->is('inventaris') ? 'active':'' }}"">
             <a href="{{asset('/inventaris')}}" class='sidebar-link active'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
                     <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
@@ -37,7 +37,7 @@
             </a>
         </li>
         <li
-            class="sidebar-item">
+            class="sidebar-item {{ request()->is('revisidata') ? 'active':'' }}">
             <a href="{{url('/revisidata')}}" class='sidebar-link'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
                     <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
@@ -48,7 +48,7 @@
             </a>
         </li>
         <li
-            class="sidebar-item">
+            class="sidebar-item {{ (request()->is('aksesprogram')) ? 'active':'' }}">
             <a href="{{url('/aksesprogram')}}" class='sidebar-link'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-terminal" viewBox="0 0 16 16">
                     <path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/>
@@ -58,7 +58,7 @@
             </a>
         </li>
         <li
-            class="sidebar-item">
+            class="sidebar-item {{ request()->is('sewazoom') ? 'active':'' }}"">
             <a href="{{url('/sewazoom')}}" class="sidebar-link {{Request::is('/sewazoom') ? 'active' : ''}}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
@@ -67,7 +67,7 @@
             </a>
         </li>
         <li
-            class="sidebar-item">
+            class="sidebar-item {{ request()->is('aksesinternet') ? 'active':'' }}"">
             <a href="{{url('/aksesinternet')}}" class='sidebar-link'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-router" viewBox="0 0 16 16">
                     <path d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707Z"/>

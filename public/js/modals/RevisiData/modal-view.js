@@ -1,8 +1,6 @@
 
 $('body').on('click', '#btn-view', function () {
-//    $('input').attr('readonly', true);
     let id = $(this).data('id');
-
     //fetch detail post with ajax
     $.ajax({
         url: `/revisidata/${id}`,

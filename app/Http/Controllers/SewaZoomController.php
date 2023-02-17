@@ -15,7 +15,6 @@ class SewaZoomController extends Controller
         $nama = $request->nama;
         $departemen = $request->departemen;
         $tanggal = $request->tanggal;
-        // return $request->all();
         $sewazoom = SewaZoom::with('detailStatus')->where('tanggal','>=', date('Y-m-d'))
                             ->where('status','like','%'.$status.'%')->where('nama','like','%'.$nama.'%')
                             ->where('departemen','like','%'.$departemen.'%')->where('tanggal','like','%'.$tanggal.'%')
