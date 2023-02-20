@@ -23,4 +23,10 @@ class PeminjamanInventaris extends Model
     public function MasterInventaris(){
         return $this->hasMany(MasterInventaris::class, 'nama_barang','master_inventaris');
     }
+    public function detailStatus(){
+        return $this->hasOne(Status::class, 'id','status');
+    }
+    public function itemPeminjaman(){
+        return $this->hasOne(itemPeminjaman::class, 'master_inventaris_id');
+    }
 }

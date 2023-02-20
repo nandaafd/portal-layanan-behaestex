@@ -73,17 +73,9 @@
                                     <div class="input-group mb-3">
                                         <select class="form-select" id="inputGroupSelect02" name="mytext[]">
                                             <option selected>Pilih inventaris...</option>
-                                            <option value="Proyektor">Proyektor</option>
-                                            <option value="Laptop">Laptop</option>
-                                            <option value="Tablet">Tablet</option>
-                                            <option value="Keyboard">Keyboard</option>
-                                            <option value="Mouse">Mouse</option>
-                                            <option value="Scanner">Scanner</option>
-                                            <option value="Monitor">Monitor</option>
-                                            <option value="Converter HDMI to VGA">Converter HDMI to VGA</option>
-                                            <option value="Converter VGA to HDMI">Converter VGA to HDMI</option>
-                                            <option value="Kabel HDMI">Kabel HDMI</option>
-                                            <option value="Charger laptop">Charger laptop</option>
+                                            @foreach ($master_inventaris as $master)
+                                            <option value="{{$master->id}}">{{$master->nama_barang}}</option>
+                                            @endforeach
                                         </select>
 
                                     </div>

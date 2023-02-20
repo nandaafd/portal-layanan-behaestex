@@ -1,8 +1,6 @@
 @extends('layouts.main');
 
 @section('content')
-@forelse ($profile as $data)
-    
 
 <div class="container bootstrap snippets bootdey">
     <div class="panel-body inf-content">
@@ -41,7 +39,7 @@
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                 
+                                 {{Auth::user()->nama}}
                             </td>
                         </tr>
                         <tr>        
@@ -121,7 +119,4 @@
     </div>
     </div>   
     
-    @empty
-    
-@endforelse
 @endsection
