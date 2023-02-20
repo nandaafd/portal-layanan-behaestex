@@ -8,6 +8,7 @@ $('#store-inventaris').click(function(e) {
     let departemen = $('#add-departemen').val();
     let tanggal_pinjam = $('#tanggal_pinjam').val();
     let tanggal_dikembalikan = $('#tanggal_dikembalikan').val();
+    let item_inventaris = $('#item_inventaris').val();
     let token = $("meta[name='csrf-token']").attr("content");
     $.ajax({
         url: `/inventaris`,
@@ -19,6 +20,7 @@ $('#store-inventaris').click(function(e) {
             'departemen':departemen,
             'tanggal_pinjam':tanggal_pinjam,
             'tanggal_dikembalikan':tanggal_dikembalikan,
+            'item[]':item_inventaris,
       
             "_token": token
         }, 

@@ -43,24 +43,25 @@ document.querySelector('.sidebar-hide').addEventListener('click', () => {
 
 // append
 $(document).ready(function () {
-    var max_fields = 10; 
+    var max_fields = 5; 
     var wrapper = $("#form-area"); 
     var add_button = $(".add_field_button"); 
 
     var x = 1; 
     $(add_button).click(function (e) { 
         e.preventDefault();
-        if (x < max_fields) { 
+        if (x <= max_fields) { 
             x++;
-            $(wrapper).append('<div class="col-md-4" id="opsi-a"><label></label></div><div class="col-md-8" id="opsi-b"><div class="form-group has-icon-right"><div class="input-group mb-3"><select class="form-select" id="inputGroupSelect02" name="mytext[]"><option selected>Pilih inventaris...</option><option value="Proyektor">Proyektor</option><option value="Laptop">Laptop</option><option value="Tablet">Tablet</option><option value="Keyboard">Keyboard</option><option value="Mouse">Mouse</option><option value="Scanner">Scanner</option><option value="Monitor">Monitor</option><option value="Converter HDMI to VGA">Converter HDMI to VGA</option> <option value="Converter VGA to HDMI">Converter VGA to HDMI</option><option value="Kabel HDMI">Kabel HDMI</option><option value="Charger laptop">Charger laptop</option></select><i class="bi bi-x-circle-fill"></i></div></div></div>'); //add input box
+            $(wrapper).append($('#append-area').html()); //add input box
            
+        }else{
+            alert('Item yang anda pinjam mencapai batas maksimal')
         }
     }); 
 
     
     $(wrapper).on("click", ".bi-x-circle-fill", function (e) { //user click on remove text
-        $("#opsi-a").remove()
-        $("#opsi-b").remove()
+        $("#opsi").remove()
     })
 });
 

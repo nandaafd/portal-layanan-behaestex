@@ -19,6 +19,7 @@ class PeminjamanInventarisController extends Controller
         return view('fitur.inventaris', compact('inventaris', 'master_inventaris','item_peminjaman'));
     }
     public function store(Request $request){
+        // return $request->all();
         $validator = Validator::make($request->all(),[
             'user_id' => 'required',
             'nama' => 'required',
@@ -35,7 +36,16 @@ class PeminjamanInventarisController extends Controller
             'tanggal_pinjam' => $request->tanggal_pinjam,
             'tanggal_dikembalikan' => $request->tanggal_dikembalikan,
         ]);
-        
+        // $data = PeminjamanInventaris::create($request->all());
+        $id = $peminjaman_inventaris->id;
+        foreach ($request->item as $key => $value) {
+            ItemPeminjaman::create([
+                'peminjaman_id' =>$id,
+                'master_inventaris_id'=>$value
+            ]);
+        }
+        // $data = 'asu';
+        // return $data;
         return response()->json([
             'success'=>true,
             'message'=>'Success',
