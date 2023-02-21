@@ -13,7 +13,7 @@ class PeminjamanInventarisController extends Controller
     //
     public function index(Request $request){
         // return $request->all();
-        $inventaris = PeminjamanInventaris::with('detailStatus')->get();
+        $inventaris = PeminjamanInventaris::with('detailStatus')->with('itemPeminjaman')->get();
         $master_inventaris = MasterInventaris::all();
         $item_peminjaman = ItemPeminjaman::all();
         return view('fitur.inventaris', compact('inventaris', 'master_inventaris','item_peminjaman'));
@@ -36,7 +36,6 @@ class PeminjamanInventarisController extends Controller
             'tanggal_pinjam' => $request->tanggal_pinjam,
             'tanggal_dikembalikan' => $request->tanggal_dikembalikan,
         ]);
-        // $data = PeminjamanInventaris::create($request->all());
         $id = $peminjaman_inventaris->id;
         foreach ($request->item as $key => $value) {
             ItemPeminjaman::create([
@@ -44,12 +43,36 @@ class PeminjamanInventarisController extends Controller
                 'master_inventaris_id'=>$value
             ]);
         }
-        // $data = 'asu';
-        // return $data;
+
         return response()->json([
             'success'=>true,
             'message'=>'Success',
             'data'=>$peminjaman_inventaris
         ]);
     }
+    public function show($id){
+       $data = PeminjamanInventaris::find($id);
+       $item = ItemPeminjaman::where('peminjaman_id',$data->id)->first();
+       return response()->json([
+        'success' => true,
+        'message' => 'detail data',
+        'data'=> [$data, $item]
+       ]);
+    }
+    public function update(Request $request, PeminjamanInventaris $peminjaman_inventaris, ItemPeminjaman $item_peminjaman){
+        $peminjaman_inventaris->find($request->id)->update([
+            'nama'=>$request->nama,
+            'departemen'=>$request->departemen,
+            'tanggal_pinjam'=>$request->tanggal_pinjam
+        ]);
+        $item_peminjaman->where('peminjaman_id',$peminjaman_inventaris->id)->update([
+            'master_inventaris_id'=>$request->item_peminjaman
+        ]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Data Berhasil Diudapte!',
+            'data'    => [$peminjaman_inventaris, $item_peminjaman]  
+        ]);
+    }
+
 }

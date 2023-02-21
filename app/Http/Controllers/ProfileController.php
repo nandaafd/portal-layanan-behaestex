@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function index(){
-        $profile = User::all();
+        $profile = User::select('nama')->select('id')->first();
         return view('profile', compact('profile'));
     }
 }

@@ -27,6 +27,6 @@ class PeminjamanInventaris extends Model
         return $this->hasOne(Status::class, 'id','status');
     }
     public function itemPeminjaman(){
-        return $this->hasOne(itemPeminjaman::class, 'master_inventaris_id');
+        return $this->hasMany(itemPeminjaman::class, 'master_inventaris_id','item_peminjaman');
     }
 }

@@ -7,16 +7,17 @@
             </div>
             <div class="modal-body">
                 <form class="form form-horizontal">
+                    <input type="text" hidden name="user_id" id="user_id" value="{{Auth::id()}}">
                     <div class="form-body">
                         <div class="row" id="form-area">
                             <div class="col-md-4">
-                                <label>Name</label>
+                                <label>Nama</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Name"
-                                            id="first-name-icon">
+                                        <input type="text" name="nama" class="form-control" placeholder="Name"
+                                            id="nama">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>
@@ -30,7 +31,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" placeholder="Department"
-                                            id="first-name-icon">
+                                            id="departemen" name="departemen">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
@@ -49,7 +50,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" class="form-control" placeholder="">
+                                        <input type="date" name="tanggal_dipinjam" id="tanggal_dipinjam" class="form-control" placeholder="">
                                         <div class="form-control-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -70,21 +71,13 @@
                                 {{-- <label for="mytext[]">Item Inventaris</label> --}}
                                 <div class="form-group has-icon-right">
                                     <div class="input-group mb-3">
-                                        <select class="form-select" id="inputGroupSelect02" name="mytext[]">
-                                            <option selected>Pilih inventaris...</option>
-                                            <option value="Proyektor">Proyektor</option>
-                                            <option value="Laptop">Laptop</option>
-                                            <option value="Tablet">Tablet</option>
-                                            <option value="Keyboard">Keyboard</option>
-                                            <option value="Mouse">Mouse</option>
-                                            <option value="Scanner">Scanner</option>
-                                            <option value="Monitor">Monitor</option>
-                                            <option value="Converter HDMI to VGA">Converter HDMI to VGA</option>
-                                            <option value="Converter VGA to HDMI">Converter VGA to HDMI</option>
-                                            <option value="Kabel HDMI">Kabel HDMI</option>
-                                            <option value="Charger laptop">Charger laptop</option>
+                                        <select class="form-select" id="item" name="item[]">
+                                            @foreach ($master_inventaris as $master)
+                                                <option value="{{$master->id}}">{{$master->nama_barang}}</option>
+                                            @endforeach
                                         </select>
-
+                                        
+                                        {{-- <input type="text" name="item_peminjaman" id="item"> --}}
                                     </div>
                                 </div>
                             </div>

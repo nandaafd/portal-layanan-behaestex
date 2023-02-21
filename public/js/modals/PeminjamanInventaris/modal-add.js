@@ -8,8 +8,14 @@ $('#store-inventaris').click(function(e) {
     let departemen = $('#add-departemen').val();
     let tanggal_pinjam = $('#tanggal_pinjam').val();
     let tanggal_dikembalikan = $('#tanggal_dikembalikan').val();
-    let item_inventaris = $('#item_inventaris').val();
+    let item_inventaris = $('.pilihan').val();
     let token = $("meta[name='csrf-token']").attr("content");
+    let arr = [];
+    $('.pilihan').each(function(){
+        arr.push($(this).val())
+    })
+    let resItem = arr.pop();
+    console.log(arr);
     $.ajax({
         url: `/inventaris`,
         type: "POST",
@@ -20,8 +26,7 @@ $('#store-inventaris').click(function(e) {
             'departemen':departemen,
             'tanggal_pinjam':tanggal_pinjam,
             'tanggal_dikembalikan':tanggal_dikembalikan,
-            'item[]':item_inventaris,
-      
+            'item[]':arr,
             "_token": token
         }, 
         success:function(response) {

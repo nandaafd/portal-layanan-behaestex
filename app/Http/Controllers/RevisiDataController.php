@@ -66,7 +66,6 @@ class RevisiDataController extends Controller
 
      public function update(Request $request, $id, RevisiData $revisidata)
      {
-        // return 'asu';
          //define validation rules
          $validator = Validator::make($request->all(), [
              'jenis_revisi'=>'required',

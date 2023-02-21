@@ -63,7 +63,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="row" id="append"> --}}
                             <div class="col-md-4" id="">
                                 <label>Item Inventaris</label>
                             </div>
@@ -71,7 +70,7 @@
                                 {{-- <label for="mytext[]">Item Inventaris</label> --}}
                                 <div class="form-group has-icon-right">
                                     <div class="input-group mb-3" id="">
-                                        <select class="form-select" id="item_inventaris" name="item[]">
+                                        <select class="form-select pilihan" name="item[]">
                                             <option  selected>Pilih inventaris...</option>
                                             @foreach ($master_inventaris as $master)
                                                 <option value="{{$master->id}}">{{$master->nama_barang}}</option>
@@ -79,35 +78,27 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4" id="">
-                                <label></label>
-                            </div>
-                            <div class="col-md-8" id="">
-                                {{-- <label for="mytext[]">Item Inventaris</label> --}}
-                                <div class="form-group has-icon-right">
-                                    <div class="input-group mb-3" id="opsi">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            </div> 
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8" id="append-area"></div>                   
                         </div>
                     </div>
                 </form>
-                <div class="row" id="append-area" hidden>  
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8" class="d-none" id="">
-                        <select class="form-select" id="item_inventaris" name="item[]">
-                            <option selected>Pilih inventaris...</option>
-                            @foreach ($master_inventaris as $master)
-                                <option value="{{$master->id}}">{{$master->nama_barang}}</option>
-                            @endforeach
-                        </select>
-                        <i class="bi bi-x-circle-fill"></i>
-                    </div>                               
+                <div class="row" id="append-item" hidden>  
+                    <div class="" id="append-b">
+                        <div class="form-group has-icon-right">
+                            <div class="input-group mb-3" id="">
+                                <select class="form-select pilihan" name="item[]">
+                                    <option >Pilih inventaris...</option>
+                                    @foreach ($master_inventaris as $master)
+                                        <option value="{{$master->id}}">{{$master->nama_barang}}</option>
+                                    @endforeach
+                                </select>
+                                <i class="bi bi-x-circle-fill"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="col-12 d-flex justify-content-end btn-action">
                     <button type="" class="btn btn-primary me-1 mb-1 add_field_button" id="btn-tambah">tambah
                         opsi</button>

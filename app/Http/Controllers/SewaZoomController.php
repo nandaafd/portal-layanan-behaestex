@@ -112,7 +112,6 @@ class SewaZoomController extends Controller
          //return response
          return response()->json([
              'success' => true,
-             
              'message' => 'Data Berhasil Diudapte!',
              'data'    => $sewazoom  
          ]);

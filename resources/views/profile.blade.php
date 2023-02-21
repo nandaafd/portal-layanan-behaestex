@@ -28,7 +28,7 @@
                                 </strong>
                             </td>
                             <td class="text-primary">
-                                {{Auth::id()}}     
+                                {{$profile->id}}     
                             </td>
                         </tr>
                         <tr>    

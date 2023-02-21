@@ -79,7 +79,7 @@
                                 <tr id="index">
                                     <td class="text-bold-500">{{$data->nama}}</td>
                                     <td>{{$data->departemen}}</td>
-                                    <td></td>  
+                                    <td></td>
                                     <td>{{$data->tanggal_pinjam}}</td>
                                     <td>{{$data->tanggal_dikembalikan}}</td>
                                     <td><span class="badge bg-warning">{{$data->detailStatus->nama_status}}</span></td>
@@ -87,7 +87,7 @@
                                         <button id="btn-kembalikan" data-id="" class="btn btn-warning btn-sm" title="Kembalikan"><i class="bi bi-capslock-fill"></i></button>
                                         <button id="btn-accept-inventaris" data-id="" class="btn btn-primary btn-sm" title="Approve"><i class="bi bi-check"></i></button>
                                         <button id="btn-decline-inventaris" data-id="" class="btn btn-danger btn-sm" title="Decline"><i class="bi bi-x"></i></button> 
-                                        <button id="btn-update-inventaris" data-id="" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
+                                        <button id="btn-update-inventaris" data-id="{{$data->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
                                         <button id="btn-delete-inventaris" data-id="" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </td>                                       
                                 </tr>
@@ -108,4 +108,5 @@
 @endsection
 @push('js')
     <script src="{{asset('js/modals/PeminjamanInventaris/modal-add.js')}}"></script>
+    <script src="{{asset('js/modals/PeminjamanInventaris/modal-edit.js')}}"></script>
 @endpush

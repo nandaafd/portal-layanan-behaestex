@@ -44,24 +44,19 @@ document.querySelector('.sidebar-hide').addEventListener('click', () => {
 // append
 $(document).ready(function () {
     var max_fields = 5; 
-    var wrapper = $("#form-area"); 
+    var wrapper = $("#append-area"); 
     var add_button = $(".add_field_button"); 
 
     var x = 1; 
     $(add_button).click(function (e) { 
         e.preventDefault();
-        if (x <= max_fields) { 
-            x++;
-            $(wrapper).append($('#append-area').html()); //add input box
-           
-        }else{
-            alert('Item yang anda pinjam mencapai batas maksimal')
-        }
+            $(wrapper).append($('#append-item').html());
+             //add input box
     }); 
 
     
     $(wrapper).on("click", ".bi-x-circle-fill", function (e) { //user click on remove text
-        $("#opsi").remove()
+        $(this).parent('div').remove();
     })
 });
 
