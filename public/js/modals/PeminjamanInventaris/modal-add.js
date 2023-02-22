@@ -10,12 +10,13 @@ $('#store-inventaris').click(function(e) {
     let tanggal_dikembalikan = $('#tanggal_dikembalikan').val();
     let item_inventaris = $('.pilihan').val();
     let token = $("meta[name='csrf-token']").attr("content");
-    let arr = [];
+    arr = [];
     $('.pilihan').each(function(){
         arr.push($(this).val())
     })
     let resItem = arr.pop();
     console.log(arr);
+
     $.ajax({
         url: `/inventaris`,
         type: "POST",
@@ -74,3 +75,4 @@ $('#store-inventaris').click(function(e) {
         
     })
 })
+

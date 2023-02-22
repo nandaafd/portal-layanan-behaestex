@@ -52,7 +52,7 @@ class PeminjamanInventarisController extends Controller
     }
     public function show($id){
        $data = PeminjamanInventaris::find($id);
-       $item = ItemPeminjaman::where('peminjaman_id',$data->id)->first();
+       $item = ItemPeminjaman::where('peminjaman_id',$data->id)->get();
        return response()->json([
         'success' => true,
         'message' => 'detail data',
