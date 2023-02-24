@@ -74,57 +74,82 @@
                             </thead>
                             <tbody>
                                 @forelse ($akses_internet as $ai)
-
-                                <tr id="index__{{$ai->id}}">
-                                    <td>{{$ai->nama}}</td>
-                                    <td>{{$ai->departemen}}</td>
-                                    <td>{{$ai->jabatan}}</td>
-                                    <td>{{$ai->keperluan_email}}</td>
-                                    <td>{{$ai->keperluan_browsing}}</td>
-                                    @if($ai->status === 1)
-                                        <td><span class="badge bg-warning">{{$ai->detailStatus->nama_status}}</span></td>
-                                    @elseif ($ai->status === 2)
-                                        <td><span class="badge bg-success">{{$ai->detailStatus->nama_status}}</span></td>
-                                    @elseif($ai->status === 5)
-                                        <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
-                                    @elseif($ai->status === 4)
-                                        <td><span class="badge bg-secondary">{{$ai->detailStatus->nama_status}}</span></td>
-                                    @elseif($ai->status === 6)
-                                        <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
-                                    @endif
-                                    
-                                    <td>
-                                        @if(Auth::user()->hak_akses_id == 1)
-                                        <button id="btn-status" title="edit status" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">status</button>
-                                        <ul class="dropdown-menu" aria-labelledby="btn-status">
-                                            @if ($ai->status == 1)
-                                                <li><button class="dropdown-item" id="btn-accept-internet" data-id="{{$ai->id}}"><i class="fas fa-check pe-2"></i>Approve</button></li>
-                                                <li><button class="dropdown-item" id="btn-decline-internet" data-id="{{$ai->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
-                                                <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                                <li><button class="dropdown-item" id="btn-cancel-internet" data-id="{{$ai->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
-                                            @elseif ($ai->status == 2)
-                                                <li><button class="dropdown-item" id="btn-decline-internet" data-id="{{$ai->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
-                                                <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                                <li><button class="dropdown-item" id="btn-cancel-internet" data-id="{{$ai->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
-                                            @elseif ($ai->status == 5)
-                                                <li><button class="dropdown-item" id="btn-accept-internet" data-id="{{$ai->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
-                                                <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                                <li><button class="dropdown-item" id="btn-cancel-internet" data-id="{{$ai->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
-                                            @elseif ($ai->status == 6)
-                                                <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
-                                            @elseif ($ai->status == 4)  
-                                                <li style="margin-left:10px;">Status tidak dapat diubah</li>
-                                            @endif
-                                        </ul>
-                                            <button id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
-                                            <button id="btn-delete-aksesinternet" data-id="{{$ai->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                                        @else
-                                            @if($ai->user_id === Auth::id())
+                                @if (Auth::user()->hak_akses_id == 1)
+                                    <tr id="index__{{$ai->id}}">
+                                        <td>{{$ai->nama}}</td>
+                                        <td>{{$ai->departemen}}</td>
+                                        <td>{{$ai->jabatan}}</td>
+                                        <td>{{$ai->keperluan_email}}</td>
+                                        <td>{{$ai->keperluan_browsing}}</td>
+                                        @if($ai->status === 1)
+                                            <td><span class="badge bg-warning">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif ($ai->status === 2)
+                                            <td><span class="badge bg-success">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif($ai->status === 5)
+                                            <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif($ai->status === 4)
+                                            <td><span class="badge bg-secondary">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif($ai->status === 6)
+                                            <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @endif
+                                        
+                                        <td>
+                                            @if(Auth::user()->hak_akses_id == 1)
+                                            <button id="btn-status" title="edit status" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">status</button>
+                                            <ul class="dropdown-menu" aria-labelledby="btn-status">
+                                                @if ($ai->status == 1)
+                                                    <li><button class="dropdown-item" id="btn-accept-internet" data-id="{{$ai->id}}"><i class="fas fa-check pe-2"></i>Approve</button></li>
+                                                    <li><button class="dropdown-item" id="btn-decline-internet" data-id="{{$ai->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                                    <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                    <li><button class="dropdown-item" id="btn-cancel-internet" data-id="{{$ai->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                @elseif ($ai->status == 2)
+                                                    <li><button class="dropdown-item" id="btn-decline-internet" data-id="{{$ai->id}}"><i class="fas fa-ban pe-2"></i>Decline</button></li>
+                                                    <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                    <li><button class="dropdown-item" id="btn-cancel-internet" data-id="{{$ai->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                @elseif ($ai->status == 5)
+                                                    <li><button class="dropdown-item" id="btn-accept-internet" data-id="{{$ai->id}}"><i class="fas fa-check pe-2"></i>Accept</button></li>
+                                                    <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                    <li><button class="dropdown-item" id="btn-cancel-internet" data-id="{{$ai->id}}"><i class="fas fa-times-circle pe-2"></i>Cancel</button></li>
+                                                @elseif ($ai->status == 6)
+                                                    <li><button class="dropdown-item" id="btn-end-internet" data-id="{{$ai->id}}"><i class="fas fa-check-square pe-2"></i>End</button></li>    
+                                                @elseif ($ai->status == 4)  
+                                                    <li style="margin-left:10px;">Status tidak dapat diubah</li>
+                                                @endif
+                                            </ul>
                                                 <button id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
-                                            @endif 
-                                        @endif   
-                                    </td>
-                                </tr>                                 
+                                                <button id="btn-delete-aksesinternet" data-id="{{$ai->id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                            @else
+                                                @if($ai->user_id === Auth::id())
+                                                    <button id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button>
+                                                @endif 
+                                            @endif   
+                                        </td>
+                                    </tr>
+                                @else
+                                    @if (Auth::id() == $ai->user_id)
+                                    <tr id="index__{{$ai->id}}">
+                                        <td>{{$ai->nama}}</td>
+                                        <td>{{$ai->departemen}}</td>
+                                        <td>{{$ai->jabatan}}</td>
+                                        <td>{{$ai->keperluan_email}}</td>
+                                        <td>{{$ai->keperluan_browsing}}</td>
+                                        @if($ai->status === 1)
+                                            <td><span class="badge bg-warning">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif ($ai->status === 2)
+                                            <td><span class="badge bg-success">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif($ai->status === 5)
+                                            <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif($ai->status === 4)
+                                            <td><span class="badge bg-secondary">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @elseif($ai->status === 6)
+                                            <td><span class="badge bg-danger">{{$ai->detailStatus->nama_status}}</span></td>
+                                        @endif                  
+                                        <td>
+                                            <button id="btn-update-aksesinternet" data-id="{{$ai->id}}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil-square"></i> </button> 
+                                        </td>
+                                    </tr>
+                                    @endif
+                                @endif                                 
                                 @empty
                                     <h5 id="emptydata-info">Tidak ada pengajuan masuk.</h5>
                                 @endforelse

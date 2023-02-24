@@ -93,3 +93,23 @@ $('body').on('click','#btn-reset-internet', function () {
     $('#filter-departemen-internet').val('')
     $('#filter-status-internet').prop('selectedIndex',0)
 })
+// event listener reset filter peminjaman inven
+$('body').on('click','#btn-reset-inventaris', function () {
+    $('#filter-nama-inventaris').val('')
+    $('#filter-tanggal-inventaris').val('')
+    $('#filter-status-inventaris').prop('selectedIndex',0)
+    $('#filter-departemen-inventaris').val('')
+})
+$('body').on('click','#btn-reset-aksprog', function () {
+    $('#filter-nama-aksprog').val('')
+    $('#filter-status-aksprog').prop('selectedIndex',0)
+    $('#filter-departemen-aksprog').val('')
+});
+
+$('#tnc').on('click',function() {
+    $('#snk').slideDown(300,'linear');
+    $('#snk').removeClass('d-none');
+});
+$('#hide').on('click',function() {
+    $(this).parent('p').slideUp(200,'linear')
+});

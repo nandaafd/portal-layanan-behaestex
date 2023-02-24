@@ -80,7 +80,8 @@
                                 </div>
                             </div> 
                             <div class="col-md-4"></div>
-                            <div class="col-md-8" id="append-area"></div>                   
+                            <div class="col-md-8" id="append-area"></div>
+                                              
                         </div>
                     </div>
                 </form>
@@ -103,6 +104,14 @@
                     <button type="" class="btn btn-primary me-1 mb-1 add_field_button" id="btn-tambah">tambah
                         opsi</button>
                 </div>
+                <div class="col-md-12">
+                    <a href="javascript:void(0)" class="" id="tnc">Baca syarat dan ketentuan </a>
+                </div>
+                <div class="col-md-12">
+                    <p class="d-none" id="snk"><span>Note : </span> Barang yang anda pinjam adalah inventaris perusahaan, 
+                        pastikan anda merawat dengan baik, segera mengembalikan inventaris ketika sudah selesai digunakan, 
+                        dan inventaris dikembalikan tanpa ada rusak sedikitpun. <br> <a href="javascript:void(0)" class="" id="hide">sembunyikan</a> </p>
+                </div> 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -110,30 +119,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="pengembalian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Apakah Anda Yakin Ingin Mengembalikan
-                    Inventaris?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Pastikan inventaris yang anda pinjam tidak terdapat kerusakan dan masih berfungsi dengan baik.
-                    <br>
-                    Kembalikan inventaris ke IT Behaestex dengan tepat waktu!</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Kembalikan</button>
-            </div>
-        </div>
-    </div>
-</div>
 </div>

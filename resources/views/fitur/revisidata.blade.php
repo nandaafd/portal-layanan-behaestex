@@ -85,6 +85,7 @@
                             </thead>
                             <tbody id="table-revisidata">
                                 @forelse ($revisidata as $rev)
+                                @if (Auth::user()->hak_akses_id == 1)
                                 <tr id="index_{{ $rev->id }}">
                                     <td>{{$rev->jenis_revisi}}</td>
                                     <td>{{$rev->tanggal}}</td>
@@ -136,6 +137,33 @@
                                         @endif
                                     </td>
                                 </tr>
+                                @else
+                                    @if (Auth::id() == $rev->user_id)
+                                    <tr id="index_{{ $rev->id }}">
+                                        <td>{{$rev->jenis_revisi}}</td>
+                                        <td>{{$rev->tanggal}}</td>
+                                        <td>{{$rev->tanggal_data}}</td>
+                                        <td>{{$rev->jenis_data}}</td>
+                                        <td>{{$rev->nama_data}}</td>
+                                        @if ($rev->status ==1)
+                                            <td><span class="badge bg-warning">{{$rev->detailStatus->nama_status}}</span></td>
+                                        @elseif($rev->status ==3)
+                                            <td><span class="badge bg-success">{{$rev->detailStatus->nama_status}}</span></td>
+                                        @elseif ($rev->status ==5)
+                                            <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
+                                        @elseif ($rev->status ==4)
+                                            <td><span class="badge bg-secondary">{{$rev->detailStatus->nama_status}}</span></td>
+                                        @elseif ($rev->status ==6)
+                                            <td><span class="badge bg-danger">{{$rev->detailStatus->nama_status}}</span></td>
+                                        @endif
+                                        <td>
+                                            <button id="btn-view" data-id="{{$rev->id}}" class="btn btn-warning btn-sm" title="lihat detail"><i class="bi bi-eye-fill"></i></button>
+                                            <button id="btn-update-revisidata" data-id="{{$rev->id}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                @endif
+                                
                                 @empty
                                    <h5 id="emptydata-info">Tidak ada pengajuan masuk hari ini.</h5> 
                                 @endforelse

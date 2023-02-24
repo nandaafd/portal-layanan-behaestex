@@ -30,6 +30,8 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
 Route::middleware(['isLogin'])->group(function () {
     Route::resource('inventaris', \App\Http\Controllers\PeminjamanInventarisController::class);
+    Route::post('/inventaris/{id}/update','App\Http\Controllers\PeminjamanInventarisController@update_status');
+    Route::post('inventaris/{id}/pengembalian','App\Http\Controllers\PeminjamanInventarisController@pengembalian');
     Route::resource('profile',\App\Http\Controllers\ProfileController::class);
     Route::resource('/aksesprogram', App\Http\Controllers\AksesProgramController::class);
     Route::post('aksesprogram/{id}/update', 'App\Http\Controllers\AksesProgramController@update_status');

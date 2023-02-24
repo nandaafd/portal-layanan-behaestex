@@ -12,11 +12,17 @@ class PeminjamanInventarisController extends Controller
 {
     //
     public function index(Request $request){
-        // return $request->all();
-        $inventaris = PeminjamanInventaris::with('detailStatus')->with('itemPeminjaman')->get();
+        $nama = $request->nama;
+        $status = $request->status;
+        $departemen = $request->departemen;
+        $tanggal = $request->tanggal;
+        $inventaris = PeminjamanInventaris::with('detailStatus')->with('itemPeminjaman')
+                                            ->where('status','like','%'.$status.'%')->where('nama','like','%'.$nama.'%')
+                                            ->where('departemen','like','%'.$departemen.'%')->where('tanggal_pinjam','like','%'.$tanggal.'%')
+                                            ->orderBy('created_at','desc')->get();
         $master_inventaris = MasterInventaris::all();
-        $item_peminjaman = ItemPeminjaman::all();
-        return view('fitur.inventaris', compact('inventaris', 'master_inventaris','item_peminjaman'));
+        $item_peminjaman = ItemPeminjaman::all()->first();
+        return view('fitur.inventaris', compact('inventaris', 'master_inventaris','item_peminjaman','nama','departemen','status','tanggal'));
     }
     public function store(Request $request){
         // return $request->all();
@@ -46,7 +52,7 @@ class PeminjamanInventarisController extends Controller
 
         return response()->json([
             'success'=>true,
-            'message'=>'Success',
+            'message'=>'Data peminjaman anda berhasil ditambah!',   
             'data'=>$peminjaman_inventaris
         ]);
     }
@@ -72,6 +78,45 @@ class PeminjamanInventarisController extends Controller
             'success' => true,
             'message' => 'Data Berhasil Diudapte!',
             'data'    => [$peminjaman_inventaris, $item_peminjaman]  
+        ]);
+    }
+
+    public function destroy($id){
+        ItemPeminjaman::where('peminjaman_id',$id)->delete();
+        PeminjamanInventaris::where('id',$id)->delete();
+        return response()->json([
+            'success'=>true,
+            'message'=>'Data berhasil dihapus!'
+        ]);
+    }
+    public function update_status(Request $request){
+        $type = $request->type;
+        if ($type == "approve") {
+            PeminjamanInventaris::find($request->id)->update(['status'=>2]);
+        } elseif ($type == "decline") {
+            PeminjamanInventaris::find($request->id)->update(['status'=>5]);
+        }
+        elseif ($type == "end") {
+            PeminjamanInventaris::find($request->id)->update(['status'=>4]);
+        }
+        elseif ($type == "cancel") {
+            PeminjamanInventaris::find($request->id)->update(['status'=>6]);
+        } 
+        return response()->json([
+            'success'=>true,
+            'message'=>'Status Berhasil Diubah',
+        ]);
+    }
+    public function pengembalian(Request $request){
+        $pengembalian = $request->type;
+        $tanggal = date('Y-m-d');
+        if ($pengembalian == 'dikembalikan') {
+            PeminjamanInventaris::find($request->id)->update(['status'=>4]);
+            PeminjamanInventaris::find($request->id)->update(['tanggal_dikembalikan'=>$tanggal]);
+        }
+        return response()->json([
+            'success'=>true,
+            'message'=>'Berhasil Dikembalikan!',
         ]);
     }
 

@@ -56,6 +56,8 @@ header a{
 .card-header{
     padding-bottom: 0px;
 }
+#tnc{font-size: 14px; color: #3CADA2;}
+#hide{font-size: 13px; color: #3CADA2;}
 /* button */
 #btn-status{
     font-size: 12px;
@@ -67,6 +69,10 @@ header a{
 #btn-reset-rev:hover{background-color: grey; color: white;}
 #btn-reset-internet{background-color: rgb(197, 197, 197); border: none; color:white}
 #btn-reset-internet:hover{background-color: grey; color: white;}
+#btn-reset-aksprog{background-color: rgb(197, 197, 197); border: none; color:white}
+#btn-reset-aksprog:hover{background-color: grey; color: white;}
+#btn-reset-inventaris{background-color: rgb(197, 197, 197); border: none; color:white}
+#btn-reset-inventaris:hover{background-color: grey; color: white;}
 #btn-cari{padding-right: 15px;}
 #btn-cari  i{
     color: white;
@@ -109,6 +115,15 @@ header a{
     margin-top: 5px;
 }
 #btn-add-revisidata i{color: white;}
+#btn-add-inventaris{
+    background-color: #3CADA2;
+    border: none;
+    width: 6.2rem;
+    font-size: 14px;
+    height: 2rem;
+    margin-top: 5px;
+}
+#btn-add-inventaris i{color: white; margin-right: 5px; font-size: 14px;}
 #btn-add-aksesprogram{
     background-color: #3CADA2;
     border: none;
@@ -143,9 +158,12 @@ header a{
 #btn-view-aksesprogram > i{
     color: black; 
 }
+#btn-kembalikan{
+    font-size: 12px;
+}
 #btn-kembalikan > i{
     color: white; 
-    font-size: 15px;
+    font-size: 12px;
 }
 #btn-edit > i{
     color: white;
@@ -196,7 +214,7 @@ header a{
     font-size: 17px;
 }
 #btn-accept-inventaris > i{
-    color: white;
+    color: green;
     font-size: 17px;
 }
 #btn-accept-aksesprogram > i{
@@ -220,7 +238,7 @@ header a{
     font-size: 15px;
 }
 #btn-decline-inventaris > i{
-    color: white;
+    color: red;
     font-size: 15px;
 }
 #btn-decline-aksesprogram > i{
@@ -248,11 +266,19 @@ header a{
     font-size: 16px;
     color: rgb(198, 3, 3);
 }
+#btn-cancel-inventaris i{
+    font-size: 16px;
+    color: rgb(198, 3, 3);
+}
 #btn-end i{
     font-size: 16px;
     color: grey;
 }
 #btn-end-rev i{
+    font-size: 16px;
+    color: grey;
+}
+#btn-end-inventaris i{
     font-size: 16px;
     color: grey;
 }
@@ -526,11 +552,13 @@ table.dataTable thead .sorting_desc_disabled:before {
 #table-inventaris_length label{
     margin-left: 5%;
     padding-bottom: 1rem;
+    display: none;
 }
 
 #table-inventaris_filter label{
     margin-right: 5%;
     padding-bottom: 1rem;
+    display: none;
 }
 #table-inventaris_info{
     padding: 3%;
@@ -539,7 +567,7 @@ table.dataTable thead .sorting_desc_disabled:before {
     padding: 3%;
     padding-top: 1%;
     font-size: 12px;
-}
+}   
 
 /* filter tabel aksesprogram */
 #table-aksesprogram_length label{
