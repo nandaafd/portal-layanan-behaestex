@@ -83,8 +83,7 @@
                                         <td>{{$data->departemen}}</td>
                                         <td>
                                             <button type="button" class="btn btn-primary" id="btn-view-item" data-id="{{$data->id}}">
-                                                Lihat item
-                                              </button>
+                                             <i class="fas fa-eye pe-2"></i> lihat item </button>
                                         </td>
                                         <td>{{$data->tanggal_pinjam}}</td>
                                         <td>{{$data->tanggal_dikembalikan}}</td>
@@ -140,7 +139,7 @@
                                             <td class="text-bold-500">{{$data->nama}}</td>
                                             <td>{{$data->departemen}}</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <button type="button" id="btn-view-item" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Lihat item
                                                   </button>
                                             </td>

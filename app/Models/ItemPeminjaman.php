@@ -11,6 +11,8 @@ class ItemPeminjaman extends Model
     protected $table = 'item_peminjaman';
     protected $fillable = ['peminjaman_id','master_inventaris_id'];
     
-
+    public function MasterInventaris(){
+        return $this->hasOne(MasterInventaris::class, 'id', 'master_inventaris_id');
+    }
 }
 

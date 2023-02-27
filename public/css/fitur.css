@@ -58,10 +58,18 @@ header a{
 }
 #tnc{font-size: 14px; color: #3CADA2;}
 #hide{font-size: 13px; color: #3CADA2;}
+
+
 /* button */
 #btn-status{
     font-size: 12px;
     padding: 3px 7px;
+}
+#btn-view-item{
+    font-size: 12px;
+    padding: 3px 7px;}
+#btn-view-item i{
+    color: white;
 }
 #btn-reset-zoom{background-color: rgb(197, 197, 197); color:white}
 #btn-reset-zoom:hover{background-color: grey; color: white;}

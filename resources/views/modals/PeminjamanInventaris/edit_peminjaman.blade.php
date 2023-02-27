@@ -92,8 +92,8 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" id="btn-edit-inventaris" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>

@@ -20,9 +20,7 @@ class PeminjamanInventaris extends Model
         'ttd_pengembalian',
         'status'
     ];
-    public function MasterInventaris(){
-        return $this->hasMany(MasterInventaris::class, 'nama_barang','master_inventaris');
-    }
+   
     public function detailStatus(){
         return $this->hasOne(Status::class, 'id','status');
     }

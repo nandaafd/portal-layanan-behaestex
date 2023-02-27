@@ -21,7 +21,7 @@ class PeminjamanInventarisController extends Controller
                                             ->where('departemen','like','%'.$departemen.'%')->where('tanggal_pinjam','like','%'.$tanggal.'%')
                                             ->orderBy('created_at','desc')->get();
         $master_inventaris = MasterInventaris::all();
-        $item_peminjaman = ItemPeminjaman::all()->first();
+        $item_peminjaman = ItemPeminjaman::with('MasterInventaris')->first();
         return view('fitur.inventaris', compact('inventaris', 'master_inventaris','item_peminjaman','nama','departemen','status','tanggal'));
     }
     public function store(Request $request){
@@ -58,7 +58,7 @@ class PeminjamanInventarisController extends Controller
     }
     public function show($id){
        $data = PeminjamanInventaris::find($id);
-       $item = ItemPeminjaman::where('peminjaman_id',$data->id)->get();
+       $item = ItemPeminjaman::with('MasterInventaris')->where('peminjaman_id',$data->id)->get();
        return response()->json([
         'success' => true,
         'message' => 'detail data',
@@ -66,13 +66,14 @@ class PeminjamanInventarisController extends Controller
        ]);
     }
     public function update(Request $request, PeminjamanInventaris $peminjaman_inventaris, ItemPeminjaman $item_peminjaman){
+        // return $request->all;
         $peminjaman_inventaris->find($request->id)->update([
             'nama'=>$request->nama,
             'departemen'=>$request->departemen,
             'tanggal_pinjam'=>$request->tanggal_pinjam
         ]);
         $item_peminjaman->where('peminjaman_id',$peminjaman_inventaris->id)->update([
-            'master_inventaris_id'=>$request->item_peminjaman
+            'master_inventaris_id'=>$request->item
         ]);
         return response()->json([
             'success' => true,
